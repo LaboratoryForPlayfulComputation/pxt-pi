@@ -1,0 +1,61 @@
+{
+    "name": "sample",
+    "description": "A target sample for KindScript",
+    "files": [
+        "README.md",
+        "core.d.ts",
+        "basic.ts"
+    ],
+    "public": true,
+    "dependencies": {},
+    "target": {
+        "id": "sample",
+        "name": "sample",
+        "title": "Sample",
+        "cloud": true,
+        "blocksprj": {
+            "id": "blocksprj",
+            "config": {
+                "name": "{0} block",
+                "dependencies": {
+                    "sample": "*"
+                },
+                "description": "",
+                "files": [
+                    "main.blocks",
+                    "main.blocks.ts",
+                    "README.md"
+                ]
+            },
+            "files": {
+                "main.blocks": "<xml xmlns='http://www.w3.org/1999/xhtml'>\n</xml>\n",
+                "main.blocks.ts": "\n",
+                "README.md": "Describe your project here!"
+            }
+        },
+        "tsprj": {
+            "id": "tsprj",
+            "config": {
+                "name": "{0} js",
+                "dependencies": {
+                    "microbit": "*",
+                    "microbit-radio": "*"
+                },
+                "description": "",
+                "files": [
+                    "main.ts",
+                    "README.md"
+                ]
+            },
+            "files": {
+                "main.ts": "\n",
+                "README.md": "Describe your project here!"
+            }
+        },
+        "koduvscode": false,
+        "compile": {
+            "isNative": false,
+            "hasHex": false
+        }
+    }
+}

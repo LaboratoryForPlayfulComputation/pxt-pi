@@ -1,0 +1,6 @@
+{
+    "corepkg": "sample",
+    "bundleddirs": [
+        "libs/core"
+    ]
+}
