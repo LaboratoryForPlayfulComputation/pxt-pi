@@ -1,14 +1,13 @@
 /// <reference path="../node_modules/kindscript/typings/bluebird/bluebird.d.ts"/>
 /// <reference path="../node_modules/kindscript/built/kindsim.d.ts"/>
 
-namespace ks.rt.sim {
-    export function initCurrentRuntime() {
-        ks.rt.runtime.board = new Board();
-    }
-    ks.rt.initCurrentRuntime = initCurrentRuntime;
+namespace ks.rt {
+    initCurrentRuntime = () => {
+        runtime.board = new Board();
+    };
 
     export function board() : Board {
-        return ks.rt.runtime.board as Board;
+        return runtime.board as Board;
     }
     
     export interface Sprite {
