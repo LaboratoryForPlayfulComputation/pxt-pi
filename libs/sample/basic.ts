@@ -1,7 +1,5 @@
 enum Direction {
-    //% enumval=0
     Left,
-    //% enumval=1
     Right
 }
 

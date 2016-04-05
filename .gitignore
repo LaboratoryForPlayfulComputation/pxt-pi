@@ -5,3 +5,4 @@ typings/
 tmp/
 *.ts.new
 temp/
+projects/
