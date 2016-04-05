@@ -1,6 +1,73 @@
 {
-    "corepkg": "sample",
+    "id": "sample",
+    "name": "Sample KS",
+    "title": "Sample KindScript Target",
+    "cloud": {
+        "workspace": false,
+        "packages": true
+    },
     "bundleddirs": [
-        "libs/core"
-    ]
+        "libs/sample"
+    ],
+    "blocksprj": {
+        "id": "blocksprj",
+        "config": {
+            "name": "{0} block",
+            "dependencies": {
+                "sample": "*"
+            },
+            "description": "",
+            "files": [
+                "main.blocks",
+                "main.blocks.ts",
+                "README.md"
+            ]
+        },
+        "files": {
+            "main.blocks": "<xml xmlns='http://www.w3.org/1999/xhtml'>\n</xml>\n",
+            "main.blocks.ts": "\n",
+            "README.md": "Describe your project here!"
+        }
+    },
+    "tsprj": {
+        "id": "tsprj",
+        "config": {
+            "name": "{0} js",
+            "dependencies": {
+                "sample": "*"
+            },
+            "description": "",
+            "files": [
+                "main.ts",
+                "README.md"
+            ]
+        },
+        "files": {
+            "main.ts": "\n",
+            "README.md": "Describe your project here!"
+        }
+    },
+    "compile": {
+        "isNative": false,
+        "hasHex": false
+    },
+    "simulator": {
+        "autoRun": true
+    },
+    "appTheme": {
+        "logoUrl": "https://sample.kindscript.com/",
+        "homeUrl": "https://sample.kindscript.com/",
+        "embedUrl": "https://sample.kindscript.com/",
+        "visualStudioCode": false,
+        "docMenu": [
+            {
+                "name": "About",
+                "path": "/about"
+            },
+            {
+                "name": "Docs",
+                "path": "/docs"
+            }
+        ]
+    }
 }
