@@ -1,32 +1,32 @@
 {
-  "name": "pxt-sample",
-  "version": "0.0.4",
-  "description": "sample target for KindScript",
-  "keywords": [
-    "JavaScript",
-    "education",
-    "KindScript"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Microsoft/pxt-sample.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "homepage": "https://github.com/Microsoft/pxt-sample#readme",
-  "files": [
-    "README.md",
-    "pxtarget.json",
-    "built/*.js",
-    "built/*.json",
-    "built/*.d.ts",
-    "sim/public",
-    "docs/*.md"
-  ],
-  "devDependencies": {
-    "typescript": "^1.8.7"
-  },
-  "dependencies": {
-    "pxt-core": "0.2.45"
-  }
+    "name": "pxt-sample",
+    "version": "0.0.4",
+    "description": "sample target for KindScript",
+    "keywords": [
+        "JavaScript",
+        "education",
+        "KindScript"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/pxt-sample.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "homepage": "https://github.com/Microsoft/pxt-sample#readme",
+    "files": [
+        "README.md",
+        "pxtarget.json",
+        "built/*.js",
+        "built/*.json",
+        "built/*.d.ts",
+        "sim/public",
+        "docs/*.md"
+    ],
+    "devDependencies": {
+        "typescript": "^1.8.7"
+    },
+    "dependencies": {
+        "pxt-core": "0.2.46"
+    }
 }
