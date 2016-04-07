@@ -1,4 +1,4 @@
-namespace ks.rt.basic {
+namespace pxsim.basic {
     export function forward(steps: number) {
         let cb = getResume();
         let b = board();

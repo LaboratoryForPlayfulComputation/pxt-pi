@@ -1,5 +1,5 @@
 {
-  "name": "kindscript-sample",
+  "name": "pxt-sample",
   "version": "0.0.2",
   "description": "sample target for KindScript",
   "keywords": [
@@ -9,14 +9,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Microsoft/kindscript-target-sample.git"
+    "url": "git+https://github.com/Microsoft/pxt-sample.git"
   },
   "author": "",
   "license": "MIT",
-  "homepage": "https://github.com/Microsoft/kindscript-target-sample#readme",
+  "homepage": "https://github.com/Microsoft/pxt-sample#readme",
   "files": [
     "README.md",
-    "kindtarget.json",
+    "pxtarget.json",
     "built/*.js",
     "built/*.json",
     "built/*.d.ts",
@@ -27,6 +27,6 @@
     "typescript": "^1.8.7"
   },
   "dependencies": {
-    "kindscript": "0.2.21"
+    "pxt-core": "0.2.21"
   }
 }

@@ -1,10 +1,10 @@
 {
     "name": "sample",
-    "description": "A target sample for KindScript",
+    "description": "A target sample for PXT",
     "files": [
         "README.md",
-        "ks-core.d.ts",
-        "ks-helpers.ts",
+        "pxt-core.d.ts",
+        "pxt-helpers.ts",
         "basic.ts"
     ],
     "public": true,

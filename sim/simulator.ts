@@ -1,7 +1,7 @@
-/// <reference path="../node_modules/kindscript/typings/bluebird/bluebird.d.ts"/>
-/// <reference path="../node_modules/kindscript/built/kindsim.d.ts"/>
+/// <reference path="../node_modules/pxt-core/typings/bluebird/bluebird.d.ts"/>
+/// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
 
-namespace ks.rt {
+namespace pxsim {
     initCurrentRuntime = () => {
         runtime.board = new Board();
     };
@@ -16,7 +16,7 @@ namespace ks.rt {
         angle:number;
     }
 
-    export class Board extends ks.rt.BaseBoard {
+    export class Board extends pxsim.BaseBoard {
         public element : SVGSVGElement;
         public spriteElement: SVGCircleElement;
         public sprite : Sprite;
@@ -28,7 +28,7 @@ namespace ks.rt {
             this.sprite = { x:100, y: 100, angle:90 }
         }
         
-        initAsync(msg: ks.rt.SimulatorRunMessage): Promise<void> {
+        initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
             console.log('setting simulator')
             
             document.body.innerHTML = ''; // clear children
