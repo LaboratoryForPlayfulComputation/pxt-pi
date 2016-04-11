@@ -19,7 +19,6 @@
             "description": "",
             "files": [
                 "main.blocks",
-                "main.blocks.ts",
                 "README.md"
             ]
         },
