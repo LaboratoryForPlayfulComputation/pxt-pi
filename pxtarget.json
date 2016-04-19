@@ -1,7 +1,8 @@
 {
     "id": "sample",
-    "name": "Sample KS",
-    "title": "Sample KindScript Target",
+    "name": "Sample PXT",
+    "title": "Sample PXT Target",
+    "corepkg": "sample",
     "cloud": {
         "workspace": false,
         "packages": true
@@ -19,12 +20,13 @@
             "description": "",
             "files": [
                 "main.blocks",
+                "main.ts",
                 "README.md"
             ]
         },
         "files": {
             "main.blocks": "<xml xmlns='http://www.w3.org/1999/xhtml'>\n</xml>\n",
-            "main.blocks.ts": "\n",
+            "main.ts": "\n",
             "README.md": "Describe your project here!"
         }
     },

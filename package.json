@@ -1,11 +1,11 @@
 {
   "name": "pxt-sample",
   "version": "0.0.7",
-  "description": "sample target for KindScript",
+  "description": "sample target for PXT",
   "keywords": [
     "JavaScript",
     "education",
-    "KindScript"
+    "PXT"
   ],
   "repository": {
     "type": "git",
