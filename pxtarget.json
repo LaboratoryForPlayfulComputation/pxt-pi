@@ -48,10 +48,6 @@
             "README.md": "Describe your project here!"
         }
     },
-    "compile": {
-        "isNative": false,
-        "hasHex": false
-    },
     "simulator": {
         "autoRun": true
     },
