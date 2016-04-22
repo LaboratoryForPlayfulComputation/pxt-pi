@@ -48,6 +48,11 @@
             "README.md": "Describe your project here!"
         }
     },
+    "runtime": {
+      "mathBlocks": true,
+      "textBlocks": true,
+      "listsBlocks": true 
+    },
     "simulator": {
         "autoRun": true
     },
