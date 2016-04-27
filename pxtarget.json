@@ -50,6 +50,9 @@
     },
     "runtime": {
       "mathBlocks": true,
+      "loopBlocks": true,
+      "logicBlocks": true,
+      "variablesBlocks": true,
       "textBlocks": true,
       "listsBlocks": true 
     },
