@@ -1,8 +1,3 @@
-enum Direction {
-    Left,
-    Right
-}
-
 /**
  * Basic functionalities.
  */
