@@ -9,12 +9,6 @@ namespace pxsim {
     export function board() : Board {
         return runtime.board as Board;
     }
-    
-    export interface Sprite {
-        x:number;
-        y:number;
-        angle:number;
-    }
 
     export class Board extends pxsim.BaseBoard {
         public element : SVGSVGElement;
@@ -25,7 +19,7 @@ namespace pxsim {
             super();
             this.element = <SVGSVGElement><any>document.getElementById('svgcanvas');
             this.spriteElement = <SVGCircleElement>this.element.getElementById('svgsprite');
-            this.sprite = { x:100, y: 100, angle:90 }
+            this.sprite = new Sprite()
         }
         
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
