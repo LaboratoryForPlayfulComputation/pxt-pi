@@ -6,6 +6,7 @@
         "pxt-core.d.ts",
         "pxt-helpers.ts",
         "enums.d.ts",
+        "sims.d.ts",
         "basic.ts"
     ],
     "public": true,
