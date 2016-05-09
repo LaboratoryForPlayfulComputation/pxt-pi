@@ -48,12 +48,16 @@ namespace pxsim.basic {
     }
 }
 
+function logMsg(m:string) { console.log(m) }
+
 namespace pxsim.console {
     /**
      * Print out message
      */
     //% 
     export function log(msg:string) {
+        logMsg("CONSOLE: " + msg)
+        // why doesn't that work?
         board().writeSerial(msg + "\n")
     }
 }
@@ -69,6 +73,10 @@ namespace pxsim {
          */
         //%
         public x = 100;
+         /**
+         * The Y-coordiante
+         */
+        //%
         public y = 100;
         public angle = 90;
         

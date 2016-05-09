@@ -58,6 +58,13 @@ declare namespace console {
         //% shim=.x
         public x: number;
 
+        /**
+         * The Y-coordiante
+         */
+        //%
+        //% shim=.y
+        public y: number;
+
         /** 
          * Make new sprite
          */
