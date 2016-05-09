@@ -8,14 +8,7 @@ namespace pxsim.basic {
     //% weight=90
     //% blockId=sampleForward block="forward %steps"
     export function forwardAsync(steps: number) {
-        let b = board();
-
-        let deg = b.sprite.angle / 180 * Math.PI;
-        b.sprite.x += Math.cos(deg) * steps * 10;
-        b.sprite.y += Math.sin(deg) * steps * 10;
-
-        b.updateView();
-        return Promise.delay(400)
+        return board().sprite.forwardAsync(steps)
     }
 
     /**
@@ -40,7 +33,7 @@ namespace pxsim.basic {
      */
     //% help=functions/forever weight=55 blockGap=8
     //% blockId=device_forever block="forever" icon="\uf01e" 
-    export function forever(body: RefAction): void { 
+    export function forever(body: RefAction): void {
         thread.forever(body)
     }
 
@@ -50,7 +43,62 @@ namespace pxsim.basic {
      */
     //% help=functions/pause weight=54
     //% block="pause (ms) %pause" blockId=device_pause icon="\uf110"
-    export function pauseAsync(ms: number) { 
+    export function pauseAsync(ms: number) {
         return Promise.delay(ms)
+    }
+}
+
+function logMsg(m:string) { console.log(m) }
+
+namespace pxsim.console {
+    /**
+     * Print out message
+     */
+    //% 
+    export function log(msg:string) {
+        logMsg("CONSOLE: " + msg)
+        // why doesn't that work?
+        board().writeSerial(msg + "\n")
+    }
+}
+
+namespace pxsim {
+    /**
+     * A ghost on the screen.
+     */
+    //%
+    export class Sprite {
+        /**
+         * The X-coordiante
+         */
+        //%
+        public x = 100;
+         /**
+         * The Y-coordiante
+         */
+        //%
+        public y = 100;
+        public angle = 90;
+        
+        /** 
+         * Make new sprite
+         */
+        //%
+        constructor() {
+        }
+        
+        private foobar() {}
+
+        /**
+         * Move the thing forward
+         */
+        //%
+        public forwardAsync(steps: number) {
+            let deg = this.angle / 180 * Math.PI;
+            this.x += Math.cos(deg) * steps * 10;
+            this.y += Math.sin(deg) * steps * 10;
+            board().updateView();
+            return Promise.delay(400)
+        }
     }
 }
