@@ -48,6 +48,16 @@ namespace pxsim.basic {
     }
 }
 
+namespace pxsim.console {
+    /**
+     * Print out message
+     */
+    //% 
+    export function log(msg:string) {
+        board().writeSerial(msg + "\n")
+    }
+}
+
 namespace pxsim {
     /**
      * A ghost on the screen.

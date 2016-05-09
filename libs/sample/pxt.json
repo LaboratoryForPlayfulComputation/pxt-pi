@@ -9,6 +9,9 @@
         "sims.d.ts",
         "basic.ts"
     ],
+    "testFiles": [
+        "test.ts"
+    ],
     "public": true,
     "dependencies": {}
 }

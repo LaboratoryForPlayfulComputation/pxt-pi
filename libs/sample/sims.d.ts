@@ -37,5 +37,41 @@ declare namespace basic {
     function pause(ms: number): void;
 
 }
+declare namespace console {
+    /**
+     * Print out message
+     */
+    //%
+    //% shim=console::log
+    function log(msg: string): void;
+
+}
+    /**
+     * A ghost on the screen.
+     */
+    //%
+    declare class Sprite {
+        /**
+         * The X-coordiante
+         */
+        //%
+        //% shim=.x
+        public x: number;
+
+        /** 
+         * Make new sprite
+         */
+        //%
+        //% shim="new Sprite"
+        constructor();
+
+        /**
+         * Move the thing forward
+         */
+        //%
+        //% shim=.forwardAsync promise
+        public forward(steps: number): void;
+
+    }
 
 // Auto-generated. Do not edit. Really.
