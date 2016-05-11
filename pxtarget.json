@@ -59,6 +59,8 @@
         "logoUrl": "https://sample.pxt.io/",
         "homeUrl": "https://sample.pxt.io/",
         "embedUrl": "https://sample.pxt.io/",
+        "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
+        "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "visualStudioCode": false,
         "docMenu": [
             {
