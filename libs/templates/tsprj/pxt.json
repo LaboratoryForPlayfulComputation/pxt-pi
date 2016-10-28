@@ -1,0 +1,11 @@
+{
+    "name": "{0} bit",
+    "dependencies": {
+        "core": "*"
+    },
+    "description": "",
+    "files": [
+        "main.ts",
+        "README.md"
+    ]
+}
