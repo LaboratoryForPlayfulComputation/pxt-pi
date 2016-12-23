@@ -23,6 +23,8 @@
     "sim/public",
     "docs/**"
   ],
+  "main": "built/pxtrequire.js",
+  "typings": "built/pxtrequire.d.ts",
   "devDependencies": {
     "typescript": "^1.8.7",
     "less": "^2.6.0",
