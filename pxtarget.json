@@ -61,7 +61,6 @@
         "embedUrl": "https://sample.pxt.io/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
-        "visualStudioCode": false,
         "docMenu": [
             {
                 "name": "About",
@@ -71,6 +70,11 @@
                 "name": "Docs",
                 "path": "/docs"
             }
-        ]
+        ],
+        "invertedToolbox": true,
+        "coloredToolbox": true,
+        "monacoToolbox": true,
+        "simAnimationEnter": "rotate in",
+        "simAnimationExit": "rotate out"
     }
 }
