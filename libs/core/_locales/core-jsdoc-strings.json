@@ -26,13 +26,14 @@
   "String.substr|param|length": "number of characters to extract",
   "String.substr|param|start": "first character index; can be negative from counting from the end, eg:0",
   "console.log": "Print out message",
-  "drawing": "Basic functionalities.",
-  "drawing.forever": "Repeats the code forever in the background. On each iteration, allows other code to run.",
-  "drawing.forever|param|body": "TODO",
-  "drawing.forward": "Moves the sprite forward",
-  "drawing.forward|param|steps": "number of steps to move, eg: 1",
-  "drawing.pause": "Pause for the specified time in milliseconds",
-  "drawing.pause|param|ms": "how long to pause for, eg: 100, 200, 500, 1000, 2000",
-  "drawing.turn": "Moves the sprite forward",
-  "drawing.turn|param|angle": "degrees to turn, eg:90"
+  "control": "Control flow",
+  "control.forever": "Repeats the code forever in the background. On each iteration, allows other code to run.",
+  "control.forever|param|body": "TODO",
+  "control.pause": "Pause for the specified time in milliseconds",
+  "control.pause|param|ms": "how long to pause for, eg: 100, 200, 500, 1000, 2000",
+  "turtle": "Basic functionalities.",
+  "turtle.forward": "Moves the sprite forward",
+  "turtle.forward|param|steps": "number of steps to move, eg: 1",
+  "turtle.turn": "Moves the sprite forward",
+  "turtle.turn|param|angle": "degrees to turn, eg:90"
 }

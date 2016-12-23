@@ -1,12 +1,14 @@
 # Docs for Sample Target
 
+This is a pure javascript sample target for PXT. For more information about setting your own target, see https://pxt.io/docs .
+
 You can embed code snippets.
 
 ```blocks
-basic.forever(() => {
-    basic.turn(Direction.Left, 10);
-    basic.forward(1);
+control.forever(() => {
+    turtle.turn(Direction.Left, 10);
+    turtle.forward(1);
 });
 ```
 
-TODO: show examples of cards etc
+Or embed blocks inline, `[control.forever(() => {})]` and many other features in our augmented markdown.

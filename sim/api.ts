@@ -1,6 +1,6 @@
 /// <reference path="../libs/core/enums.d.ts"/>
 
-namespace pxsim.drawing {
+namespace pxsim.turtle {
     /**
      * Moves the sprite forward
      * @param steps number of steps to move, eg: 1
@@ -26,6 +26,9 @@ namespace pxsim.drawing {
             b.sprite.angle += angle;
         return Promise.delay(400)
     }
+}
+
+namespace pxsim.control {
 
     /**
      * Repeats the code forever in the background. On each iteration, allows other code to run.

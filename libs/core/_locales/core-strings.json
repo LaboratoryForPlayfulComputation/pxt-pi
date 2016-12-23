@@ -1,4 +1,6 @@
 {
+  "Direction.Left|block": "left",
+  "Direction.Right|block": "right",
   "Math|block": "Math",
   "String.charAt|block": "char from %this|at %pos",
   "String.compare|block": "compare %this| to %that",
@@ -9,14 +11,16 @@
   "String.substr|block": "substring of %this|from %start|of length %length",
   "String|block": "String",
   "console|block": "console",
-  "drawing.forever|block": "forever",
-  "drawing.forward|block": "forward %steps",
-  "drawing.pause|block": "pause (ms) %pause",
-  "drawing.turn|block": "turn %direction|by %angle degrees",
-  "drawing|block": "drawing",
+  "control.forever|block": "forever",
+  "control.pause|block": "pause (ms) %pause",
+  "control|block": "control",
+  "turtle.forward|block": "forward %steps",
+  "turtle.turn|block": "turn %direction|by %angle degrees",
+  "turtle|block": "turtle",
   "{id:category}Console": "Console",
-  "{id:category}Drawing": "Drawing",
+  "{id:category}Control": "Control",
   "{id:category}Math": "Math",
   "{id:category}String": "String",
-  "{id:category}Text": "Text"
+  "{id:category}Text": "Text",
+  "{id:category}Turtle": "Turtle"
 }
