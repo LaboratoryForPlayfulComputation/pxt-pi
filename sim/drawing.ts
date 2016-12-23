@@ -1,6 +1,6 @@
-/// <reference path="../libs/sample/enums.d.ts"/>
+/// <reference path="../libs/core/enums.d.ts"/>
 
-namespace pxsim.basic {
+namespace pxsim.drawing {
     /**
      * Moves the sprite forward
      * @param steps number of steps to move, eg: 1

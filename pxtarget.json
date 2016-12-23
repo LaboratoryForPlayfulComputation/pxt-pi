@@ -2,48 +2,14 @@
     "id": "sample",
     "name": "Sample PXT",
     "title": "Sample PXT Target",
-    "corepkg": "sample",
+    "corepkg": "core",
     "cloud": {
         "workspace": false,
         "packages": true
     },
     "bundleddirs": [
-        "libs/sample"
+        "libs/core"
     ],
-    "blocksprj": {
-        "id": "blocksprj",
-        "config": {
-            "name": "{0} block",
-            "dependencies": {
-                "sample": "*"
-            },
-            "description": "",
-            "files": [
-                "main.blocks",
-                "main.ts"
-            ]
-        },
-        "files": {
-            "main.blocks": "<xml xmlns='http://www.w3.org/1999/xhtml'>\n</xml>\n",
-            "main.ts": "\n"
-        }
-    },
-    "tsprj": {
-        "id": "tsprj",
-        "config": {
-            "name": "{0} js",
-            "dependencies": {
-                "sample": "*"
-            },
-            "description": "",
-            "files": [
-                "main.ts"
-            ]
-        },
-        "files": {
-            "main.ts": "\n"
-        }
-    },
     "runtime": {
       "mathBlocks": true,
       "loopsBlocks": true,

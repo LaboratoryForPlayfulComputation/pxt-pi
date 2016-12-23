@@ -1,5 +1,5 @@
 {
-    "name": "sample",
+    "name": "core",
     "description": "A target sample for PXT",
     "files": [
         "README.md",
@@ -7,7 +7,7 @@
         "pxt-helpers.ts",
         "enums.d.ts",
         "sims.d.ts",
-        "basic.ts"
+        "drawing.ts"
     ],
     "testFiles": [
         "test.ts"

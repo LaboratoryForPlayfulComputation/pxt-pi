@@ -1,12 +1,12 @@
 // Auto-generated from simulator. Do not edit.
-declare namespace basic {
+declare namespace drawing {
     /**
      * Moves the sprite forward
      * @param steps number of steps to move, eg: 1
      */
     //% weight=90
     //% blockId=sampleForward block="forward %steps"
-    //% shim=basic::forwardAsync promise
+    //% shim=drawing::forwardAsync promise
     function forward(steps: number): void;
 
     /**
@@ -15,7 +15,7 @@ declare namespace basic {
      */
     //% weight=85
     //% blockId=sampleTurn block="turn %direction|by %angle degrees"
-    //% shim=basic::turnAsync promise
+    //% shim=drawing::turnAsync promise
     function turn(direction: Direction, angle: number): void;
 
     /**
@@ -24,7 +24,7 @@ declare namespace basic {
      */
     //% help=functions/forever weight=55 blockGap=8
     //% blockId=device_forever block="forever" icon="\uf01e"
-    //% shim=basic::forever
+    //% shim=drawing::forever
     function forever(body: () => void): void;
 
     /**
@@ -33,7 +33,7 @@ declare namespace basic {
      */
     //% help=functions/pause weight=54
     //% block="pause (ms) %pause" blockId=device_pause icon="\uf110"
-    //% shim=basic::pauseAsync promise
+    //% shim=drawing::pauseAsync promise
     function pause(ms: number): void;
 
 }
