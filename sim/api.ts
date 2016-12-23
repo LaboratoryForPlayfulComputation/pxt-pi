@@ -13,6 +13,7 @@ namespace pxsim.turtle {
 
     /**
      * Moves the sprite forward
+     * @param direction the direction to turn, eg: Direction.Left
      * @param angle degrees to turn, eg:90
      */
     //% weight=85
