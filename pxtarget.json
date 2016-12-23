@@ -40,6 +40,15 @@
         "invertedToolbox": true,
         "coloredToolbox": true,
         "monacoToolbox": true,
+        "invertedMenu": true,
+        "blocklyOptions": { 
+            "grid": {
+                "spacing": 45,
+                "length": 7,
+                "colour": "rgba(189, 195, 199, 0.30)",
+                "snap": true
+            }
+        },
         "simAnimationEnter": "rotate in",
         "simAnimationExit": "rotate out"
     }
