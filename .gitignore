@@ -6,4 +6,5 @@ tmp/
 *.ts.new
 temp/
 projects/
-packaged/
+packaged
+gh-pages
