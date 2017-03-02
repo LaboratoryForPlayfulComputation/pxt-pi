@@ -6,3 +6,4 @@ tmp/
 *.ts.new
 temp/
 projects/
+packaged/
