@@ -5,7 +5,7 @@ declare namespace turtle {
      * @param steps number of steps to move, eg: 1
      */
     //% weight=90
-    //% blockId=sampleForward block="forward %steps"
+    //% block
     //% shim=turtle::forwardAsync promise
     function forward(steps: number): void;
 

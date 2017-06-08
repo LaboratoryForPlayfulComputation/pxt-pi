@@ -14,7 +14,7 @@
   "control|block": "control",
   "sprites.createSprite|block": "create sprite",
   "sprites|block": "sprites",
-  "turtle.forward|block": "forward %steps",
+  "turtle.forward|block": "forward|steps %steps",
   "turtle.turn|block": "turn %direction|by %angle degrees",
   "turtle|block": "turtle",
   "{id:category}Console": "Console",
