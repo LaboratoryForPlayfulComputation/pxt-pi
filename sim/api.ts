@@ -84,10 +84,6 @@ namespace pxsim {
         public y = 100;
         public angle = 90;
         
-        /** 
-         * Make new sprite
-         */
-        //%
         constructor() {
         }
         
@@ -104,5 +100,15 @@ namespace pxsim {
             board().updateView();
             return Promise.delay(400)
         }
+    }
+}
+
+namespace pxsim.sprites {
+    /**
+     * Creates a new sprite
+     */
+    //% block
+    export function createSprite(): Sprite {
+        return new Sprite();
     }
 }

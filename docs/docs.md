@@ -1,8 +1,10 @@
 # Docs for Sample Target
 
-This is a pure javascript sample target for PXT. For more information about setting your own target, see https://pxt.io/docs .
+This is a pure javascript sample target for [Microsoft MakeCode](https://makecode.com). 
+For more information about setting your own target, 
+see https://makecode.com/packages .
 
-You can embed code snippets.
+You can embed code snippets and [more](https://makecode.com/markdown)
 
 ```blocks
 control.forever(() => {
@@ -10,5 +12,3 @@ control.forever(() => {
     turtle.forward(1);
 });
 ```
-
-Or embed blocks inline, `[control.forever(() => {})]` and many other features in our augmented markdown.

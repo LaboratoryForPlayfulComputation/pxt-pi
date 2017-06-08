@@ -68,13 +68,6 @@ declare namespace console {
         //% shim=.y
         public y: number;
 
-        /** 
-         * Make new sprite
-         */
-        //%
-        //% shim="new Sprite"
-        constructor();
-
         /**
          * Move the thing forward
          */
@@ -83,5 +76,14 @@ declare namespace console {
         public forward(steps: number): void;
 
     }
+declare namespace sprites {
+    /**
+     * Creates a new sprite
+     */
+    //% block
+    //% shim=sprites::createSprite
+    function createSprite(): Sprite;
+
+}
 
 // Auto-generated. Do not edit. Really.
