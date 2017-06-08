@@ -7,7 +7,7 @@ see https://makecode.com/packages .
 You can embed code snippets and [more](https://makecode.com/markdown)
 
 ```blocks
-control.forever(() => {
+loops.forever(() => {
     turtle.turn(Direction.Left, 10);
     turtle.forward(1);
 });
