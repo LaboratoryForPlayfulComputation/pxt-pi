@@ -29,14 +29,14 @@ namespace pxsim.turtle {
     }
 }
 
-namespace pxsim.control {
+namespace pxsim.loops {
 
     /**
      * Repeats the code forever in the background. On each iteration, allows other code to run.
-     * @param body TODO
+     * @param body the code to repeat
      */
     //% help=functions/forever weight=55 blockGap=8
-    //% blockId=device_forever block="forever" icon="\uf01e" 
+    //% blockId=device_forever block="forever" 
     export function forever(body: RefAction): void {
         thread.forever(body)
     }
@@ -46,7 +46,7 @@ namespace pxsim.control {
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
     //% help=functions/pause weight=54
-    //% block="pause (ms) %pause" blockId=device_pause icon="\uf110"
+    //% block="pause (ms) %pause" blockId=device_pause
     export function pauseAsync(ms: number) {
         return Promise.delay(ms)
     }
