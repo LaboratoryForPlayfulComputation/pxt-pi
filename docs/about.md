@@ -1,5 +1,5 @@
 # About Sample Target
 
-Example for [Microsoft Programming Experience Toolkit](https://www.pxt.io).
+Example of editor target for [Microsoft MakeCode](https://makecode.com/).
 
 See [GitHub repo](https://github.com/Microsoft/pxt-sample) for details.

@@ -1,7 +1,7 @@
-# Sample target for PXT
+# Sample editor target for Microsoft MakeCode
 
-Sample target for
-[Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt) - [TRY IT LIVE](http://microsoft.github.io/pxt-sample/)
+Sample editor target for
+[Microsoft MakeCode](https://github.com/Microsoft/pxt) - [TRY IT LIVE](https://microsoft.github.io/pxt-sample/)
 
 [![Build Status](https://travis-ci.org/Microsoft/pxt-sample.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-sample)
 
