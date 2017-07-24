@@ -16,6 +16,7 @@
       "logicBlocks": true,
       "variablesBlocks": true,
       "textBlocks": true,
+      "functionBlocks": true,
       "listsBlocks": true 
     },
     "simulator": {
@@ -48,8 +49,8 @@
                 "snap": true
             }
         },
-        "simAnimationEnter": "rotate in",
-        "simAnimationExit": "rotate out",
+        "simAnimationEnter": "fly right in",
+        "simAnimationExit": "fly right out",
         "disableBlockIcons": true
     }
 }

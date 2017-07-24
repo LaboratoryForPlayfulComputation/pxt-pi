@@ -1,6 +1,7 @@
 {
   "Direction.Left|block": "left",
   "Direction.Right|block": "right",
+  "Math.randomRange|block": "pick random %min|to %limit",
   "Math|block": "Math",
   "String.charAt|block": "char from %this=text|at %pos",
   "String.compare|block": "compare %this=text| to %that",
