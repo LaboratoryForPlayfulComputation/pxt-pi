@@ -1,7 +1,7 @@
 {
-    "id": "sample",
-    "name": "Sample PXT",
-    "title": "Sample PXT Target",
+    "id": "airsim",
+    "name": "AirSim",
+    "title": "AirSim Editor",
     "corepkg": "core",
     "cloud": {
         "workspace": false,
@@ -23,8 +23,8 @@
         "autoRun": true
     },
     "appTheme": {
-        "logoUrl": "https://microsoft.github.io/pxt-sample/",
-        "homeUrl": "https://microsoft.github.io/pxt-sample/",
+        "logoUrl": "https://github.com/Microsoft/pxt-airsim",
+        "homeUrl": "https://airsim.pxt.io/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "betaUrl": "https://makecode.com/",
