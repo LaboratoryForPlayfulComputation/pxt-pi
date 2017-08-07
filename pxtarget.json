@@ -41,6 +41,7 @@
         "coloredToolbox": true,
         "monacoToolbox": true,
         "invertedMenu": true,
+        "useStartPage": true,
         "blocklyOptions": { 
             "grid": {
                 "spacing": 45,

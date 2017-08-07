@@ -1,6 +1,6 @@
 {
   "name": "pxt-sample",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "sample target for PXT",
   "keywords": [
     "JavaScript",
@@ -31,6 +31,6 @@
     "semantic-ui-less": "^2.2.4"
   },
   "dependencies": {
-    "pxt-core": "1.7.17"
+    "pxt-core": "2.0.2"
   }
 }
