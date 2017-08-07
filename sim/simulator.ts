@@ -22,11 +22,10 @@ namespace pxsim {
      */
     export class Board extends pxsim.BaseBoard {
         public element: HTMLDivElement;
-        public drone: DroneClient;
         
         constructor() {
             super();
-            this.element = <SVGSVGElement><any>document.getElementById('sim');
+            this.element = <HTMLDivElement><any>document.getElementById('sim');
         }
         
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
