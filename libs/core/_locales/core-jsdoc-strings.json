@@ -101,6 +101,8 @@
   "airsim.GeoPoint": "A Geo location point",
   "airsim.drone": "Gets the default drone",
   "airsim.drone|param|ip": "the IP address of the drone if any",
+  "airsim.yawMode": "Gets a yawMode",
+  "airsim.yawMode|param|isRate": "@param yawOrRate ",
   "console.log": "Print out message",
   "loops.forever": "Repeats the code forever in the background. On each iteration, allows other code to run.",
   "loops.forever|param|body": "the code to repeat",
