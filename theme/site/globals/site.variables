@@ -138,7 +138,7 @@
 --------------------*/
 
 @simulatorBackground: #607D8B;
-@blocklySvgColor: #fafafa;
+@blocklySvgColor: #F9F9F9;
 
 /*-------------------
    Side Docs
