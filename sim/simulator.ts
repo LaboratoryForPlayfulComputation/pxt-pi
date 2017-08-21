@@ -21,8 +21,7 @@ namespace pxsim {
      * Do not store state anywhere else!
      */
     export class Board extends pxsim.BaseBoard {
-        public element: HTMLDivElement;
-        public drone: DroneClient;
+        public element: SVGSVGElement;
         
         constructor() {
             super();
