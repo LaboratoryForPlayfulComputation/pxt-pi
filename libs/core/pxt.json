@@ -7,8 +7,7 @@
         "pxt-helpers.ts",
         "enums.d.ts",
         "sims.d.ts",
-        "ns.ts",
-        "drone.ts"
+        "ns.ts"
     ],
     "testFiles": [
         "test.ts"
