@@ -13,6 +13,8 @@ These instructions allow to run locally to modify the sample.
 
 The following commands are a 1-time setup after synching the repo on your machine.
 
+* install [node.js](https://nodejs.org/en/)
+
 * install the PXT command line
 ```
 npm install -g pxt
