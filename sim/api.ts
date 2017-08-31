@@ -1,27 +1,31 @@
 /// <reference path="../libs/core/enums.d.ts"/>
 
-namespace turtle {
-    /**		
-     * Moves the sprite forward		
-     * @param steps number of steps to move, eg: 1		
+namespace pxsim.turtle {
+    /**
+     * Moves the sprite forward
+     * @param steps number of steps to move, eg: 1
      */
-    //% weight=90		
-    //% block		
-    //% shim=turtle::forwardAsync promise		
-    export function forward(steps: number): void {
-
+    //% weight=90
+    //% block
+    export function forwardAsync(steps: number) {
+        return board().sprite.forwardAsync(steps)
     }
 
-    /**		
-     * Moves the sprite forward		
-     * @param direction the direction to turn, eg: Direction.Left		
-     * @param angle degrees to turn, eg:90		
+    /**
+     * Moves the sprite forward
+     * @param direction the direction to turn, eg: Direction.Left
+     * @param angle degrees to turn, eg:90
      */
-    //% weight=85		
-    //% blockId=sampleTurn block="turn %direction|by %angle degrees"		
-    //% shim=turtle::turnAsync promise		
-    export function turn(direction: Direction, angle: number): void {
+    //% weight=85
+    //% blockId=sampleTurn block="turn %direction|by %angle degrees"
+    export function turnAsync(direction: Direction, angle: number) {
+        let b = board();
 
+        if (direction == Direction.Left)
+            b.sprite.angle -= angle;
+        else
+            b.sprite.angle += angle;
+        return Promise.delay(400)
     }
 }
 
@@ -48,12 +52,63 @@ namespace pxsim.loops {
     }
 }
 
+function logMsg(m:string) { console.log(m) }
+
 namespace pxsim.console {
     /**
      * Print out message
      */
     //% 
-    export function log(msg: string) {
-        console.log("CONSOLE: " + msg)
+    export function log(msg:string) {
+        logMsg("CONSOLE: " + msg)
+        // why doesn't that work?
+        board().writeSerial(msg + "\n")
+    }
+}
+
+namespace pxsim {
+    /**
+     * A ghost on the screen.
+     */
+    //%
+    export class Sprite {
+        /**
+         * The X-coordiante
+         */
+        //%
+        public x = 100;
+         /**
+         * The Y-coordiante
+         */
+        //%
+        public y = 100;
+        public angle = 90;
+        
+        constructor() {
+        }
+        
+        private foobar() {}
+
+        /**
+         * Move the thing forward
+         */
+        //%
+        public forwardAsync(steps: number) {
+            let deg = this.angle / 180 * Math.PI;
+            this.x += Math.cos(deg) * steps * 10;
+            this.y += Math.sin(deg) * steps * 10;
+            board().updateView();
+            return Promise.delay(400)
+        }
+    }
+}
+
+namespace pxsim.sprites {
+    /**
+     * Creates a new sprite
+     */
+    //% block
+    export function createSprite(): Sprite {
+        return new Sprite();
     }
 }
