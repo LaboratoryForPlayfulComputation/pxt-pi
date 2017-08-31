@@ -1,8 +1,9 @@
-# AirSim Code Editor editor target for Microsoft MakeCode
+# Sample target for PXT
 
-A code editor the AirSim project (https://github.com/Microsoft/AirSim).
+Sample target for
+[Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt) - [TRY IT LIVE](http://microsoft.github.io/pxt-sample/)
 
-[![Build Status](https://travis-ci.org/Microsoft/pxt-airsim.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-airsim)
+[![Build Status](https://travis-ci.org/Microsoft/pxt-sample.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-sample)
 
 ## Running locally
 
