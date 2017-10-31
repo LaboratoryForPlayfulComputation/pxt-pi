@@ -2,8 +2,14 @@
      User Global Variables
 *******************************/
 
+/*--------------
+      Page
+---------------*/
+
+@pageBackground      : #F9F9F9;
+
 /*-------------------
-       Fonts
+     Fonts
 --------------------*/
 
 @headerFont        : "Roboto Mono", serif;
@@ -11,61 +17,24 @@
 @googleFontName    : 'Roboto Mono';
 @importGoogleFonts : true;
 
-/*--------------
-      Page
----------------*/
-
-@pageBackground      : #F9F9F9;
-@lineHeight          : 1.33;
-@textColor           : #212121;
-
-/*--------------
-  Page Heading
----------------*/
-
-@headerLineHeight : 1.33em;
-@headerFontWeight : 400;
-
-@h1               : 2.25rem;
-@h2               : 2rem;
-@h3               : 1.75rem;
-@h4               : 1.5rem;
-@h5               : 1.25rem;
+@docsHeaderFont: @headerFont;
+@docsPageFont: @pageFont;
 
 /*-------------------
       Site Colors
 --------------------*/
 
 /*---  Colors  ---*/
-@black            : #1B1C1D;
-@blue             : #2196F3;
-@green            : #4CAF50;
-@grey             : #9E9E9E;
-@orange           : #FF9800;
+@black            : #34495e;
+@blue             : #3498db;
+@green            : #2ecc71;
+@grey             : #7f8c8d;
+@orange           : #e67e22;
 @pink             : #E91E63;
 @purple           : #9C27B0;
-@red              : #F44336;
-@teal             : #1de9b6;
-@yellow           : #FFEB3B;
-
-/*---  Light Colors  ---*/
-@lightBlack       : #333333;
-@lightBlue        : #2979FF;
-@lightGreen       : #00E676;
-@lightOrange      : #FF9100;
-@lightPink        : #F50057;
-@lightPurple      : #D500F9;
-@lightRed         : #FF1744;
-@lightTeal        : #1DE9B6;
-@lightYellow      : #FFEA00;
-
-/*---   Neutrals  ---*/
-@fullBlack        : #000000;
-@darkGrey         : #AAAAAA;
-@lightGrey        : #DCDDDE;
-@offWhite         : #FAFAFA;
-@darkWhite        : #F0F0F0;
-@white            : #FFFFFF;
+@red              : #e74c3c;
+@teal             : #1abc9c;
+@yellow           : #f1c40f;
 
 /*-------------------
     Brand Colors
@@ -77,36 +46,6 @@
 @lightPrimaryColor   : @lightBlue;
 @lightSecondaryColor : @lightGrey;
 
-/*-------------------
-      Paragraph
---------------------*/
-
-@paragraphMargin     : 0em 0em 1.53em;
-
-/*-------------------
-       Links
---------------------*/
-
-@linkColor           : #009FDA;
-@linkUnderline       : none;
-@linkHoverColor      : lighten(@linkColor, 5);
-@linkHoverUnderline  : @linkUnderline;
-
-/*-------------------
-  Highlighted Text
---------------------*/
-
-@highlightBackground : #009FDA;
-@highlightColor      : @white;
-
-/*-------------------
-       Accents
---------------------*/
-
-/* 4px @ default em */
-@relativeBorderRadius: @relative4px;
-@absoluteBorderRadius: 4px;
-
 /*******************************
      PXT Variables
 *******************************/
@@ -115,11 +54,8 @@
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: @pink;
+@mainMenuInvertedBackground: @green;
 @mainMenuTutorialBackground: @orange;
-
-@mainMenuHeight: 4.5rem;
-@mobileMenuHeight: 4.0rem;
 
 @mainMenuBlocksJsToggleColor: @primaryColor;
 
@@ -137,15 +73,18 @@
    Background
 --------------------*/
 
-@simulatorBackground: #607D8B;
-@blocklySvgColor: #F9F9F9;
+@simulatorBackground: #2c3e50;
+@editorToolsBackground: @simulatorBackground;
+@blocklySvgColor: #ecf0f1;
+
+@homeScreenBackground: #ecf0f1;
 
 /*-------------------
-   Side Docs
+   Full screen
 --------------------*/
 
-@sidedocsButtonsTop: (@mainMenuHeight + 1rem);
-@sidedocsButtonsRight: 4.25rem;
+@fullscreenBackgroundGradientStart: @mainMenuInvertedBackground;
+@fullscreenBackgroundGradientEnd: @simulatorBackground;
 
 /*-------------------
    Editor
@@ -153,3 +92,18 @@
 
 @blocklyToolboxColor: white;
 @trashIconColor: @primaryColor;
+
+/*-------------------
+   Blockly
+--------------------*/
+
+@blocklyFont: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+
+/*-------------------
+   Flyout
+--------------------*/
+
+@flyoutLabelColor: white;
+@blocklyFlyoutColor: @grey;
+@blocklyFlyoutColorOpacity: 0.9;
+@monacoFlyoutColor: fade(@blocklyFlyoutColor, 90%);

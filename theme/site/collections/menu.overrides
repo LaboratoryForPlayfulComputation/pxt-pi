@@ -3,5 +3,5 @@
 *******************************/
 
 #menubar .ui.menu.inverted {
-    box-shadow: 0 0 4px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.24);
+    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 3px 3px rgba(0,0,0,0.24);
 }

@@ -52,6 +52,8 @@
         },
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
-        "disableBlockIcons": true
+        "monacoColors": {
+            "editor.background": "#ecf0f1"
+        }
     }
 }
