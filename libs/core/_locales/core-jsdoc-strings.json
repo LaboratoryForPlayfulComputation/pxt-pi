@@ -111,6 +111,7 @@
   "turtle": "Basic functionalities.",
   "turtle.forward": "Moves the sprite forward",
   "turtle.forward|param|steps": "number of steps to move, eg: 1",
+  "turtle.onBump": "Triggers when the turtle bumps a wall",
   "turtle.turn": "Moves the sprite forward",
   "turtle.turn|param|angle": "degrees to turn, eg:90",
   "turtle.turn|param|direction": "the direction to turn, eg: Direction.Left"

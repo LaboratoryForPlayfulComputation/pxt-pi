@@ -21,12 +21,14 @@ namespace pxsim {
      * Do not store state anywhere else!
      */
     export class Board extends pxsim.BaseBoard {
+        public bus: EventBus;
         public element : SVGSVGElement;
         public spriteElement: SVGCircleElement;
         public sprite : Sprite;
         
         constructor() {
             super();
+            this.bus = new EventBus(runtime);
             this.element = <SVGSVGElement><any>document.getElementById('svgcanvas');
             this.spriteElement = <SVGCircleElement>this.element.getElementById('svgsprite');
             this.sprite = new Sprite()

@@ -19,6 +19,14 @@ declare namespace turtle {
     //% shim=turtle::turnAsync promise
     function turn(direction: Direction, angle: number): void;
 
+    /**
+     * Triggers when the turtle bumps a wall
+     * @param handler 
+     */
+    //% blockId=onBump block="on bump"
+    //% shim=turtle::onBump
+    function onBump(handler: () => void): void;
+
 }
 declare namespace loops {
     /**

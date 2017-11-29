@@ -27,6 +27,17 @@ namespace pxsim.turtle {
             b.sprite.angle += angle;
         return Promise.delay(400)
     }
+
+    /**
+     * Triggers when the turtle bumps a wall
+     * @param handler 
+     */
+    //% blockId=onBump block="on bump"
+    export function onBump(handler: RefAction) {
+        let b = board();
+
+        b.bus.listen("Turtle", "Bump", handler);
+    }
 }
 
 namespace pxsim.loops {
@@ -98,6 +109,10 @@ namespace pxsim {
             this.x += Math.cos(deg) * steps * 10;
             this.y += Math.sin(deg) * steps * 10;
             board().updateView();
+
+            if (this.x < 0 || this.y < 0)
+                board().bus.queue("TURTLE", "BUMP");
+
             return Promise.delay(400)
         }
     }
