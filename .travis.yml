@@ -3,7 +3,6 @@ node_js:
   - "5.7.0"
 script:
   - "node node_modules/pxt-core/built/pxt.js travis"  
-  - "node node_modules/pxt-core/built/pxt.js uploaddoc"
 sudo: false
 cache:
   directories:
