@@ -6,7 +6,7 @@ namespace pxsim.turtle {
      * @param steps number of steps to move, eg: 1
      */
     //% weight=90
-    //% block
+    //% blockId=sampleForward block="forward %steps"
     export function forwardAsync(steps: number) {
         return board().sprite.forwardAsync(steps)
     }
@@ -122,7 +122,7 @@ namespace pxsim.sprites {
     /**
      * Creates a new sprite
      */
-    //% block
+    //% blockId="sampleCreate" block="createSprite"
     export function createSprite(): Sprite {
         return new Sprite();
     }

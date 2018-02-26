@@ -5,7 +5,7 @@ declare namespace turtle {
      * @param steps number of steps to move, eg: 1
      */
     //% weight=90
-    //% block
+    //% blockId=sampleForward block="forward %steps"
     //% shim=turtle::forwardAsync promise
     function forward(steps: number): void;
 
@@ -88,7 +88,7 @@ declare namespace sprites {
     /**
      * Creates a new sprite
      */
-    //% block
+    //% blockId="sampleCreate" block="createSprite"
     //% shim=sprites::createSprite
     function createSprite(): Sprite;
 
