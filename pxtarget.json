@@ -15,9 +15,9 @@
       "loopsBlocks": true,
       "logicBlocks": true,
       "variablesBlocks": true,
-      "textBlocks": true,
-      "functionBlocks": true,
-      "listsBlocks": true 
+      "textBlocks": false,
+      "functionBlocks": false,
+      "listsBlocks": false 
     },
     "simulator": {
         "autoRun": true
@@ -38,9 +38,9 @@
                 "path": "/docs"
             }
         ],
-        "coloredToolbox": true,
+        "coloredToolbox": false,
         "monacoToolbox": true,
-        "invertedMenu": true,
+        "invertedMenu": false,
         "showHomeScreen": true,
         "homeScreenHero": "./static/hero.png",        
         "blocklyOptions": { 
