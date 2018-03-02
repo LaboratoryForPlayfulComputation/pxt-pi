@@ -4,9 +4,16 @@ namespace pxsim.hare {
     /**
      * This is hop
      */
-    //% blockId="sampleHop" block="hop %height"
-    export function hopForwardAsync(height: number, silly?: boolean) {
-        return board().hare.forwardAsync(height)
+    //% blockId="sampleHop" block="hop %hop on color %color=colorNumberPicker"
+    //% hop.fieldEditor="gridpicker"
+    export function hop(hop: Hop, color: number) {
+
+    }
+
+    //% blockId=sampleOnLand block="on land"
+    //% optionalVariableArgs
+    export function onLand(handler: (height: number, more: number, most: number) => void) {
+
     }
 }
 
@@ -28,6 +35,7 @@ namespace pxsim.turtle {
      */
     //% weight=85
     //% blockId=sampleTurn block="turn %direction|by %angle degrees"
+    //% angle.min=-180 angle.max=180
     export function turnAsync(direction: Direction, angle: number) {
         let b = board();
 
