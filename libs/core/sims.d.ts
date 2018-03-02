@@ -1,4 +1,19 @@
 // Auto-generated from simulator. Do not edit.
+declare namespace hare {
+    /**
+     * This is hop
+     */
+    //% blockId="sampleHop" block="hop %hop on color %color=colorNumberPicker"
+    //% hop.fieldEditor="gridpicker"
+    //% shim=hare::hop
+    function hop(hop: Hop, color: number): void;
+
+    //% blockId=sampleOnLand block="on land"
+    //% optionalVariableArgs
+    //% shim=hare::onLand
+    function onLand(handler: (height: number, more: number, most: number) => void): void;
+
+}
 declare namespace turtle {
     /**
      * Moves the sprite forward
@@ -16,6 +31,7 @@ declare namespace turtle {
      */
     //% weight=85
     //% blockId=sampleTurn block="turn %direction|by %angle degrees"
+    //% angle.min=-180 angle.max=180
     //% shim=turtle::turnAsync promise
     function turn(direction: Direction, angle: number): void;
 
