@@ -1,4 +1,13 @@
 // Auto-generated from simulator. Do not edit.
+declare namespace hare {
+    /**
+     * This is hop
+     */
+    //% blockId="sampleHop" block="hop %height"
+    //% shim=hare::hopForwardAsync promise
+    function hopForward(height: number, silly?: boolean): void;
+
+}
 declare namespace turtle {
     /**
      * Moves the sprite forward

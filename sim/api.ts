@@ -1,5 +1,15 @@
 /// <reference path="../libs/core/enums.d.ts"/>
 
+namespace pxsim.hare {
+    /**
+     * This is hop
+     */
+    //% blockId="sampleHop" block="hop %height"
+    export function hopForwardAsync(height: number, silly?: boolean) {
+        return board().hare.forwardAsync(height)
+    }
+}
+
 namespace pxsim.turtle {
     /**
      * Moves the sprite forward
