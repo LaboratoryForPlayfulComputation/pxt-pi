@@ -40,7 +40,7 @@
         ],
         "coloredToolbox": false,
         "monacoToolbox": true,
-        "invertedMenu": false,
+        "invertedMenu": true,
         "showHomeScreen": true,
         "homeScreenHero": "./static/hero.png",        
         "blocklyOptions": { 

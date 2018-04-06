@@ -25,16 +25,16 @@
 --------------------*/
 
 /*---  Colors  ---*/
-@black            : #34495e;
-@blue             : #3498db;
-@green            : #2ecc71;
-@grey             : #7f8c8d;
-@orange           : #e67e22;
-@pink             : #E91E63;
-@purple           : #9C27B0;
-@red              : #e74c3c;
-@teal             : #1abc9c;
-@yellow           : #f1c40f;
+@black            : #2d3436;
+@blue             : #74b9ff;
+@green            : #55efc4;
+@grey             : #636e72;
+@orange           : #fab1a0;
+@pink             : #fd79a8;
+@purple           : #a29bfe;
+@red              : #ff7675;
+@teal             : #81ecec;
+@yellow           : #ffeaa7;
 
 /*-------------------
     Brand Colors
@@ -54,7 +54,8 @@
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: @green;
+@mainMenuBackground: @purple;
+@mainMenuInvertedBackground: @mainMenuBackground;
 @mainMenuTutorialBackground: @orange;
 
 @mainMenuBlocksJsToggleColor: @primaryColor;
@@ -73,9 +74,9 @@
    Background
 --------------------*/
 
-@simulatorBackground: #2c3e50;
-@editorToolsBackground: @simulatorBackground;
-@blocklySvgColor: #ecf0f1;
+@simulatorBackground: #E8EDF1;
+@editorToolsBackground: #E8EDF1;
+@blocklySvgColor: #F9F9F9;
 
 @homeScreenBackground: #ecf0f1;
 
