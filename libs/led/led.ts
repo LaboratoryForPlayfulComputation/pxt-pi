@@ -20,7 +20,7 @@ namespace led {
         //% on.fieldEditor=toggleonoff
         set(on: boolean) {
             if (on) five.rpcCall("Led", this.options, "on", []);
-            else five.rpcCall("Led", this.options, "off", [])
+            else five.rpcCall("Led", this.options, "off", []);
         }
 
         /**

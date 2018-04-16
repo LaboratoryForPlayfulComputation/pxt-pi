@@ -1,0 +1,11 @@
+{
+    "name": "ping",
+    "description": "hello elixir",
+    "files": [
+        "ping.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}

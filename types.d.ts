@@ -52,3 +52,30 @@ declare namespace j5 {
         eventName: string;
     }
 }
+
+
+declare namespace makecodepi {
+    interface Message{}
+
+    interface Request extends Message {
+        id?: string; // request id
+        type: string; // request type
+        board: string;
+    }
+
+    interface Response extends Message {
+        id?: string;
+        type?: string;
+        status: number;
+    }    
+
+    interface ConnectRequest extends Request {
+        type: "connect";
+    }
+
+    interface Event extends Response {
+        type: "event";
+        eventId: string;
+        eventName: string;
+    }
+}

@@ -19,6 +19,16 @@ declare namespace five {
     function rpcOnEvent(component: string, componentArgs: Options, event: string, handler: () => void): void;
 
 }
+declare namespace mypi {
+    //% promise
+    //% shim=mypi::piCallAsync promise
+    function piCall(message: string, boardID: string): void;
+
+    //% promise
+    //% shim=mypi::piOnEventAsync promise
+    function piOnEvent(component: string, componentArgs: Options, event: string, handler: () => void): void;
+
+}
 declare namespace loops {
     /**
      * Repeats the code forever in the background. On each iteration, allows other code to run.

@@ -45,6 +45,36 @@ namespace pxsim.five {
     }
 }
 
+namespace pxsim.mypi {
+    //% promise
+    export function piCallAsync(message: string, boardID: string): Promise<void> {
+        const toMsg = message;
+        const b = board();        
+        return b.queuePiAsync(<makecodepi.Request>{
+            type: "myMessage",
+            board: boardID
+        }).then();
+    }
+
+    //% promise
+    export function piOnEventAsync(component: string, componentArgs: Options, event: string, handler: RefAction): Promise<void> {
+        const cArgs = (<any>componentArgs).data;
+        const boardId = "";
+        const b = board();        
+        const evid = JSON.stringify({component, cArgs });
+        b.bus.listen(evid, event, handler);
+        return b.queueRequestAsync(<j5.ListenEventRequest>{
+            type: "listenevent",
+            board: boardId || "0",
+            component,
+            componentArgs: cArgs,
+            eventId: evid,
+            eventName: event
+        }).then();
+    }
+
+}
+
 namespace pxsim.loops {
 
     /**

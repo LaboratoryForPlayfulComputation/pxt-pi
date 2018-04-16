@@ -25,6 +25,13 @@ namespace pxsim {
         initiated?: boolean;
     }
 
+    interface piSocketRequest {
+        req: makecodepi.Request;
+        resolve: (resp?: makecodepi.Response) => void;
+        time: number;
+        initiated?: boolean;
+    }
+
     export interface IChatView {
         clear(): void;
         append(msg: string): void;
@@ -82,8 +89,9 @@ namespace pxsim {
         }
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
+            console.log('entered initAsync');
             this.chat.clear();
-            return this.queueRequestAsync(<j5.ConnectRequest>{
+            return this.queuePiAsync(<makecodepi.ConnectRequest>{
                 type: "connect",
                 board: "0"
             }).then(() => {
@@ -104,6 +112,26 @@ namespace pxsim {
                         };
                         this.requests[id] = r;
                         ws.send(JSON.stringify(req));
+                        console.log('queueRequestAsync');
+                    })
+                    else return undefined;
+                });
+        }
+
+        queuePiAsync(req: makecodepi.Request): Promise<any> {
+            const id = this.nextId++; // `${runtime.id}-${}`;
+            req.id = id + "";
+            return server.initPiAsync()
+                .then(ws => {
+                    if (ws) return new Promise((resolve, reject) => {
+                        const r: piSocketRequest = {
+                            req,
+                            resolve,
+                            time: new Date().getTime()
+                        };
+                        this.requests[id] = r;
+                        ws.send(JSON.stringify(req));
+                        console.log(req);
                     })
                     else return undefined;
                 });
@@ -118,6 +146,19 @@ namespace pxsim {
                 delete this.requests[id];
             } else if (resp.type === "event") {
                 const ev = resp as j5.Event;
+                this.bus.queue(ev.eventId, ev.eventName);
+            }
+        }
+
+        handlePiResponse(resp: makecodepi.Response) {
+            const id = resp.id;
+            const req = this.requests[id];
+            // pending request?
+            if (req) {
+                req.resolve(resp);
+                delete this.requests[id];
+            } else if (resp.type === "event") {
+                const ev = resp as makecodepi.Event;
                 this.bus.queue(ev.eventId, ev.eventName);
             }
         }

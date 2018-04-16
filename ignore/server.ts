@@ -175,7 +175,7 @@ function startws(request: any, socket: any, body: any) {
         handleRequest(JSON.parse(event.data) as j5.Request);
     });
     ws.on('close', function (event: any) {
-        log('j5: connection closed')
+        log('is this built: connection closed')
         editors.splice(editors.indexOf(ws), 1)
         ws = null;
     });
