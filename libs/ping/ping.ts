@@ -1,8 +1,11 @@
 namespace ping {
+    export interface PiOptions {
 
-    interface pingOptions extends Options {
-        pin: number;
-        controller?: string;
+    }
+
+    //% blockId=fooBlock block="do something"
+    export function fooBlock() {
+        mypi.piCall("hello", "board")
     }
     
     /**
@@ -10,16 +13,23 @@ namespace ping {
      */
     //% fixedInstances
     export class Pi extends five.Component {
-        constructor(options: Options) {
+        constructor(options: PiOptions) {
             super(options)
         }
 
         /**
          * Sends a ping
          */
-        //% blockId=myPing block="send ping"
+        //% blockId=myPing block="send ping using %this"
         sendPing(on: boolean) {
-            if (on) mypi.piCall("Ping!", "myBoard");
-        }   
-    }    
+        }
+
+        //% blockId=printSome block="print test on %this"
+        printSome() {
+            five.printSomeStuff()
+        }
+    }
+
+    //% fixedInstance block="pi 1"
+    export const pi1 = new Pi({});
 }

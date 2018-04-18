@@ -22,6 +22,14 @@ namespace pxsim.five {
         }).then();
     }
 
+    //% promise
+    export function printSomeStuffAsync(): Promise<void> {
+        return new Promise(function (r) {
+            console.log("Hello world!")
+            r()
+        })
+    }
+
     /**
      * Executes an RPC call into Johnny Five
      * @param component 
