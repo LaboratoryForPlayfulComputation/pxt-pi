@@ -1,0 +1,11 @@
+{
+    "name": "ledpi",
+    "description": "grovepi led",
+    "files": [
+        "ledpi.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}

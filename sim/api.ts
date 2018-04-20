@@ -59,7 +59,7 @@ namespace pxsim.mypi {
         const toMsg = message;
         const b = board();        
         return b.queuePiAsync(<makecodepi.Request>{
-            type: "myMessage",
+            type: toMsg,
             board: boardID
         }).then();
     }

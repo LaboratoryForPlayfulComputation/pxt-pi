@@ -11,7 +11,8 @@
         "libs/core",
         "libs/led",
         "libs/button",
-        "libs/ping"
+        "libs/ping",
+        "libs/ledpi"
     ],
     "runtime": {
       "mathBlocks": true,
