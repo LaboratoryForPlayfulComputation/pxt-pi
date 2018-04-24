@@ -30,7 +30,7 @@ namespace pxsim.server {
         if (!/^(?:http:\/\/)?(?:localhost|127(?:\.[0-9]+){0,2}\.[0-9]+|(?:0*\:)*?:?0*1)/.test(document.referrer))
             return undefined; // TODO
 
-        ws = new WebSocket(`ws://127.0.0.1:${port}/ws`);
+        ws = new WebSocket(`ws://192.168.27.64:${port}/ws`);
         ws.addEventListener('message', handlePiMessage, false)
         ws.addEventListener('close', ev => close(), false);
         ws.addEventListener('error', ev => close(), false);

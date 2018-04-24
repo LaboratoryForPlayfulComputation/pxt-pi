@@ -39,8 +39,10 @@
     "@types/node": "8.0.53"
   },
   "dependencies": {
+    "@types/peerjs": "0.0.29",
     "faye-websocket": "^0.11.0",
     "johnny-five": "^0.14.1",
+    "peerjs": "^0.3.14",
     "pxt-core": "3.*"
   }
 }

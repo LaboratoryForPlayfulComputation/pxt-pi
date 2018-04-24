@@ -53,5 +53,27 @@ declare namespace loops {
     function pause(ms: number): void;
 
 }
+declare namespace messaging {
+    /**
+     * Peer
+     * @param id The value of the marker
+     */
+    //% blockId=peer_block block="send key %key| value %value| to %id"
+    //% blockNamespace=messaging inBasicCategory=true
+    //% weight=100
+    //% shim=messaging::send
+    function send(key: string, value: number, id: string): void;
+
+    /**
+     * Allows user to define callbacks for receive event
+     * @param key 
+     */
+    //% blockId=peer_receive block="when I receive key %key|do" blockGap=8
+    //% blockNamespace=messaging inBasicCategory=true
+    //% weight=99
+    //% shim=messaging::receive
+    function receive(key: string, handler: () => void): void;
+
+}
 
 // Auto-generated. Do not edit. Really.
