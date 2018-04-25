@@ -24,8 +24,6 @@
     "sim/public",
     "docs/**"
   ],
-  "main": "built/pxtrequire.js",
-  "typings": "built/pxtrequire.d.ts",
   "devDependencies": {
     "typescript": "2.6.1",
     "rtlcss": "^2.1.2",
