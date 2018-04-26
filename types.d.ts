@@ -60,7 +60,11 @@ declare namespace makecodepi {
     interface Request extends Message {
         id?: string; // request id
         type: string; // request type
-        board: string;
+        message: string;
+    }
+
+    interface CallRequest extends Request {
+        componentArgs?: Options;
     }
 
     interface Response extends Message {

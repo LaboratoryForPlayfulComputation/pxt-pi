@@ -1,13 +1,9 @@
 namespace ledpi {
+    
     export interface PiOptions {
 
     }
 
-    //% blockId=fooBlock block="do something"
-    export function fooBlock() {
-        mypi.piCall("hello", "board")
-    }
-    
     /**
      * Pi
      */
@@ -21,12 +17,22 @@ namespace ledpi {
          */
         //% blockId=piLedOn block="set %this %on"
         //% on.fieldEditor=toggleonoff
-        piset(on: boolean) {
-            if (on) mypi.piCall("LedOn", "boardnum");
-            else mypi.piCall("Ledoff", "boardnum");
+        ledToggle(on: boolean) {
+            if (on) mypi.piCall("led", "on");
+            else mypi.piCall("led", "off");
         }
     }
 
-    //% fixedInstance block="pi 1"
-    export const ledpi1 = new ledPi({});
+    //% fixedInstance block="led 1"
+    export const port1 = new ledPi({});
+    //% fixedInstance block="led 2"
+    export const port2 = new ledPi({});
+    //% fixedInstance block="led 3"
+    export const port3 = new ledPi({});
+    //% fixedInstance block="led 4"
+    export const port4 = new ledPi({});
+    //% fixedInstance block="led 5"
+    export const port5 = new ledPi({});
+    
+    
 }

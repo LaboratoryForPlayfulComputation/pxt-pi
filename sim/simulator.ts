@@ -78,8 +78,9 @@ namespace pxsim {
         public id: string;
         public bus: EventBus;
         private nextId = 0;
-        private requests: Map<SocketRequest> = {};
+        private requests: Map<piSocketRequest> = {};
         private chat: IChatView;
+        private j5requests: Map<SocketRequest> = {};
 
         constructor() {
             super();
@@ -93,7 +94,7 @@ namespace pxsim {
             this.chat.clear();
             return this.queuePiAsync(<makecodepi.ConnectRequest>{
                 type: "connect",
-                board: "0"
+                message: "0"
             }).then(() => {
                 this.chat.append(lf("board connected..."));
             })
@@ -110,7 +111,7 @@ namespace pxsim {
                             resolve,
                             time: new Date().getTime()
                         };
-                        this.requests[id] = r;
+                        this.j5requests[id] = r;
                         ws.send(JSON.stringify(req));
                         console.log('queueRequestAsync');
                     })

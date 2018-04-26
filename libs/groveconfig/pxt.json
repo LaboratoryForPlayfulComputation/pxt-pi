@@ -1,0 +1,11 @@
+{
+    "name": "groveconfig",
+    "description": "Grove config blocks",
+    "files": [
+        "groveconfig.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}

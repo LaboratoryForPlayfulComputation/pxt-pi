@@ -55,12 +55,16 @@ namespace pxsim.five {
 
 namespace pxsim.mypi {
     //% promise
-    export function piCallAsync(message: string, boardID: string): Promise<void> {
+    export function piCallAsync(msgType: string, message: string, componentArgs?: string): Promise<void> {
+        const cArgs = componentArgs;
+        const toMsgType = msgType;
         const toMsg = message;
         const b = board();        
-        return b.queuePiAsync(<makecodepi.Request>{
-            type: toMsg,
-            board: boardID
+        
+        return b.queuePiAsync(<makecodepi.CallRequest>{
+            type: msgType,
+            message: message,
+            args: cArgs
         }).then();
     }
 

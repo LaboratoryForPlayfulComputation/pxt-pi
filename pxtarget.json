@@ -12,7 +12,8 @@
         "libs/led",
         "libs/button",
         "libs/ping",
-        "libs/ledpi"
+        "libs/ledpi",
+        "libs/groveconfig"
     ],
     "runtime": {
       "mathBlocks": true,
