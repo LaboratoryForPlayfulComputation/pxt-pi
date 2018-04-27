@@ -64,7 +64,7 @@ declare namespace makecodepi {
     }
 
     interface CallRequest extends Request {
-        componentArgs?: Options;
+        args?: any;
     }
 
     interface Response extends Message {

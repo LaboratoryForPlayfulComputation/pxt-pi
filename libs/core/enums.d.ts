@@ -1,3 +1,4 @@
 interface Options {
     board?: string;
 }
+

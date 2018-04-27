@@ -16,7 +16,7 @@ enum DigitalDeviceType {
 
 
 namespace groveconfig {
-    export interface PiOptions extends Options{
+    export interface PortOptions extends Options{
         port: number;
     }
     
@@ -36,7 +36,7 @@ namespace groveconfig {
      */
     //% fixedInstances
     export class AnalogPort extends five.Component {
-        constructor(options: PiOptions) {
+        constructor(options: PortOptions) {
             super(options)
         }
         /**
@@ -44,7 +44,7 @@ namespace groveconfig {
          */
         //% blockId=analogPort block="set %this to device %type"
         setPort(type: AnalogDeviceType) {
-            mypi.piCall("aset", analogDeviceDict[type]);
+            mypi.piCall("aset", analogDeviceDict[type], 2);
         }
     }
     //% fixedInstance block="Analog Port 1"
@@ -59,7 +59,7 @@ namespace groveconfig {
      */
     //% fixedInstances
     export class DigitalPort extends five.Component {
-        constructor(options: PiOptions) {
+        constructor(options: PortOptions) {
             super(options)
         }
 
@@ -88,7 +88,7 @@ namespace groveconfig {
      */
     //% fixedInstances
     export class PWMPort extends five.Component {
-        constructor(options: PiOptions) {
+        constructor(options: PortOptions) {
             super(options)
         }
         /**
