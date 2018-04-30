@@ -16,8 +16,8 @@ enum DigitalDeviceType {
 
 
 namespace groveconfig {
-    
-    
+
+
     const analogDeviceDict = [
         "led",
         "ultrasonic sensor",
@@ -29,20 +29,11 @@ namespace groveconfig {
         "water sensor"
     ];
 
-    //super class for all ports
-    export class Port {
-        protected portNum: string;
-        
-        constructor(_portNum: string) {
-            this.portNum = _portNum; 
-        }
-    }
-
     /**
      * analogport
      */
     //% fixedInstances
-    export class AnalogPort extends Port {
+    export class AnalogPort extends grove.Port {
         constructor(portNum: string) {
             super(portNum);
         }
@@ -51,7 +42,7 @@ namespace groveconfig {
          */
         //% blockId=analogPort block="set %this to device %type"
         setPort(type: AnalogDeviceType) {
-            mypi.piCall("analogSet", analogDeviceDict[type], this.portNum);
+            mypi.piCall("setComponentType", analogDeviceDict[type], this.portNum);
         }
     }
     //% fixedInstance block="Analog Port 1"
@@ -65,7 +56,7 @@ namespace groveconfig {
      * digport
      */
     //% fixedInstances
-    export class DigitalPort extends Port {
+    export class DigitalPort extends grove.Port {
         constructor(portNum: string) {
             super(portNum);
         }
@@ -75,7 +66,7 @@ namespace groveconfig {
          */
         //% blockId=digitalPort block="set %this to device %type"
         setDigPort(type: DigitalDeviceType) {
-            mypi.piCall("digitalSet", digitalDeviceDict[type], this.portNum);
+            mypi.piCall("setComponentType", digitalDeviceDict[type], this.portNum);
         }
     }
     //% fixedInstance block="Digital Port 2"
@@ -93,7 +84,7 @@ namespace groveconfig {
      * digPWMport
      */
     //% fixedInstances
-    export class PWMPort extends Port {
+    export class PWMPort extends grove.Port {
         constructor(portNum: string) {
             super(portNum);
         }
@@ -102,7 +93,7 @@ namespace groveconfig {
          */
         //% blockId=DigitalPWMPort block="set %this to device %type"
         setPWMPort(type: DigitalDeviceType) {
-            mypi.piCall("pwmSet", digitalDeviceDict[type], this.portNum);
+            mypi.piCall("setComponentType", digitalDeviceDict[type], this.portNum);
         }
     }
     //% fixedInstance block="Digital (PWM) Port 3"
@@ -111,6 +102,6 @@ namespace groveconfig {
     export const pwmPort5 = new PWMPort("5");
     //% fixedInstance block="Digital (PWM) Port 6"
     export const pwmPort6 = new PWMPort("6");
-    
-    
+
+
 }

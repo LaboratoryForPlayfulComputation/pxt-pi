@@ -1,27 +1,29 @@
 namespace testblockspace {
+    
+
     /**
      * A testing playground
      */
     //% fixedInstances
     export class testblocks {
-        public portNum: string
+        public opts: testExpandedoptions;
 
-        constructor(_portNum: string) {
-            this.portNum = _portNum;
+        constructor(myOpts: testExpandedoptions) {
+            this.opts = myOpts;
         }
         /**
          * Foo a Bar
          */
         //% blockId=testBlockOne block="do %this"
         fooBar() {
-            mypi.piCall("hi there", "here's a message", this.portNum);
+            mypi.piCall("hi there", "here's a message", this.opts)
         }   
     }
     
     //% fixedInstance block="testblockone"
-    export const firstBlock = new testblocks("1");
+    export const myblock = new testblocks({testNum: 1, testString: "one"});
 
     //% fixedInstance block="testblocktwo"
-    export const secondBlock = new testblocks("2"); 
+    export const secondBlock = new testblocks({testNum: 2, testString: "two"});
 }
 

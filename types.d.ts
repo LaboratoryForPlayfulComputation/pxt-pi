@@ -61,7 +61,7 @@ declare namespace makecodepi {
         id?: string; // request id
         type: string; // request type
         message: string;
-        extraOps: string;
+        extraOps: testExpandedoptions;
      }
 
     interface CallRequest extends Request {
