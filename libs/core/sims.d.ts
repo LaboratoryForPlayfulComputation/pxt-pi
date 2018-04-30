@@ -11,7 +11,7 @@ declare namespace five {
 
     //% promise
     //% shim=five::printSomeStuffAsync promise
-    function printSomeStuff(): void;
+    function printSomeStuff(toPrint: string): void;
 
     /**
      * Executes an RPC call into Johnny Five
@@ -26,7 +26,7 @@ declare namespace five {
 declare namespace mypi {
     //% promise
     //% shim=mypi::piCallAsync promise
-    function piCall(msgType: string, message: string, componentArgs?: number | Options): void;
+    function piCall(msgType: string, message: string, extraOpts: string): void;
 
     //% promise
     //% shim=mypi::piOnEventAsync promise

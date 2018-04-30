@@ -23,9 +23,9 @@ namespace pxsim.five {
     }
 
     //% promise
-    export function printSomeStuffAsync(): Promise<void> {
+    export function printSomeStuffAsync(toPrint: string): Promise<void> {
         return new Promise(function (r) {
-            console.log("Hello world!")
+            console.log(toPrint);
             r()
         })
     }
@@ -53,15 +53,10 @@ namespace pxsim.five {
     }
 }
 
-type portOptions = {
-    'port': number
-}
-
 namespace pxsim.mypi {
     //% promise
-    export function piCallAsync(msgType: string, message: string, componentArgs?: Options | number): Promise<void> {
-        console.log(componentArgs);
-        const cArgs = componentArgs;
+    export function piCallAsync(msgType: string, message: string, extraOpts: string): Promise<void> {
+        const opts = extraOpts;
         const toMsgType = msgType;
         const toMsg = message;
         const b = board();        
@@ -69,7 +64,7 @@ namespace pxsim.mypi {
         return b.queuePiAsync(<makecodepi.Request>{
             type: msgType,
             message: message,
-            port: cArgs
+            extraOps: opts
         }).then();
     }
 

@@ -1,0 +1,11 @@
+{
+    "name": "testblocks",
+    "description": "testblock playground",
+    "files": [
+        "testblocks.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}

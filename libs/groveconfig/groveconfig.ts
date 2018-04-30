@@ -44,7 +44,7 @@ namespace groveconfig {
          */
         //% blockId=analogPort block="set %this to device %type"
         setPort(type: AnalogDeviceType) {
-            mypi.piCall("aset", analogDeviceDict[type], 2);
+            //mypi.piCall("aset", analogDeviceDict[type], 2);
         }
     }
     //% fixedInstance block="Analog Port 1"
@@ -68,7 +68,7 @@ namespace groveconfig {
          */
         //% blockId=digitalPort block="set %this to device %type"
         setDigPort(type: DigitalDeviceType) {
-            mypi.piCall("dset", digitalDeviceDict[type]);
+            //mypi.piCall("dset", digitalDeviceDict[type]);
         }
 
     }
@@ -96,7 +96,7 @@ namespace groveconfig {
          */
         //% blockId=DigitalPWMPort block="set %this to device %type"
         setPWMPort(type: DigitalDeviceType) {
-            mypi.piCall("pdset", digitalDeviceDict[type]);
+            //mypi.piCall("pdset", digitalDeviceDict[type]);
         }
     }
     //% fixedInstance block="Digital (PWM) Port 3"
