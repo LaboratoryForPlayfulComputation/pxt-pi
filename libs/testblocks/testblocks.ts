@@ -1,6 +1,4 @@
 namespace testblockspace {
-    
-
     /**
      * A testing playground
      */
