@@ -1,0 +1,8 @@
+{
+  "groveconfig.AnalogPort": "analogport",
+  "groveconfig.AnalogPort.setPort": "Configure a port",
+  "groveconfig.DigitalPort": "digport",
+  "groveconfig.DigitalPort.setDigPort": "Configure a digital port",
+  "groveconfig.PWMPort": "digPWMport",
+  "groveconfig.PWMPort.setPWMPort": "Configure a digital (PWM) port"
+}

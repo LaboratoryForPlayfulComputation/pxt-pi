@@ -56,7 +56,8 @@ namespace pxsim.five {
 namespace pxsim.mypi {
     //% promise
     export function piCallAsync(msgType: string, message: string, extraOpts: testExpandedoptions): Promise<void> {
-        const opts = <any>extraOpts as testExpandedoptions;
+        const opts = (<any>extraOpts).toAny();
+        console.log("HEY " + opts)
         const toMsgType = msgType;
         const toMsg = message;
         const b = board();        

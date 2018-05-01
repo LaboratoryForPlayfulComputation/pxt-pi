@@ -1,0 +1,7 @@
+{
+  "testblockspace.myblock|block": "testblockone",
+  "testblockspace.secondBlock|block": "testblocktwo",
+  "testblockspace.testblocks.fooBar|block": "do %this",
+  "testblockspace|block": "testblockspace",
+  "{id:category}Testblockspace": "Testblockspace"
+}

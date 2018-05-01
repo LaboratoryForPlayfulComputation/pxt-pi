@@ -1,0 +1,23 @@
+{
+  "AnalogDeviceType.Led|block": "led",
+  "AnalogDeviceType.Moisture|block": "moisture",
+  "AnalogDeviceType.UltrasonicSensor|block": "ultrasonic sensor",
+  "DigitalDeviceType.Button|block": "button",
+  "DigitalDeviceType.WaterSensor|block": "water sensor",
+  "groveconfig.AnalogPort.setPort|block": "set %this to device %type",
+  "groveconfig.DigitalPort.setDigPort|block": "set %this to device %type",
+  "groveconfig.PWMPort.setPWMPort|block": "set %this to device %type",
+  "groveconfig.aPort1|block": "Analog Port 1",
+  "groveconfig.aPort2|block": "Analog Port 2",
+  "groveconfig.aPort3|block": "Analog Port 3",
+  "groveconfig.dPort2|block": "Digital Port 2",
+  "groveconfig.dPort3|block": "Digital Port 3",
+  "groveconfig.dPort4|block": "Digital Port 4",
+  "groveconfig.dPort7|block": "Digital Port 7",
+  "groveconfig.dPort8|block": "Digital Port 8",
+  "groveconfig.pwmPort3|block": "Digital (PWM) Port 3",
+  "groveconfig.pwmPort5|block": "Digital (PWM) Port 5",
+  "groveconfig.pwmPort6|block": "Digital (PWM) Port 6",
+  "groveconfig|block": "groveconfig",
+  "{id:category}Groveconfig": "Groveconfig"
+}

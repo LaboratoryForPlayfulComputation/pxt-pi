@@ -28,21 +28,22 @@
   "main": "built/pxtrequire.js",
   "typings": "built/pxtrequire.d.ts",
   "devDependencies": {
-    "typescript": "2.6.1",
-    "less": "^2.6.0",
-    "rtlcss": "^2.1.2",
-    "autoprefixer": "^6.7.6",
-    "semantic-ui-less": "^2.2.4",
     "@types/bluebird": "2.0.33",
     "@types/jquery": "3.2.16",
     "@types/marked": "0.3.0",
-    "@types/node": "8.0.53"
+    "@types/node": "8.0.53",
+    "autoprefixer": "^6.7.6",
+    "less": "^2.7.3",
+    "rtlcss": "^2.2.1",
+    "semantic-ui-less": "^2.3.1",
+    "typescript": "2.6.1"
   },
   "dependencies": {
     "@types/peerjs": "0.0.29",
     "faye-websocket": "^0.11.0",
-    "johnny-five": "^0.14.1",
+    "johnny-five": "^0.14.3",
+    "marked": "^0.3.19",
     "peerjs": "^0.3.14",
-    "pxt-core": "3.*"
+    "pxt-core": "^3.12.10"
   }
 }

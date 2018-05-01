@@ -4,5 +4,6 @@ interface Options {
 
 interface testExpandedoptions {
     testNum: number,
-    testString: string
+    testString: string,
+    testExtra: string
 }

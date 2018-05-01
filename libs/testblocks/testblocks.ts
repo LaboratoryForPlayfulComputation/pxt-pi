@@ -21,9 +21,9 @@ namespace testblockspace {
     }
     
     //% fixedInstance block="testblockone"
-    export const myblock = new testblocks({testNum: 1, testString: "one"});
+    export const myblock = new testblocks({testNum: 1, testString: "one", testExtra: "two"});
 
     //% fixedInstance block="testblocktwo"
-    export const secondBlock = new testblocks({testNum: 2, testString: "two"});
+    export const secondBlock = new testblocks({testNum: 2, testString: "three", testExtra: "four"});
 }
 
