@@ -1,21 +1,18 @@
 namespace ledpi {
-    
-    export interface PiOptions {
 
-    }
 
     /**
      * Pi
      */
     //% fixedInstances
-    export class ledPi extends five.Component {
-        constructor(options: PiOptions) {
+    export class ledPi extends grove.Port {
+        constructor(options: piOptions) {
             super(options)
         }
         /**
          * Turn the LED on or off
          */
-        //% blockId=piLedOn block="set %this %on"
+        //% blockId=piLedOn block="set LED at %this %on"
         //% on.fieldEditor=toggleonoff
         ledToggle(on: boolean) {
             if (on) mypi.piCall("setComponentValue", "led", "on");

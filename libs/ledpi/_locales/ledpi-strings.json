@@ -1,5 +1,5 @@
 {
-  "ledpi.ledPi.ledToggle|block": "set %this %on",
+  "ledpi.ledPi.ledToggle|block": "set LED at %this %on",
   "ledpi.port1|block": "led 1",
   "ledpi.port2|block": "led 2",
   "ledpi.port3|block": "led 3",

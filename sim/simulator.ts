@@ -93,8 +93,7 @@ namespace pxsim {
             console.log('entered initAsync');
             this.chat.clear();
             return this.queuePiAsync(<makecodepi.ConnectRequest>{
-                type: "connect",
-                message: "0"
+                type: "connect"
             }).then(() => {
                 this.chat.append(lf("board connected..."));
             })

@@ -5,25 +5,24 @@ namespace testblockspace {
      * A testing playground
      */
     //% fixedInstances
-    export class testblocks {
-        public opts: testExpandedoptions;
+    export class testblocks extends grove.Port{
 
-        constructor(myOpts: testExpandedoptions) {
-            this.opts = myOpts;
+        constructor(_options: piOptions) {
+            super(_options);
         }
         /**
          * Foo a Bar
          */
         //% blockId=testBlockOne block="do %this"
         fooBar() {
-            mypi.piCall("hi there", "here's a message", this.opts)
+            mypi.piCall("hi there", this.options)
         }   
     }
     
     //% fixedInstance block="testblockone"
-    export const myblock = new testblocks({testNum: 1, testString: "one", testExtra: "two"});
+    export const myblock = new testblocks({deviceType: "test"});
 
     //% fixedInstance block="testblocktwo"
-    export const secondBlock = new testblocks({testNum: 2, testString: "three", testExtra: "four"});
+    export const secondBlock = new testblocks({deviceType: "testTwo"});
 }
 

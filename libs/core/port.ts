@@ -1,9 +1,9 @@
 namespace grove {
     export class Port {
-        protected portNum: string;
+        protected options: piOptions
         
-        constructor(_portNum: string) {
-            this.portNum = _portNum; 
+        constructor(_options: piOptions) {
+            this.options = _options;
         }
     }
 }
