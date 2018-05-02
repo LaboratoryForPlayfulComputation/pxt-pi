@@ -26,7 +26,7 @@ declare namespace five {
 declare namespace mypi {
     //% promise
     //% shim=mypi::piCallAsync promise
-    function piCall(msgType: string, extraOpts: piOptions): void;
+    function piCall(msgType: string, deviceType: string, extraOpts: piOptions): void;
 
     //% promise
     //% shim=mypi::piOnEventAsync promise

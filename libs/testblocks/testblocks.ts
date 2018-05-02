@@ -15,7 +15,7 @@ namespace testblockspace {
          */
         //% blockId=testBlockOne block="do %this"
         fooBar() {
-            mypi.piCall("hi there", this.options)
+            //mypi.piCall("hi there", this.options)
         }   
     }
     

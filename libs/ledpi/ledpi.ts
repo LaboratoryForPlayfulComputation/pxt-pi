@@ -15,8 +15,7 @@ namespace ledpi {
         //% blockId=piLedOn block="set LED at %this %on"
         //% on.fieldEditor=toggleonoff
         ledToggle(on: boolean) {
-            if (on) mypi.piCall("setComponentValue", "led", "on");
-            else mypi.piCall("setComponentValue", "led", "off");
+           
         }
     }
 
