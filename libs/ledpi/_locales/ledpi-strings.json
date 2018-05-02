@@ -1,10 +1,12 @@
 {
   "ledpi.ledPi.ledToggle|block": "set LED at %this %on",
-  "ledpi.port1|block": "led 1",
-  "ledpi.port2|block": "led 2",
-  "ledpi.port3|block": "led 3",
-  "ledpi.port4|block": "led 4",
-  "ledpi.port5|block": "led 5",
+  "ledpi.port2|block": "port 2",
+  "ledpi.port3|block": "port 3",
+  "ledpi.port4|block": "port 4",
+  "ledpi.port5|block": "port 5",
+  "ledpi.port6|block": "port 6",
+  "ledpi.port7|block": "port 7",
+  "ledpi.port8|block": "port 8",
   "ledpi|block": "ledpi",
   "{id:category}Ledpi": "Ledpi"
 }
