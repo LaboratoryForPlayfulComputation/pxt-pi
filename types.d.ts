@@ -59,7 +59,7 @@ declare namespace makecodepi {
 
     interface Request extends Message {
         id?: string; // request id
-        requestType: string; // request type
+        messageType: string; // request type
         deviceType: string;
         options?: piOptions;
      }

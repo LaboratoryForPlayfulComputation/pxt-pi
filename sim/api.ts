@@ -61,7 +61,7 @@ namespace pxsim.mypi {
         const toDeviceType = deviceType;
         const b = board();        
         return b.queuePiAsync(<makecodepi.Request>{
-            requestType: toMsgType,
+            messageType: toMsgType,
             deviceType: toDeviceType,
             options: options
         }).then();
