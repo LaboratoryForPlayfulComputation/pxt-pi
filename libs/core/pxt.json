@@ -1,6 +1,6 @@
 {
     "name": "core",
-    "description": "A target sample for PXT",
+    "description": "A Raspberry Pi target for PXT",
     "files": [
         "README.md",
         "pxt-core.d.ts",

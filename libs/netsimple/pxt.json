@@ -1,0 +1,14 @@
+{
+	"name": "netsimple",
+	"description": "Send IP messages using manual peering",
+	"files": [
+		"netsimple.ts"
+	],
+	"testFiles": [
+		"test.ts"
+	],
+	"public": true,
+	"dependencies": {
+		"core": "file:../core"
+	}
+}

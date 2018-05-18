@@ -1,23 +1,24 @@
 {
-    "id": "sample",
-    "name": "sample",
-    "title": "MakeCode Editor Sample",
+    "id": "pi",
+    "name": "Raspberry Pi",
+    "title": "MakeCode Pi",
     "corepkg": "core",
     "cloud": {
         "workspace": false,
-        "packages": true
+        "packages": false
     },
     "bundleddirs": [
-        "libs/core"
+        "libs/core",
+        "libs/netsimple"
     ],
     "runtime": {
       "mathBlocks": true,
       "loopsBlocks": true,
       "logicBlocks": true,
       "variablesBlocks": true,
-      "textBlocks": false,
-      "functionBlocks": false,
-      "listsBlocks": false 
+      "textBlocks": true,
+      "functionBlocks": true,
+      "listsBlocks": true 
     },
     "simulator": {
         "autoRun": true
@@ -38,10 +39,10 @@
                 "path": "/docs"
             }
         ],
-        "coloredToolbox": false,
+        "coloredToolbox": true,
         "monacoToolbox": true,
-        "invertedMenu": true,
-        "showHomeScreen": true,
+        "invertedMenu": false,
+        "showHomeScreen": false,
         "homeScreenHero": "./static/hero.png",        
         "blocklyOptions": { 
             "grid": {
@@ -51,8 +52,6 @@
                 "snap": true
             }
         },
-        "simAnimationEnter": "fly right in",
-        "simAnimationExit": "fly right out",
         "monacoColors": {
             "editor.background": "#ecf0f1"
         }

@@ -1,0 +1,4 @@
+{
+  "network.foo|block": "do something networky",
+  "{id:category}Network": "Network"
+}
