@@ -28,5 +28,23 @@ declare namespace console {
     function log(msg: string): void;
 
 }
+declare namespace peer {
+    /**
+     * Peer
+     * @param id The value of the marker
+     */
+    //% promise
+    //% shim=peer::sendAsync promise
+    function send(from: string, id: string, payload: any): void;
+
+    /**
+     * Allows user to define callbacks for receive event
+     * @param key 
+     */
+    //% promise
+    //% shim=peer::onReceiveAsync promise
+    function onReceive(key: string, handler: () => void): void;
+
+}
 
 // Auto-generated. Do not edit. Really.

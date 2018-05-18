@@ -33,6 +33,7 @@
     "@types/node": "8.0.53"
   },
   "dependencies": {
+    "@types/peerjs": "0.0.29",
     "pxt-core": "^3.15.3"
   }
 }

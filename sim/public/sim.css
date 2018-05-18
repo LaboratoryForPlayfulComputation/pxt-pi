@@ -1,9 +1,7 @@
-svg {
-    width:100%;
+body img.board {
+    width: 100%;
 }
 
-.sprite {
-    fill:yellow;
-    stroke:#ccc;
-    stroke-width: 3px;
+table#eventTable {
+    width: 100%;
 }

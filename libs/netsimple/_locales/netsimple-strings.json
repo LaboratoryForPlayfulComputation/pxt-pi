@@ -1,4 +1,5 @@
 {
-  "network.foo|block": "do something networky",
+  "network.receive|block": "on receive value",
+  "network.send|block": "send %msg to %to as %from",
   "{id:category}Network": "Network"
 }
