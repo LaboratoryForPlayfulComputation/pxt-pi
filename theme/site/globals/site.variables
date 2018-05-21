@@ -12,9 +12,9 @@
      Fonts
 --------------------*/
 
-@headerFont        : "Roboto Mono", serif;
-@pageFont          : "Roboto Mono", serif;
-@googleFontName    : 'Roboto Mono';
+@headerFont        : "Source Sans Pro", sans;
+@pageFont          : "Source Sans Pro", sans;
+@googleFontName    : 'Source Sans Pro';
 @importGoogleFonts : true;
 
 @docsHeaderFont: @headerFont;
@@ -24,27 +24,32 @@
       Site Colors
 --------------------*/
 
-/*---  Colors  ---*/
-@black            : #2d3436;
-@blue             : #74b9ff;
-@green            : #55efc4;
-@grey             : #636e72;
-@orange           : #fab1a0;
-@pink             : #fd79a8;
-@purple           : #a29bfe;
-@red              : #ff7675;
-@teal             : #81ecec;
-@yellow           : #ffeaa7;
+@base03    :      #002b36;
+@base02    :      #073642;
+@base01    :      #586e75;
+@base00    :      #657b83;
+@base0     :      #839496;
+@base1     :      #93a1a1;
+@base2     :      #eee8d5;
+@base3     :      #fdf6e3;
+@yellow    :      #b58900;
+@orange    :      #cb4b16;
+@red       :      #dc322f;
+@magenta   :      #d33682;
+@violet    :      #6c71c4;
+@blue      :      #268bd2;
+@cyan      :      #2aa198;
+@green     :      #859900;
 
 /*-------------------
     Brand Colors
 --------------------*/
 
 @primaryColor        : @blue;
-@secondaryColor      : @grey;
+@secondaryColor      : @base0;
 
-@lightPrimaryColor   : @lightBlue;
-@lightSecondaryColor : @lightGrey;
+@lightPrimaryColor   : fade(@primaryColor, 90%);
+@lightSecondaryColor : @base1;
 
 /*******************************
      PXT Variables
@@ -54,7 +59,7 @@
    Menu
 --------------------*/
 
-@mainMenuBackground: @purple;
+@mainMenuBackground: #c7053d;
 @mainMenuInvertedBackground: @mainMenuBackground;
 @mainMenuTutorialBackground: @orange;
 
@@ -74,11 +79,11 @@
    Background
 --------------------*/
 
-@simulatorBackground: #E8EDF1;
-@editorToolsBackground: #E8EDF1;
-@blocklySvgColor: #F9F9F9;
+@simulatorBackground: @base2;
+@editorToolsBackground: @base3;
+@blocklySvgColor: @base03;
 
-@homeScreenBackground: #ecf0f1;
+@homeScreenBackground: @base2;
 
 /*-------------------
    Full screen
@@ -91,7 +96,7 @@
    Editor
 --------------------*/
 
-@blocklyToolboxColor: white;
+@blocklyToolboxColor: @base3;
 @trashIconColor: @primaryColor;
 
 /*-------------------
@@ -104,7 +109,7 @@
    Flyout
 --------------------*/
 
-@flyoutLabelColor: white;
-@blocklyFlyoutColor: @grey;
+@flyoutLabelColor: @base2;
+@blocklyFlyoutColor: @base02;
 @blocklyFlyoutColorOpacity: 0.9;
 @monacoFlyoutColor: fade(@blocklyFlyoutColor, 90%);

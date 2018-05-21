@@ -19,6 +19,46 @@ declare namespace loops {
     function pause(ms: number): void;
 
 }
+declare namespace network {
+    //%
+    //% shim=network::init
+    function init(id: string): void;
+
+    //%
+    //% shim=network::sendPacket
+    function sendPacket(to: string, key: string, data: Packet): void;
+
+    //%
+    //% shim=network::handlePacket
+    function handlePacket(key: string, h: () => void): void;
+
+    //%
+    //% shim=network::getPacket
+    function getPacket(): Packet;
+
+    // ERROR HANDLING
+    //%
+    //% shim=network::handleError
+    function handleError(h: () => void): void;
+
+    //%
+    //% shim=network::getErrorMessage
+    function getErrorMessage(): string;
+
+    // PACKET FUNCTIONS
+    //%
+    //% shim=network::makePacket
+    function makePacket(): Packet;
+
+    //%
+    //% shim=network::addNumber
+    function addNumber(p: Packet, n: number): void;
+
+    //%
+    //% shim=network::getNumber
+    function getNumber(p: Packet, i: number): number;
+
+}
 declare namespace console {
     /**
      * Print out message
@@ -26,24 +66,6 @@ declare namespace console {
     //%
     //% shim=console::log
     function log(msg: string): void;
-
-}
-declare namespace peer {
-    /**
-     * Peer
-     * @param id The value of the marker
-     */
-    //% promise
-    //% shim=peer::sendAsync promise
-    function send(from: string, id: string, payload: any): void;
-
-    /**
-     * Allows user to define callbacks for receive event
-     * @param key 
-     */
-    //% promise
-    //% shim=peer::onReceiveAsync promise
-    function onReceive(key: string, handler: () => void): void;
 
 }
 

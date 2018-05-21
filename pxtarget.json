@@ -18,7 +18,10 @@
       "variablesBlocks": true,
       "textBlocks": true,
       "functionBlocks": true,
-      "listsBlocks": true 
+      "listsBlocks": true,
+      "onStartNamespace": "loops",
+      "onStartColor" : "#859900",
+      "onStartWeight" : 100
     },
     "simulator": {
         "autoRun": true
@@ -29,7 +32,6 @@
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "betaUrl": "https://makecode.com/",
-        "extendEditor" : true,
         "docMenu": [
             {
                 "name": "About",
@@ -40,11 +42,17 @@
                 "path": "/docs"
             }
         ],
+        "showHomeScreen": true,
+        "homeScreenHero": "./static/hero.png",      
+        "invertedMenu": true,
+        "invertedToolbox" : false,
         "coloredToolbox": true,
+        "invertedMonaco" : true,
         "monacoToolbox": true,
-        "invertedMenu": false,
-        "showHomeScreen": false,
-        "homeScreenHero": "./static/hero.png",        
+        "simAnimationEnter" : "fly right in",
+        "simAnimationExit" : "fly right out",
+        "highContrast" : true,
+        "extendEditor" : true,
         "blocklyOptions": { 
             "grid": {
                 "spacing": 45,
@@ -53,8 +61,23 @@
                 "snap": true
             }
         },
+        "blocklyColors": {
+            "insertionMarker" : "#FFFFFF",
+            "insertionMarkerOpacity": 0.5
+        },
         "monacoColors": {
-            "editor.background": "#ecf0f1"
-        }
+            "editor.background": "#002b36"
+        },
+        "blockColors" : {
+            "loops" : "#859900",
+            "logic" : "#2aa198",
+            "variables" : "#dc322f",
+            "math" : "#d33682",
+            "advanced" : "#586e75",
+            "functions" : "#268bd2",
+            "arrays" : "#cb4b16",
+            "text" : "#b58900"
+        },
+        "allowPackageExtensions" : true
     }
 }

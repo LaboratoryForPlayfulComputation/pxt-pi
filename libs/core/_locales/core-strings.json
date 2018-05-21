@@ -22,7 +22,6 @@
   "loops.pause|block": "pause (ms) %pause",
   "loops|block": "loops",
   "parseInt|block": "parse to integer %text",
-  "peer|block": "peer",
   "{id:category}Array": "Array",
   "{id:category}Arrays": "Arrays",
   "{id:category}Boolean": "Boolean",
@@ -30,8 +29,9 @@
   "{id:category}Helpers": "Helpers",
   "{id:category}Loops": "Loops",
   "{id:category}Math": "Math",
+  "{id:category}Network": "Network",
   "{id:category}Number": "Number",
-  "{id:category}Peer": "Peer",
+  "{id:category}Packet": "Packet",
   "{id:category}String": "String",
   "{id:category}Text": "Text"
 }
