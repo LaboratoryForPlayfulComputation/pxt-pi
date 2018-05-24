@@ -3,15 +3,15 @@
 namespace pxsim.five {
     /**
      * Executes an RPC call into Johnny Five
-     * @param component 
-     * @param componentArgs 
+     * @param component
+     * @param componentArgs
      */
     //% promise
-    export function rpcCallAsync(component: string, componentArgs: Options, fn: string, fnArgs: number[]): Promise<void> {
-        const cArgs = (<any>componentArgs).toAny() as Options;
+    export function rpcCallAsync(component: string, componentArgs: piOptions, fn: string, fnArgs: number[]): Promise<void> {
+        const cArgs = (<any>componentArgs).toAny() as piOptions;
         const fArgs = (<any>fnArgs).toAny() as number[];
         const boardId = cArgs.board;
-        const b = board();        
+        const b = board();
         return b.queueRequestAsync(<j5.CallRequest>{
             type: "call",
             board: boardId || "0",
@@ -32,14 +32,14 @@ namespace pxsim.five {
 
     /**
      * Executes an RPC call into Johnny Five
-     * @param component 
-     * @param componentArgs 
+     * @param component
+     * @param componentArgs
      */
     //% promise
-    export function rpcOnEventAsync(component: string, componentArgs: Options, event: string, handler: RefAction): Promise<void> {
+    export function rpcOnEventAsync(component: string, componentArgs: piOptions, event: string, handler: RefAction): Promise<void> {
         const cArgs = (<any>componentArgs).data;
         const boardId = "";
-        const b = board();        
+        const b = board();
         const evid = JSON.stringify({component, cArgs });
         b.bus.listen(evid, event, handler);
         return b.queueRequestAsync(<j5.ListenEventRequest>{
@@ -59,7 +59,7 @@ namespace pxsim.mypi {
         const options = (<any>extraOpts).toAny() as piOptions;
         const toMsgType = msgType;
         const toDeviceType = deviceType;
-        const b = board();        
+        const b = board();
         return b.queuePiAsync(<makecodepi.Request>{
             messageType: toMsgType,
             deviceType: toDeviceType,
@@ -68,10 +68,10 @@ namespace pxsim.mypi {
     }
 
     //% promise
-    export function piOnEventAsync(component: string, componentArgs: Options, event: string, handler: RefAction): Promise<void> {
+    export function piOnEventAsync(component: string, componentArgs: piOptions, event: string, handler: RefAction): Promise<void> {
         const cArgs = (<any>componentArgs).data;
         const boardId = "";
-        const b = board();        
+        const b = board();
         const evid = JSON.stringify({component, cArgs });
         b.bus.listen(evid, event, handler);
         return b.queueRequestAsync(<j5.ListenEventRequest>{
@@ -93,7 +93,7 @@ namespace pxsim.loops {
      * @param body the code to repeat
      */
     //% help=functions/forever weight=55 blockGap=8
-    //% blockId=device_forever block="forever" 
+    //% blockId=device_forever block="forever"
     export function forever(body: RefAction): void {
         thread.forever(body)
     }

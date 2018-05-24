@@ -10,9 +10,9 @@ const log = console.log;
 const debug = console.log;
 
 /*******************
- * 
+ *
  * Johnny Five RPC wrapper
- * 
+ *
  */
 const five = require('johnny-five')
 
@@ -24,7 +24,7 @@ class J5Board {
 
     constructor(private board: any) { }
 
-    component(name: string, args: Options): J5Component {
+    component(name: string, args: piOptions): J5Component {
         const id = JSON.stringify({ name, args });
         let component = this.components[id];
         if (!component) {
@@ -88,7 +88,7 @@ function boardAsync(id: string): Promise<J5Board> {
             const args = {
                 id: id,
                 repl: false,
-                timeout: 3                
+                timeout: 3
             }
             const b = new five.Board(args);
             b.on("ready", () => {
@@ -96,7 +96,7 @@ function boardAsync(id: string): Promise<J5Board> {
                 resolve(new J5Board(b));
             })
             b.on("exit", () => {
-                delete boards[id];                
+                delete boards[id];
             })
             b.on("error", () => {
                 delete boards[id];
@@ -129,7 +129,7 @@ function handleConnect(req: j5.ConnectRequest) {
 
 function handleCall(req: j5.CallRequest) {
     boardAsync(req.board)
-        .then(b => b.component(req.component, req.componentArgs || <Options>{}))
+        .then(b => b.component(req.component, req.componentArgs || <piOptions>{}))
         .then(c => {
             const resp = c.call(req.function, req.functionArgs || []);
             sendResponse(<j5.CallResponse>{
@@ -143,7 +143,7 @@ function handleCall(req: j5.CallRequest) {
 
 function handleListenEvent(req: j5.ListenEventRequest) {
     boardAsync(req.board)
-        .then(b => b.component(req.component, req.componentArgs || <Options>{}))
+        .then(b => b.component(req.component, req.componentArgs || <piOptions>{}))
         .then(c => {
             c.on(req.eventId, req.eventName);
             sendResponse(<j5.Response>{

@@ -1,7 +1,7 @@
 namespace five {
     export class Component {
-        protected options: Options;
-        constructor(options: Options) {
+        protected options: piOptions;
+        constructor(options: piOptions) {
             this.options = options;
         }
     }

@@ -9,7 +9,7 @@ enum ButtonEvent {
 
 
 namespace button {
-    interface ButtonOptions extends Options {
+    interface ButtonOptions extends piOptions {
         pin: number;
         invert?: boolean;
         isPullUp?: boolean;
@@ -30,7 +30,7 @@ namespace button {
     export class Button extends five.Component {
         /**
          * Creates a new button instance
-         * @param options 
+         * @param options
          */
         constructor(options: ButtonOptions) {
             super(options);
@@ -38,8 +38,8 @@ namespace button {
 
         /**
          * Registers a callback for a given event
-         * @param event 
-         * @param handler 
+         * @param event
+         * @param handler
          */
         //% blockId=buttonon block="on %this %event"
         on(event: ButtonEvent, handler: () => void) {

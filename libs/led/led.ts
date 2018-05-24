@@ -1,9 +1,9 @@
 namespace led {
-    interface LedOptions extends Options {
+    interface LedOptions extends piOptions {
         pin: number;
         controller?: string;
     }
-    
+
     /**
      * An LED
      */
@@ -32,9 +32,9 @@ namespace led {
             five.rpcCall("Led", this.options, "strobe", [ms]);
         }
 
-        /** 
+        /**
          * Stops animations
-         * 
+         *
         */
         //% blockId=ledStop block="stop %this"
         stop() {

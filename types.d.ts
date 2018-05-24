@@ -1,6 +1,6 @@
-declare interface Options {
-    board?: string;
-}
+// declare interface Options {
+//     board?: string;
+// }
 
 declare namespace j5 {
     interface Message {}
@@ -29,7 +29,7 @@ declare namespace j5 {
     interface CallRequest extends Request {
         type: "call";
         component: string;
-        componentArgs?: Options;
+        componentArgs?: piOptions;
         function: string;
         functionArgs?: number[];
     }
@@ -41,7 +41,7 @@ declare namespace j5 {
     interface ListenEventRequest extends Request {
         type: "listenevent";
         component: string;
-        componentArgs?: Options;
+        componentArgs?: piOptions;
         eventId: string;
         eventName: string;
     }
@@ -72,7 +72,7 @@ declare namespace makecodepi {
         id?: string;
         type?: string;
         status: number;
-    }    
+    }
 
     interface ConnectRequest extends Request {
         type: "connect";

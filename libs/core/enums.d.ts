@@ -1,9 +1,10 @@
-interface Options {
-    board?: string;
-}
+// interface Options {
+//     board?: string;
+// }
 
 interface piOptions {
     port?: number,
     deviceType?: string,
-    setValue?: number
+    setValue?: number,
+    board?: string
 }

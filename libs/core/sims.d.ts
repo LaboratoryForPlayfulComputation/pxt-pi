@@ -2,12 +2,12 @@
 declare namespace five {
     /**
      * Executes an RPC call into Johnny Five
-     * @param component 
-     * @param componentArgs 
+     * @param component
+     * @param componentArgs
      */
     //% promise
     //% shim=five::rpcCallAsync promise
-    function rpcCall(component: string, componentArgs: Options, fn: string, fnArgs: number[]): void;
+    function rpcCall(component: string, componentArgs: piOptions, fn: string, fnArgs: number[]): void;
 
     //% promise
     //% shim=five::printSomeStuffAsync promise
@@ -15,12 +15,12 @@ declare namespace five {
 
     /**
      * Executes an RPC call into Johnny Five
-     * @param component 
-     * @param componentArgs 
+     * @param component
+     * @param componentArgs
      */
     //% promise
     //% shim=five::rpcOnEventAsync promise
-    function rpcOnEvent(component: string, componentArgs: Options, event: string, handler: () => void): void;
+    function rpcOnEvent(component: string, componentArgs: piOptions, event: string, handler: () => void): void;
 
 }
 declare namespace mypi {
@@ -30,7 +30,7 @@ declare namespace mypi {
 
     //% promise
     //% shim=mypi::piOnEventAsync promise
-    function piOnEvent(component: string, componentArgs: Options, event: string, handler: () => void): void;
+    function piOnEvent(component: string, componentArgs: piOptions, event: string, handler: () => void): void;
 
 }
 declare namespace loops {
