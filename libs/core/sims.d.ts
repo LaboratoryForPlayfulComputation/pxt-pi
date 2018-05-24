@@ -34,7 +34,7 @@ declare namespace network {
 
     //%
     //% shim=network::getPacket
-    function getPacket(): Packet;
+    function getPacket(key: string): Packet;
 
     // ERROR HANDLING
     //%
@@ -57,6 +57,14 @@ declare namespace network {
     //%
     //% shim=network::getNumber
     function getNumber(p: Packet, i: number): number;
+
+    //%
+    //% shim=network::addString
+    function addString(p: Packet, s: string): void;
+
+    //%
+    //% shim=network::getString
+    function getString(p: Packet, i: number): string;
 
 }
 declare namespace console {

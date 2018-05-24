@@ -1,6 +1,9 @@
-/// <reference path="../types.d.ts" />
-
 namespace pxsim.peer {
+    interface PacketQueue {
+        index : number,
+        max : number,
+        queue : Packet[]
+    }
 
     const HOST = 'liminal-jam.herokuapp.com';
     const PORT = 443;
@@ -12,9 +15,7 @@ namespace pxsim.peer {
     let ready: boolean = false;
     let myId: string = undefined;
 
-    let INDEX = 0;
-    let MAX = 0;
-    let receipts : Packet[] = [];
+    let receipts : { [key: string]: PacketQueue } = {};
 
     let latestError : string = "";
 
@@ -25,23 +26,39 @@ namespace pxsim.peer {
     script.src = "https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.14/peer.js";
     document.head.appendChild(script);
 
+    export function clearQueues() {
+        Object.keys(receipts).forEach(k => {
+            receipts[k] = {
+                queue: [],
+                max: 0,
+                index: 0
+            };
+        });
+    }
+
     function initDataConnectionCallbacks(conn: PeerJs.DataConnection){
         connections[conn.peer] = conn;
         conn.on('data', function(data: any){
+            let eventQueue = receipts[data["key"]];
 
-            receipts[MAX] = data["data"];
-            MAX += 1
+            console.log("Received: " + data["key"]);
 
-            board().bus.queue(data["key"], 0x1);
+            if (eventQueue != undefined) {
+                eventQueue.queue[eventQueue.max] = data["data"];
+                eventQueue.max += 1;
+                board().bus.queue(data["key"], 0x1);
+            }
         });
         conn.on('close', function() {connections[conn.peer] = undefined;});
         conn.on('error', function() {connections[conn.peer] = undefined;});
     }
 
-    export function getEventData() {
-        let ret = receipts[INDEX];
-        delete receipts[INDEX];
-        INDEX += 1;
+    export function getEventData(key : string) {
+        let eventQueue = receipts[key];
+
+        let ret = eventQueue.queue[eventQueue.index];
+        delete eventQueue.queue[eventQueue.index];
+        eventQueue.index += 1;
 
         return ret;
     }
@@ -63,6 +80,7 @@ namespace pxsim.peer {
         while (!ready) {}
 
         peer = null;
+        clearQueues();
 
         /* Create instance of PeerJS */
         peer = new Peer(id, {
@@ -117,7 +135,18 @@ namespace pxsim.peer {
      * Allows user to define callbacks for receive event
      * @param key 
      */
-    export function onReceive(key: string, handler: RefAction){
+    export function onReceive(key: string, handler: RefAction) {
+        let eventQueue = receipts[key];
+
+        console.log("Listening: " + key);
+
+        if (eventQueue == undefined) {
+            receipts[key] = {
+                queue : [],
+                max : 0,
+                index : 0
+            }
+        }
         board().bus.listen(key, 0x1, handler);
     }
 

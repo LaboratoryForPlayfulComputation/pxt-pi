@@ -16,7 +16,7 @@ namespace network {
 	//% blockId="receiveBlock" block="on receive value"
 	export function onReceive(handler: (msg : number) => void) {
 		network.handlePacket("Test", () => {
-			let p = network.getPacket();
+			let p = network.getPacket("Test");
 			handler(network.getNumber(p, 0));
 		});
 	}

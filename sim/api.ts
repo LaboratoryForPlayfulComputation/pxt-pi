@@ -25,10 +25,11 @@ namespace pxsim.loops {
 namespace pxsim.network {
     //%
     export function init(id : string) {
-        if (!peer.initialized()) {
+        if (!peer.initialized() || peer.getMyId() != id) {
             peer.initializePeer(id);
         } else {
-            board().logEvent(EventType.WARN, "Ignoring repeated network initialization")
+            board().logEvent(EventType.WARN, "Clearing network queue.")
+            peer.clearQueues();
         }
     }
 
@@ -50,8 +51,8 @@ namespace pxsim.network {
     }
     
     //%
-    export function getPacket() : Packet {
-        return peer.getEventData();
+    export function getPacket(key: string) : Packet {
+        return peer.getEventData(key);
     }
 
     // ERROR HANDLING
@@ -72,7 +73,8 @@ namespace pxsim.network {
     export function makePacket() : Packet {
         return {
             sender: peer.getMyId(),
-            numbers: []
+            numbers: [],
+            strings: []
         }
     }
 
@@ -84,6 +86,16 @@ namespace pxsim.network {
     //%
     export function getNumber(p: Packet, i : number) : number {
         return p.numbers[i];
+    }
+
+    //%
+    export function addString(p : Packet, s : string) : void {
+        p.strings.push(s);
+    }
+
+    //%
+    export function getString(p: Packet, i : number) : string {
+        return p.strings[i];
     }
 }
 
