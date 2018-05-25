@@ -3,3 +3,5 @@ interface Packet {
     numbers: number[];
     strings: string[];
 }
+
+interface MessageOptions {}

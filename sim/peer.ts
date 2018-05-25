@@ -116,6 +116,16 @@ namespace pxsim.peer {
     }
 
     /**
+     * Disconnect immediately.
+     */
+    export function disconnect() {
+        if (peer) {
+            peer.destroy();
+            peer = undefined;
+        }
+    }
+
+    /**
      * Peer
      * @param id The value of the marker
      */

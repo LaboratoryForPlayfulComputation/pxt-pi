@@ -1,0 +1,11 @@
+{
+    "name": "grove",
+    "description": "GrovePi blocks",
+    "files": [
+        "grove.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}

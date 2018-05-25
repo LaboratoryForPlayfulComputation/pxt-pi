@@ -2,7 +2,7 @@
 	"name": "netsimple",
 	"description": "Send IP messages using manual peering",
 	"files": [
-		"netsimple.ts"
+		"network.ts"
 	],
 	"testFiles": [
 		"test.ts"

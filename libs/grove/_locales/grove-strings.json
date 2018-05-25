@@ -1,0 +1,19 @@
+{
+  "AnalogDeviceType.LIGHT|block": "light sensor",
+  "AnalogDeviceType.MOISTURE|block": "moisture",
+  "AnalogDeviceType.SLIDEPOT|block": "slide potentiometer",
+  "AnalogDeviceType.SOUND|block": "sound sensor",
+  "DigitalDeviceType.BUTTON|block": "button",
+  "DigitalDeviceType.BUZZER|block": "buzzer",
+  "DigitalDeviceType.LED|block": "LED",
+  "DigitalDeviceType.RELAY|block": "relay",
+  "DigitalDeviceType.TEMPERATUREHUMIDITY|block": "temp/humidity sensor",
+  "DigitalDeviceType.ULTRASONIC|block": "ultrasonic sensor",
+  "DigitalDeviceType.WATERSENSOR|block": "water sensor",
+  "grove.AnalogPort.setPort|block": "set %this to device %type",
+  "grove.aPort1|block": "Analog Port 0",
+  "grove.aPort2|block": "Analog Port 1",
+  "grove.aPort3|block": "Analog Port 2",
+  "grove|block": "grove",
+  "{id:category}Grove": "Grove"
+}

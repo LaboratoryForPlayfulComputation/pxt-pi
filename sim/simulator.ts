@@ -1,4 +1,5 @@
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
+/// <reference path="../types.d.ts" />
 
 namespace pxsim {
     /**
@@ -13,6 +14,13 @@ namespace pxsim {
      */
     export function board() : Board {
         return runtime.board as Board;
+    }
+
+    interface SocketRequest {
+        req: raspberryPi.Request;
+        resolve: (resp?: raspberryPi.Response) => void;
+        time: number;
+        initiated?: boolean;
     }
 
     export enum EventType {
@@ -43,9 +51,14 @@ namespace pxsim {
      * Do not store state anywhere else!
      */
     export class Board extends pxsim.BaseBoard {
+        public id : string;
         public bus: EventBus;
         public eventLog: EventDescription[];
         public eventTable: HTMLTableElement;
+
+        private nextId = 0;
+        private requests: Map<SocketRequest> = {};
+
 
         constructor() {
             super();
@@ -89,6 +102,47 @@ namespace pxsim {
             } else {
                 this.eventTable.appendChild(newRow);
             }
+        }
+
+        queueRequestAsync(req: raspberryPi.Request): Promise<any> {
+            const id = this.nextId++; // `${runtime.id}-${}`;
+            req.id = id + "";
+            return server.initPiAsync()
+                .then(ws => {
+                    if (ws) return new Promise((resolve, reject) => {
+                        const r: SocketRequest = {
+                            req,
+                            resolve,
+                            time: new Date().getTime()
+                        };
+                        this.requests[id] = r;
+                        ws.send(JSON.stringify(req));
+                        console.log('queueRequestAsync');
+                    })
+                    else return undefined;
+                });
+        }
+
+
+        handleResponse(resp: raspberryPi.Response) {
+            const id = resp.id;
+            const req = this.requests[id];
+            // pending request?
+            if (req) {
+                req.resolve(resp);
+                delete this.requests[id];
+            } else if (resp.type === "event") {
+                const ev = resp as raspberryPi.Event;
+                this.bus.queue(ev.eventId, ev.eventName);
+            }
+        }
+
+
+        kill() {
+            super.kill();
+            this.requests = {};
+            peer.disconnect();
+            peer.clearQueues();
         }
         
         updateView() {}

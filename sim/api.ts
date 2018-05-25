@@ -1,5 +1,21 @@
 /// <reference path="../libs/core/enums.d.ts"/>
 
+namespace pxsim.pi {
+    /**
+     * Executes an RPC call into the Raspberry Pi
+     * @param component 
+     * @param componentArgs 
+     */
+    //% promise
+    export function rpcCallAsync(namespace: string, target: string, opts: MessageOptions): Promise<void> {       
+        return board().queueRequestAsync(<raspberryPi.Request>{
+            namespace: namespace,
+            target: target,
+            options: (<any>opts).toAny(),
+        }).then();
+    }
+}
+
 namespace pxsim.loops {
     /**
      * Repeats the code forever in the background. On each iteration, allows other code to run.

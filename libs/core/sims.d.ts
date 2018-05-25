@@ -1,4 +1,15 @@
 // Auto-generated from simulator. Do not edit.
+declare namespace pi {
+    /**
+     * Executes an RPC call into the Raspberry Pi
+     * @param component 
+     * @param componentArgs 
+     */
+    //% promise
+    //% shim=pi::rpcCallAsync promise
+    function rpcCall(namespace: string, target: string, opts: MessageOptions): void;
+
+}
 declare namespace loops {
     /**
      * Repeats the code forever in the background. On each iteration, allows other code to run.

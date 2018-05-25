@@ -2,7 +2,8 @@
     "name": "{0}",
     "dependencies": {
         "core": "file:../core",
-        "netsimple": "file:../netsimple"
+        "network": "file:../network",
+        "grove" : "file:../grove"
     },
     "description": "",
     "files": [

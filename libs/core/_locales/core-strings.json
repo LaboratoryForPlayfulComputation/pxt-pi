@@ -22,6 +22,7 @@
   "loops.pause|block": "pause (ms) %pause",
   "loops|block": "loops",
   "parseInt|block": "parse to integer %text",
+  "pi|block": "pi",
   "{id:category}Array": "Array",
   "{id:category}Arrays": "Arrays",
   "{id:category}Boolean": "Boolean",
@@ -32,6 +33,7 @@
   "{id:category}Network": "Network",
   "{id:category}Number": "Number",
   "{id:category}Packet": "Packet",
+  "{id:category}Pi": "Pi",
   "{id:category}String": "String",
   "{id:category}Text": "Text"
 }
