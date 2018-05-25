@@ -117,4 +117,32 @@ namespace grove {
     export const dPort7 = new DigitalPort(7);
     //% fixedInstance block="Digital Port 8" 
     export const dPort8 = new DigitalPort(8);
+
+    /**
+     * digPWMport
+     */
+    //% fixedInstances
+    export class PWMPort {
+        protected port : number;
+        constructor(_port: number) {
+            this.port = _port;
+        }
+        /**
+         * Configure a digital (PWM) port
+         */
+        //% blockId=DigitalPWMPort block="set %this to device %type"
+        setPWMPort(type: DigitalDeviceType) {
+            invoke("setComponentType", <GroveOptions>{
+                port : this.port,
+                devType : digitalDeviceDict[type],
+                mode : "DIGITAL"
+            });
+        }
+    }
+    //% fixedInstance block="Digital (PWM) Port 3"
+    export const pwmPort3 = new PWMPort(3);
+    //% fixedInstance block="Digital (PWM) Port 5"
+    export const pwmPort5 = new PWMPort(5);
+    //% fixedInstance block="Digital (PWM) Port 6"
+    export const pwmPort6 = new PWMPort(6);
 }
