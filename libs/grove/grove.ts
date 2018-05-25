@@ -86,4 +86,35 @@ namespace grove {
     export const aPort2 = new AnalogPort(1);
     //% fixedInstance block="Analog Port 2"
     export const aPort3 = new AnalogPort(2);
+
+    /**
+     * digport
+     */
+    //% fixedInstances
+    export class DigitalPort {
+        protected port : number;
+        constructor(_port: number) {
+            this.port = _port
+        }
+
+        /**
+         * Configure a digital port
+         */
+        //% blockId=digitalPort block="set %this to device %type"
+        setDigPort(type: DigitalDeviceType) {
+            invoke("setComponentType", <GroveOptions>{
+                port : this.port,
+                devType : digitalDeviceDict[type],
+                mode : "DIGITAL"
+            });
+        }
+    }
+    //% fixedInstance block="Digital Port 2"
+    export const dPort2 = new DigitalPort(2);
+    //% fixedInstance block="Digital Port 4"
+    export const dPort4 = new DigitalPort(4);
+    //% fixedInstance block="Digital Port 7"
+    export const dPort7 = new DigitalPort(7);
+    //% fixedInstance block="Digital Port 8" 
+    export const dPort8 = new DigitalPort(8);
 }
