@@ -35,7 +35,7 @@ namespace grove {
         "SOUND",
         "MOISTURE",
         "SLIDEPOT"
-        
+
     ];
     const digitalDeviceDict = [
         "BUTTON",
@@ -115,7 +115,7 @@ namespace grove {
     export const dPort4 = new DigitalPort(4);
     //% fixedInstance block="Digital Port 7"
     export const dPort7 = new DigitalPort(7);
-    //% fixedInstance block="Digital Port 8" 
+    //% fixedInstance block="Digital Port 8"
     export const dPort8 = new DigitalPort(8);
 
     /**
@@ -145,4 +145,42 @@ namespace grove {
     export const pwmPort5 = new PWMPort(5);
     //% fixedInstance block="Digital (PWM) Port 6"
     export const pwmPort6 = new PWMPort(6);
+
+    /**
+     * LEDpi
+     */
+    //% fixedInstances
+    export class LEDPi {
+        protected port : number;
+        constructor(_port: number) {
+            this.port = _port;
+        }
+        /**
+         * Turn on an LED at port
+         */
+        //% blockId=LEDPi block="set %this to value %on"
+        //% on.fieldEditor=toggleonoff
+        setLED(on: boolean) {
+            invoke("setComponentValue", <GroveOptions>{
+                port : this.port,
+                devType : "LED",
+                value : "1",
+                mode : "DIGITAL"
+            });
+        }
+    }
+    //% fixedInstance block="LED Port 2"
+    export const port2 = new LEDPi(2);
+    //% fixedInstance block="LED Port 3"
+    export const port3 = new LEDPi(3);
+    //% fixedInstance block="LED Port 4"
+    export const port4 = new LEDPi(4);
+    //% fixedInstance block="LED Port 5"
+    export const port5 = new LEDPi(5);
+    //% fixedInstance block="LED Port 6"
+    export const port6 = new LEDPi(6);
+    //% fixedInstance block="LED Port 7"
+    export const port7 = new LEDPi(7);
+    //% fixedInstance block="LED Port 8"
+    export const port8 = new LEDPi(8);
 }

@@ -1,4 +1,10 @@
 {
   "grove.AnalogPort": "analogport",
-  "grove.AnalogPort.setPort": "Configure a port"
+  "grove.AnalogPort.setPort": "Configure a port",
+  "grove.DigitalPort": "digport",
+  "grove.DigitalPort.setDigPort": "Configure a digital port",
+  "grove.LEDPi": "LEDpi",
+  "grove.LEDPi.setLED": "Turn on an LED at port",
+  "grove.PWMPort": "digPWMport",
+  "grove.PWMPort.setPWMPort": "Configure a digital (PWM) port"
 }
