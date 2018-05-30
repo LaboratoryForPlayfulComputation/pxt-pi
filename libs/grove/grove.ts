@@ -161,12 +161,22 @@ namespace grove {
         //% blockId=LEDPi block="set %this to value %on"
         //% on.fieldEditor=toggleonoff
         setLED(on: boolean) {
+
+          if(on) {
             invoke("setComponentValue", <GroveOptions>{
                 port : this.port,
                 devType : "LED",
                 value : "1",
                 mode : "DIGITAL"
             });
+          } else {
+            invoke("setComponentValue", <GroveOptions>{
+                port : this.port,
+                devType : "LED",
+                value : "0",
+                mode : "DIGITAL"
+            });
+          }
         }
     }
     //% fixedInstance block="LED Port 2"
