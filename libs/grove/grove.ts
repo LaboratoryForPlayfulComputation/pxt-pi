@@ -227,6 +227,22 @@ namespace grove {
     export const fadePort6 = new FadeLED(6);
 
     /**
+     * Rotary Angle
+     */
+
+    //% blockId="rotaryBlock" block="get rotary angle sensor value at %port"
+    export function rotary(port: number): number {
+
+        invoke("getComponentValue", <GroveOptions>{
+            port : 0,
+            devType : "ROTARY_ANGLE",
+            mode : "ANALOG"
+        });
+        
+        return 0
+    }
+
+    /**
      * Button Press
      */
 
@@ -238,7 +254,5 @@ namespace grove {
             devType : "BUTTON",
             mode : "DIGITAL"
         });
-
-        
     }
 }

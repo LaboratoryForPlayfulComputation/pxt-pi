@@ -36,6 +36,7 @@
   "grove.pwmPort3|block": "Digital (PWM) Port 3",
   "grove.pwmPort5|block": "Digital (PWM) Port 5",
   "grove.pwmPort6|block": "Digital (PWM) Port 6",
+  "grove.rotary|block": "get rotary angle sensor value at %port",
   "grove|block": "grove",
   "{id:category}Grove": "Grove"
 }
