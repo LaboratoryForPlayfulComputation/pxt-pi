@@ -207,12 +207,12 @@ namespace grove {
          * Change LED brightness at port
          */
         //% blockId=FadeLED block="set %this brightness to %val"
-        fadeLED(val: string) {
+        fadeLED(val: number) {
 
             invoke("setComponentValue", <GroveOptions>{
                 port : this.port,
                 devType : "LED",
-                value : val,
+                value : ""+val,
                 mode : "DIGITAL"
             });
             
