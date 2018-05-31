@@ -180,19 +180,51 @@ namespace grove {
         }
     }
     //% fixedInstance block="LED Port 2"
-    export const port2 = new LEDPi(2);
+    export const onPort2 = new LEDPi(2);
     //% fixedInstance block="LED Port 3"
-    export const port3 = new LEDPi(3);
+    export const onPort3 = new LEDPi(3);
     //% fixedInstance block="LED Port 4"
-    export const port4 = new LEDPi(4);
+    export const onPort4 = new LEDPi(4);
     //% fixedInstance block="LED Port 5"
-    export const port5 = new LEDPi(5);
+    export const onPort5 = new LEDPi(5);
     //% fixedInstance block="LED Port 6"
-    export const port6 = new LEDPi(6);
+    export const onPort6 = new LEDPi(6);
     //% fixedInstance block="LED Port 7"
-    export const port7 = new LEDPi(7);
+    export const onPort7 = new LEDPi(7);
     //% fixedInstance block="LED Port 8"
-    export const port8 = new LEDPi(8);
+    export const onPort8 = new LEDPi(8);
+
+    /**
+     * FadeLED
+     */
+    //% fixedInstances
+    export class FadeLED {
+        protected port : number;
+        constructor(_port: number) {
+            this.port = _port;
+        }
+        /**
+         * Change LED brightness at port
+         */
+        //% blockId=FadeLED block="set %this brightness to %val"
+        fadeLED(val: string) {
+
+            invoke("setComponentValue", <GroveOptions>{
+                port : this.port,
+                devType : "LED",
+                value : val,
+                mode : "DIGITAL"
+            });
+            
+        }
+    }
+
+    //% fixedInstance block="LED Port 3"
+    export const fadePort3 = new FadeLED(3);
+    //% fixedInstance block="LED Port 5"
+    export const fadePort5 = new FadeLED(5);
+    //% fixedInstance block="LED Port 6"
+    export const fadePort6 = new FadeLED(6);
 
     /**
      * Button Press
@@ -200,10 +232,13 @@ namespace grove {
 
     //% blockId="btnPressBlock" block="on button press"
     export function onButtonPress(body: () => void) {
+
         invoke("getComponentValue", <GroveOptions>{
             port : 4,
             devType : "BUTTON",
             mode : "DIGITAL"
         });
+
+        
     }
 }

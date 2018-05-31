@@ -3,6 +3,8 @@
   "grove.AnalogPort.setPort": "Configure a port",
   "grove.DigitalPort": "digport",
   "grove.DigitalPort.setDigPort": "Configure a digital port",
+  "grove.FadeLED": "FadeLED",
+  "grove.FadeLED.fadeLED": "Change LED brightness at port",
   "grove.LEDPi": "LEDpi",
   "grove.LEDPi.setLED": "Turn on an LED at port",
   "grove.PWMPort": "digPWMport",
