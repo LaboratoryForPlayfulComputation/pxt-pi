@@ -21,6 +21,7 @@
   "grove.dPort4|block": "Digital Port 4",
   "grove.dPort7|block": "Digital Port 7",
   "grove.dPort8|block": "Digital Port 8",
+  "grove.onButtonPress|block": "on button press",
   "grove.port2|block": "LED Port 2",
   "grove.port3|block": "LED Port 3",
   "grove.port4|block": "LED Port 4",

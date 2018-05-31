@@ -193,4 +193,17 @@ namespace grove {
     export const port7 = new LEDPi(7);
     //% fixedInstance block="LED Port 8"
     export const port8 = new LEDPi(8);
+
+    /**
+     * Button Press
+     */
+
+    //% blockId="btnPressBlock" block="on button press"
+    export function onButtonPress(body: () => void) {
+        invoke("getComponentValue", <GroveOptions>{
+            port : 4,
+            devType : "BUTTON",
+            mode : "DIGITAL"
+        });
+    }
 }

@@ -6,5 +6,6 @@
   "grove.LEDPi": "LEDpi",
   "grove.LEDPi.setLED": "Turn on an LED at port",
   "grove.PWMPort": "digPWMport",
-  "grove.PWMPort.setPWMPort": "Configure a digital (PWM) port"
+  "grove.PWMPort.setPWMPort": "Configure a digital (PWM) port",
+  "grove.onButtonPress": "Button Press"
 }
