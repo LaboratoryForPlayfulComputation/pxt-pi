@@ -230,12 +230,28 @@ namespace grove {
      * Rotary Angle
      */
 
-    //% blockId="rotaryBlock" block="get rotary angle sensor value at %port"
+    //% blockId="rotaryBlock" block="rotary angle sensor value at %port"
     export function rotary(port: number): number {
 
         invoke("getComponentValue", <GroveOptions>{
-            port : 0,
+            port : port,
             devType : "ROTARY_ANGLE",
+            mode : "ANALOG"
+        });
+        
+        return 0
+    }
+
+    /**
+     * Sound Sensor
+     */
+
+    //% blockId="soundBlock" block="sound sensor value at port %port"
+    export function sound(port: number): number {
+
+        invoke("getComponentValue", <GroveOptions>{
+            port : port,
+            devType : "SOUND",
             mode : "ANALOG"
         });
         

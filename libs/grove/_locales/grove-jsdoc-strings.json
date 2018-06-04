@@ -10,5 +10,6 @@
   "grove.PWMPort": "digPWMport",
   "grove.PWMPort.setPWMPort": "Configure a digital (PWM) port",
   "grove.onButtonPress": "Button Press",
-  "grove.rotary": "Rotary Angle"
+  "grove.rotary": "Rotary Angle",
+  "grove.sound": "Sound Sensor"
 }
