@@ -259,6 +259,22 @@ namespace grove {
     }
 
     /**
+     * Ultra Sonic Ranger
+     */
+
+    //% blockId="ultrasonicBlock" block="ultrasonic ranger value at port %port"
+    export function ultrasonic(port: number): number {
+
+        invoke("getComponentValue", <GroveOptions>{
+            port : port,
+            devType : "ULTRASONIC",
+            mode : "DIGITAL"
+        });
+        
+        return 0
+    }
+
+    /**
      * Button Press
      */
 
