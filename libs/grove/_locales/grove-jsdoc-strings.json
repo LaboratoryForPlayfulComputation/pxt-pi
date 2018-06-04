@@ -9,6 +9,7 @@
   "grove.LEDPi.setLED": "Turn on an LED at port",
   "grove.PWMPort": "digPWMport",
   "grove.PWMPort.setPWMPort": "Configure a digital (PWM) port",
+  "grove.moisture": "Moisture Sensor",
   "grove.onButtonPress": "Button Press",
   "grove.rotary": "Rotary Angle",
   "grove.sound": "Sound Sensor",

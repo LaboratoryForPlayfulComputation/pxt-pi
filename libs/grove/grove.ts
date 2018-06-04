@@ -242,6 +242,9 @@ namespace grove {
         return 0
     }
 
+    //% fixedInstance block="Rotary Port 0"
+    export const rotPort0 = rotary(0);
+
     /**
      * Sound Sensor
      */
@@ -269,6 +272,22 @@ namespace grove {
             port : port,
             devType : "ULTRASONIC",
             mode : "DIGITAL"
+        });
+        
+        return 0
+    }
+
+    /**
+     * Moisture Sensor
+     */
+
+    //% blockId="moistureBlock" block="moisture sensor value at port %port"
+    export function moisture(port: number): number {
+
+        invoke("getComponentValue", <GroveOptions>{
+            port : port,
+            devType : "MOISTURE",
+            mode : "ANALOG"
         });
         
         return 0
