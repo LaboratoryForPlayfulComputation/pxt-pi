@@ -63,7 +63,7 @@ namespace grove {
      */
     //% fixedInstances
     export class AnalogPort {
-        protected port : number;
+        public port : number;
         constructor(_port: number) {
             this.port = _port;
         }
@@ -92,7 +92,7 @@ namespace grove {
      */
     //% fixedInstances
     export class DigitalPort {
-        protected port : number;
+        public port : number;
         constructor(_port: number) {
             this.port = _port
         }
@@ -230,11 +230,11 @@ namespace grove {
      * Rotary Angle
      */
 
-    //% blockId="rotaryBlock" block="rotary angle sensor value at %port"
-    export function rotary(port: number): number {
+    //% blockId="rotaryBlock" block="rotary angle sensor value at %portObj"
+    export function rotary(portObj: AnalogPort): number {
 
         invoke("getComponentValue", <GroveOptions>{
-            port : port,
+            port : portObj.port,
             devType : "ROTARY_ANGLE",
             mode : "ANALOG"
         });
@@ -242,18 +242,15 @@ namespace grove {
         return 0
     }
 
-    //% fixedInstance block="Rotary Port 0"
-    export const rotPort0 = rotary(0);
-
     /**
      * Sound Sensor
      */
 
-    //% blockId="soundBlock" block="sound sensor value at port %port"
-    export function sound(port: number): number {
+    //% blockId="soundBlock" block="sound sensor value at port %portObj"
+    export function sound(portObj: AnalogPort): number {
 
         invoke("getComponentValue", <GroveOptions>{
-            port : port,
+            port : portObj.port,
             devType : "SOUND",
             mode : "ANALOG"
         });
@@ -265,11 +262,11 @@ namespace grove {
      * Ultra Sonic Ranger
      */
 
-    //% blockId="ultrasonicBlock" block="ultrasonic ranger value at port %port"
-    export function ultrasonic(port: number): number {
+    //% blockId="ultrasonicBlock" block="ultrasonic ranger value at port %portObj"
+    export function ultrasonic(portObj: DigitalPort): number {
 
         invoke("getComponentValue", <GroveOptions>{
-            port : port,
+            port : portObj.port,
             devType : "ULTRASONIC",
             mode : "DIGITAL"
         });
@@ -281,11 +278,11 @@ namespace grove {
      * Moisture Sensor
      */
 
-    //% blockId="moistureBlock" block="moisture sensor value at port %port"
-    export function moisture(port: number): number {
+    //% blockId="moistureBlock" block="moisture sensor value at port %portObj"
+    export function moisture(portObj: AnalogPort): number {
 
         invoke("getComponentValue", <GroveOptions>{
-            port : port,
+            port : portObj.port,
             devType : "MOISTURE",
             mode : "ANALOG"
         });
