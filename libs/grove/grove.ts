@@ -123,7 +123,7 @@ namespace grove {
      */
     //% fixedInstances
     export class PWMPort {
-        protected port : number;
+        public port : number;
         constructor(_port: number) {
             this.port = _port;
         }
@@ -291,13 +291,29 @@ namespace grove {
     }
 
     /**
+     * Button Value
+     */
+
+    //% blockId="btnValueBlock" block="button value at port %portObj"
+    export function buttonValue(portObj: DigitalPort): number {
+
+        invoke("getComponentValue", <GroveOptions>{
+            port : portObj.port,
+            devType : "BUTTON",
+            mode : "DIGITAL"
+        });
+        
+        return 0
+    }
+
+    /**
      * Button Press
      */
 
     //% blockId="btnPressBlock" block="on button press"
     export function onButtonPress(body: () => void) {
 
-        invoke("getComponentValue", <GroveOptions>{
+        invoke("watchComponentValue", <GroveOptions>{
             port : 4,
             devType : "BUTTON",
             mode : "DIGITAL"

@@ -18,6 +18,7 @@
   "grove.aPort1|block": "Analog Port 0",
   "grove.aPort2|block": "Analog Port 1",
   "grove.aPort3|block": "Analog Port 2",
+  "grove.buttonValue|block": "button value at port %portObj",
   "grove.dPort2|block": "Digital Port 2",
   "grove.dPort4|block": "Digital Port 4",
   "grove.dPort7|block": "Digital Port 7",
