@@ -13,8 +13,8 @@ namespace network {
 		network.sendPacket(to, "Test", p);
 	}
 
-	//% blockId="receiveBlock" block="on receive value"
-	export function onReceive(handler: (msg : number) => void) {
+	//% blockId="receiveBlock" block="on receive from %from value"
+	export function onReceive(from: string, handler: (msg : number) => void) {
 		network.handlePacket("Test", () => {
 			let p = network.getPacket("Test");
 			handler(network.getNumber(p, 0));
