@@ -3,6 +3,7 @@
   "grove.buzzerOn|block": "true",
   "grove.getMoistureValue|block": "true",
   "grove.getRotaryAngleValue|block": "true",
+  "grove.getUltrasonicRangerValue|block": "true",
   "grove.initialize|block": "true",
   "grove.ledOff|block": "true",
   "grove.ledOn|block": "true",

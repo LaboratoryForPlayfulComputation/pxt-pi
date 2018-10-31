@@ -19,4 +19,6 @@ namespace grove {
     export function buzzerOn(pin: number): void { }
     //%block
     export function buzzerOff(pin: number): void { }
+    //%block
+    export function getUltrasonicRangerValue(port: number): number { return 0; }
 }
