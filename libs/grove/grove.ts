@@ -6,19 +6,25 @@ namespace grove {
     //%block
     export function ledOff(port: number): void { }
     //%block
-    export function pollUltrasonicRanger(port: number): void { }
+    export function pollLongButtonPress(port: number, handler: () => void): void { }
     //%block
-    export function pollButtonPress(port: number): void { }
-    //%block
-    export function pollRotaryAngle(port: number): void { }
+    export function pollShortButtonPress(port: number, handler: () => void): void { }
     //%block
     export function getRotaryAngleValue(port: number): number { return 0; }
     //%block
-    export function getMoistureValue(port: number): number { return 0; }
+    export function getUltrasonicRangerValue(port: number): number { return 0; }
     //%block
     export function buzzerOn(pin: number): void { }
     //%block
     export function buzzerOff(pin: number): void { }
     //%block
-    export function getUltrasonicRangerValue(port: number): number { return 0; }
+    export function buzzerBeep(pin: number, ms: number): void { }
+    //%block
+    export function getLightValue(pin: number): number { return 0; }
+    //%block
+    export function getSoundValue(pin: number): number { return 0; }
+    //%block
+    export function getMoistureValue(port: number): number { return 0; }
+    //%block
+    export function getTemperatureValue(pin: number): number { return 0; }
 }

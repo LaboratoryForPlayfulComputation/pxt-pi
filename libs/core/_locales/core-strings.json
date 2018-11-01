@@ -21,7 +21,6 @@
   "loops.forever|block": "forever",
   "loops.pause|block": "pause (ms) %pause",
   "loops|block": "loops",
-  "parseFloat|block": "parse to number %text",
   "parseInt|block": "parse to integer %text",
   "pi|block": "pi",
   "{id:category}Array": "Array",
