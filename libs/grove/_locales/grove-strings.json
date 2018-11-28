@@ -1,13 +1,17 @@
 {
+  "grove.buzzerBeep|block": "true",
   "grove.buzzerOff|block": "true",
   "grove.buzzerOn|block": "true",
+  "grove.getLightValue|block": "true",
   "grove.getMoistureValue|block": "true",
   "grove.getRotaryAngleValue|block": "true",
+  "grove.getSoundValue|block": "true",
+  "grove.getTemperatureValue|block": "true",
+  "grove.getUltrasonicRangerValue|block": "true",
   "grove.initialize|block": "true",
   "grove.ledOff|block": "true",
   "grove.ledOn|block": "true",
-  "grove.pollButtonPress|block": "true",
-  "grove.pollRotaryAngle|block": "true",
-  "grove.pollUltrasonicRanger|block": "true",
+  "grove.pollLongButtonPress|block": "true",
+  "grove.pollShortButtonPress|block": "true",
   "{id:category}Grove": "Grove"
 }

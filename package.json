@@ -34,6 +34,6 @@
   },
   "dependencies": {
     "@types/peerjs": "0.0.29",
-    "pxt-core": "^3.18.10"
+    "pxt-core": "^3.22.22"
   }
 }
