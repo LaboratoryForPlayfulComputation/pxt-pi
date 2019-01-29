@@ -1,7 +1,0 @@
-{
-  "network.initializeBlock|block": "use network as %id",
-  "network.onNetworkError|block": "on network error",
-  "network.onReceive|block": "on receive from %from value",
-  "network.send|block": "send %msg to %to",
-  "{id:category}Network": "Network"
-}

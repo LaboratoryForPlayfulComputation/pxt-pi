@@ -1,0 +1,11 @@
+{
+  "netsimple.getId|block": "my network ID",
+  "netsimple.joinAs|block": "join the network with ID %id",
+  "netsimple.onConnectTo|block": "when I connect to %peer",
+  "netsimple.onReceiveStringFrom|block": "when I receive data from %peer",
+  "netsimple.onReceiveString|block": "when I receive any data",
+  "netsimple.sendString|block": "send %message to %peer",
+  "netsimple.start|block": "join the network with a random ID",
+  "netsimple.waitForConnection|block": "connect to %peer and wait",
+  "{id:category}Netsimple": "Netsimple"
+}

@@ -5,12 +5,12 @@
     "corepkg": "core",
     "cloud": {
         "workspace": false,
-        "packages": false
+        "packages": true
     },
     "bundleddirs": [
         "libs/core",
         "libs/grove",
-        "libs/network"
+        "libs/netsimple"
     ],
     "runtime": {
       "mathBlocks": true,
