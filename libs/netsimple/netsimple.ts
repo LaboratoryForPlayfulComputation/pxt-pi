@@ -1,4 +1,4 @@
-//% weight=10 color=#93a1a1 icon="\uf0c2"
+//% block="Simple Network" weight=10 color=#93a1a1 icon="\uf0c2"
 namespace netsimple {
     //% blockId="start" block="join the network with a random ID"
 	export function start(): void {}

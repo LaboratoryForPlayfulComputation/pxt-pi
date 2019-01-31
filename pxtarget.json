@@ -9,6 +9,7 @@
     },
     "bundleddirs": [
         "libs/core",
+        "libs/gpio",
         "libs/grove",
         "libs/netsimple"
     ],

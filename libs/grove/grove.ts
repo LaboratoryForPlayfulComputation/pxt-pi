@@ -1,3 +1,4 @@
+//% block="GrovePi" weight=30 color=#337020 icon="\uf1bb"
 namespace grove {
     //% blockId="ledOn" block="turn on LED on port %port"
     export function ledOn(port: number): void { }

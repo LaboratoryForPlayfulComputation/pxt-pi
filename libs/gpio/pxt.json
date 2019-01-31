@@ -1,0 +1,11 @@
+{
+    "name": "gpio",
+    "description": "Manage Raspberry Pi GPIO",
+    "files": [
+        "gpio.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}
