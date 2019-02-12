@@ -11,19 +11,20 @@
         "libs/core",
         "libs/gpio",
         "libs/grove",
-        "libs/netsimple"
+        "libs/netsimple",
+        "libs/sheets"
     ],
     "runtime": {
-      "mathBlocks": true,
-      "loopsBlocks": true,
-      "logicBlocks": true,
-      "variablesBlocks": true,
-      "textBlocks": true,
-      "functionBlocks": true,
-      "listsBlocks": true,
-      "onStartNamespace": "loops",
-      "onStartColor" : "#859900",
-      "onStartWeight" : 100
+        "mathBlocks": true,
+        "loopsBlocks": true,
+        "logicBlocks": true,
+        "variablesBlocks": true,
+        "textBlocks": true,
+        "functionBlocks": true,
+        "listsBlocks": true,
+        "onStartNamespace": "loops",
+        "onStartColor": "#859900",
+        "onStartWeight": 100
     },
     "simulator": {
         "autoRun": true
@@ -45,17 +46,17 @@
             }
         ],
         "showHomeScreen": true,
-        "homeScreenHero": "./static/hero.png",      
+        "homeScreenHero": "./static/hero.png",
         "invertedMenu": true,
-        "invertedToolbox" : false,
+        "invertedToolbox": false,
         "coloredToolbox": true,
-        "invertedMonaco" : true,
+        "invertedMonaco": true,
         "monacoToolbox": true,
-        "simAnimationEnter" : "fly right in",
-        "simAnimationExit" : "fly right out",
-        "highContrast" : true,
-        "extendEditor" : true,
-        "blocklyOptions": { 
+        "simAnimationEnter": "fly right in",
+        "simAnimationExit": "fly right out",
+        "highContrast": true,
+        "extendEditor": true,
+        "blocklyOptions": {
             "grid": {
                 "spacing": 45,
                 "length": 7,
@@ -64,22 +65,22 @@
             }
         },
         "blocklyColors": {
-            "insertionMarker" : "#FFFFFF",
+            "insertionMarker": "#FFFFFF",
             "insertionMarkerOpacity": 0.5
         },
         "monacoColors": {
             "editor.background": "#002b36"
         },
-        "blockColors" : {
-            "loops" : "#859900",
-            "logic" : "#2aa198",
-            "variables" : "#dc322f",
-            "math" : "#d33682",
-            "advanced" : "#586e75",
-            "functions" : "#268bd2",
-            "arrays" : "#cb4b16",
-            "text" : "#b58900"
+        "blockColors": {
+            "loops": "#859900",
+            "logic": "#2aa198",
+            "variables": "#dc322f",
+            "math": "#d33682",
+            "advanced": "#586e75",
+            "functions": "#268bd2",
+            "arrays": "#cb4b16",
+            "text": "#b58900"
         },
-        "allowPackageExtensions" : true
+        "allowPackageExtensions": true
     }
 }
