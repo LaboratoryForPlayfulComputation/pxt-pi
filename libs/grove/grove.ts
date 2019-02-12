@@ -1,30 +1,29 @@
+//% block="GrovePi" weight=30 color=#337020 icon="\uf1bb"
 namespace grove {
-    //%block
-    export function initialize(): void { }
-    //%block
+    //% blockId="ledOn" block="turn on LED on port %port"
     export function ledOn(port: number): void { }
-    //%block
+    //% blockId="ledOff" block="turn off LED on port %port"
     export function ledOff(port: number): void { }
-    //%block
+    //% blockId="pollLongButtonPress" block="when the button on port %port is long-pressed"
     export function pollLongButtonPress(port: number, handler: () => void): void { }
-    //%block
+    //% blockId="pollShortButtonPress" block="when the button on port %port is short-pressed"
     export function pollShortButtonPress(port: number, handler: () => void): void { }
-    //%block
+    //% blockId="getRotaryAngleValue" block="rotary angle sensor value on port %port"
     export function getRotaryAngleValue(port: number): number { return 0; }
-    //%block
+    //% blockId="getUltraSonicRangerValue" block="ultrasonic sensor value on port %port"
     export function getUltrasonicRangerValue(port: number): number { return 0; }
-    //%block
+    //% blockId="buzzerOn" block="turn on buzzer on port %port"
     export function buzzerOn(pin: number): void { }
-    //%block
+    //% blockId="buzzerOff" block="turn off buzzer on port %port"
     export function buzzerOff(pin: number): void { }
-    //%block
+    //% blockId="buzzerBeep" block="beep buzzer on port %port for %ms (ms)"
     export function buzzerBeep(pin: number, ms: number): void { }
-    //%block
+    //% blockId="getLightValue" block="light sensor value on port %port"
     export function getLightValue(pin: number): number { return 0; }
-    //%block
+    //% blockId="getSoundValue" block="sound sensor value on port %port"
     export function getSoundValue(pin: number): number { return 0; }
-    //%block
+    //% blockId="getMoistureValue" block="moisture sensor value on port %port"
     export function getMoistureValue(port: number): number { return 0; }
-    //%block
+    //% blockId="getTemperatureValue" block="temperature sensor value on port %port"
     export function getTemperatureValue(pin: number): number { return 0; }
 }

@@ -1,0 +1,14 @@
+{
+  "gpio.onPinChange|block": "when %pin changes",
+  "gpio.onPinHighToLow|block": "when %pin goes from HIGH to LOW",
+  "gpio.onPinLowToHigh|block": "when %pin goes from LOW to HIGH",
+  "gpio.read|block": "read %pin",
+  "gpio.setActiveHigh|block": "set %pin to be active high",
+  "gpio.setActiveLow|block": "set %pin to be active low",
+  "gpio.setDirection|block": "configure %pin as %direction",
+  "gpio.setEdge|block": "set %pin interrupt edge to %edge",
+  "gpio.watch|block": "on %pin edge",
+  "gpio.write|block": "set %pin to %value",
+  "{id:category}Gpio": "Gpio",
+  "{id:category}Pins": "Pins"
+}
