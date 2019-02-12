@@ -1,0 +1,11 @@
+{
+    "name": "sheets",
+    "description": "Create and edit google spreadshets",
+    "files": [
+        "sheets.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}

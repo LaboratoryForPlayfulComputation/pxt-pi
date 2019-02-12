@@ -1,0 +1,9 @@
+{
+  "sheets.Spreadsheet.appendRow|block": "to %sheet append %row",
+  "sheets.Spreadsheet.clear|block": "clear %sheet",
+  "sheets.Spreadsheet.readCell|block": "read from %sheet cell %cell",
+  "sheets.Spreadsheet.readRow|block": "read from %sheet row %row",
+  "sheets.createSheet|block": "create new sheet called %title",
+  "sheets.getSheet|block": "get sheet from id %id",
+  "{id:category}Sheets": "Sheets"
+}
