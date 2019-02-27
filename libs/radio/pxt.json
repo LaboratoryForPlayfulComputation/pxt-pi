@@ -1,0 +1,11 @@
+{
+    "name": "radio",
+    "description": "Interact with MicroBit radio",
+    "files": [
+        "radio.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}
