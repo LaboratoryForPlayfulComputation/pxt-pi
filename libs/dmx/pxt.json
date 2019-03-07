@@ -1,0 +1,11 @@
+{
+    "name": "dmx",
+    "description": "DMX blocks",
+    "files": [
+        "dmx.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}
