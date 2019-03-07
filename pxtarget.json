@@ -12,7 +12,8 @@
         "libs/gpio",
         "libs/grove",
         "libs/netsimple",
-        "libs/sheets"
+        "libs/sheets",
+        "libs/dmx"
     ],
     "runtime": {
         "mathBlocks": true,
