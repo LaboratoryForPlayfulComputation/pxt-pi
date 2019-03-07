@@ -1,12 +1,4 @@
 {
-  "Colors.Black|block": "black",
-  "Colors.Blue|block": "blue",
-  "Colors.Green|block": "green",
-  "Colors.Orange|block": "orange",
-  "Colors.Purple|block": "purple",
-  "Colors.Red|block": "red",
-  "Colors.White|block": "white",
-  "Colors.Yellow|block": "yellow",
   "dmx.colors|block": "%color",
   "dmx.createFixture|block": "create fixture %name| with %numChannels| channels",
   "dmx.rgb|block": "red %red|green %green|blue %blue",
@@ -16,6 +8,5 @@
   "dmx.updateFixtureChannel|block": "update fixture %name| channel %numChannels| to %value",
   "dmx.updateFixtureColor|block": "fixture %name| set color to %color",
   "dmx.updateFixtureMasterBrightness|block": "fixture %name| set brightness to %brightness",
-  "dmx|block": "DMX",
   "{id:category}Dmx": "Dmx"
 }
