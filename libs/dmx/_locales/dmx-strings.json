@@ -1,5 +1,7 @@
 {
   "dmx.createFixture|block": "create fixture %name| with %numChannels| channels",
+  "dmx.createPrefabFixture|block": "create fixture %name| %fixutreType=dmx_fixturetype",
+  "dmx.fixturetype|block": "%fixture",
   "dmx.send|block": "send dmx",
   "dmx.updateFixtureChannel|block": "update fixture %name| channel %numChannels| to %value",
   "{id:category}Dmx": "Dmx"
