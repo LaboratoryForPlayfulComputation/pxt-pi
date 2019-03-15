@@ -72,6 +72,7 @@ namespace dmx {
          * @param value eg: 255
          */        
         //% blockId=rgbfixture_setbrightness block="%dmx(light1) set brightness to %value" blockGap=8
+        //% value.min=0 value.max= 255
         setBrightness(value: number): void { }        
 
         /**
