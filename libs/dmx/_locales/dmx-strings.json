@@ -1,8 +1,11 @@
 {
-  "dmx.createFixture|block": "create fixture %name| with %numChannels| channels",
-  "dmx.createPrefabFixture|block": "create fixture %name| %fixutreType=dmx_fixturetype",
+  "dmx.Fixture.updateChannel|block": "%dmx(fixture1) update channel %channel| to %value",
+  "dmx.RGBFixture.setBrightness|block": "%dmx(light1) set brightness to %value",
+  "dmx.RGBFixture.setColor|block": "%dmx(light1) set color to %value",
+  "dmx.createFixture|block": "create fixture with %numChannels| channels",
+  "dmx.createRGBFixture|block": "create RGB light fixture %fixutreType=dmx_fixturetype",
   "dmx.fixturetype|block": "%fixture",
   "dmx.send|block": "send dmx",
-  "dmx.updateFixtureChannel|block": "update fixture %name| channel %numChannels| to %value",
+  "dmx|block": "DMX",
   "{id:category}Dmx": "Dmx"
 }
