@@ -5,6 +5,6 @@
   "dmx.RGBFixture.setBrightness|param|value": "eg: 255",
   "dmx.RGBFixture.setColor": "Set color of an RGB fixture",
   "dmx.RGBFixture.setColor|param|value": "eg: #FF0000",
-  "dmx.fixturetype": "Prefab fixture choices",
-  "dmx.fixturetype|param|fixture": "eg: '\"Baisun8ch\"'"
+  "dmx.createRGBFixture": "Create a new RGB light fixture",
+  "dmx.createRGBFixture|param|fixtureType": "of the RGB light, eg: RGBFixtureType.Baisun8ch"
 }

@@ -2,9 +2,10 @@
   "dmx.Fixture.updateChannel|block": "%dmx(fixture1) update channel %channel| to %value",
   "dmx.RGBFixture.setBrightness|block": "%dmx(light1) set brightness to %value",
   "dmx.RGBFixture.setColor|block": "%dmx(light1) set color to %value",
+  "dmx.RGBFixtureType.Baisun8ch|block": "Baisun8ch",
+  "dmx.RGBFixtureType.Coidak8ch|block": "Coidak8ch",
   "dmx.createFixture|block": "create fixture with %numChannels| channels",
-  "dmx.createRGBFixture|block": "create RGB light fixture %fixutreType=dmx_fixturetype",
-  "dmx.fixturetype|block": "%fixture",
+  "dmx.createRGBFixture|block": "create RGB light fixture %fixtureType",
   "dmx.send|block": "send dmx",
   "dmx|block": "DMX",
   "{id:category}Dmx": "Dmx"

@@ -1,38 +1,33 @@
 //% block="DMX" weight=30 color=#7142f4 icon="\uf140"
 namespace dmx {
 
+    export enum RGBFixtureType {
+        //% block="Baisun8ch"
+        Baisun8ch,
+        //% block="Coidak8ch"
+        Coidak8ch
+    }
+
     //% blockId=dmx_createfixture block="create fixture with %numChannels| channels" blockGap=8
     //% blockSetVariable=fixture1
     export function createFixture(numChannels: number): Fixture {
-        return new Fixture(numChannels);
-    }
-
-    //% blockId=dmx_creatergbfixture block="create RGB light fixture %fixutreType=dmx_fixturetype" blockGap=8
-    //% blockSetVariable=light1
-    export function createRGBFixture(fixtureType: string) : RGBFixture { 
-        return new RGBFixture(8, fixtureType); 
+        return new Fixture(); // just a stub
     }
 
     /**
-     * Prefab fixture choices
-     * @param fixture eg: '"Baisun8ch"'
+     * Create a new RGB light fixture
+     * @param fixtureType of the RGB light, eg: RGBFixtureType.Baisun8ch
      */
-    //% blockId=dmx_fixturetype block="%fixture" blockGap=8
-    //% blockHidden=true
-    //% colorSecondary="#FFFFFF"
-    //% fixture.fieldEditor="textdropdown" fixture.fieldOptions.decompileLiterals=true
-    //% fixture.fieldOptions.values='[["Baisun8ch"], ["Coidak8ch"]]'
-    export function fixturetype(fixture: string): string { 
-        return fixture;
-    } 
+    //% blockId=dmx_creatergbfixture block="create RGB light fixture %fixtureType" blockGap=8
+    //% blockSetVariable=light1    
+    export function createRGBFixture(fixtureType: RGBFixtureType) : RGBFixture { 
+        return new RGBFixture(); // just a stub
+    }
 
     //% blockNamespace=dmx
     export class Fixture {
-        _numChannels: number;
 
-        constructor(numChannels : number) {
-            this._numChannels = numChannels;
-        }
+        constructor() { }
 
         /**
          * Update value of a fixture channel
@@ -44,27 +39,9 @@ namespace dmx {
 
     //% blockNamespace=dmx
     export class RGBFixture extends Fixture {
-        _numChannels: number;
-        _redChannel: number;
-        _greenChannel: number;
-        _blueChannel: number;
-        _brightnessChannel: number;
 
-        constructor(numChannels: number, lightType: string) {
-            super(numChannels);
-            switch(lightType) {
-                case "Baisun8ch":
-                    this._brightnessChannel = 1;
-                    this._redChannel = 2;
-                    this._greenChannel = 3;
-                    this._blueChannel = 4;
-                  break;
-                default: // Coidak
-                    this._brightnessChannel = 4;
-                    this._redChannel = 5;
-                    this._greenChannel = 6;
-                    this._blueChannel = 7;
-              }
+        constructor() {
+            super();
         }
 
         /**
@@ -81,9 +58,13 @@ namespace dmx {
          */        
         //% blockId=rgbfixture_setcolor block="%dmx(light1) set color to %value" blockGap=8
         setColor(value: string): void { }   
+
     }
 
     //% blockId=dmx_send block="send dmx" blockGap=8
     export function send(): void { } 
 
 }
+
+
+
