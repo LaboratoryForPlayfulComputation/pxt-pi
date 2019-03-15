@@ -8,6 +8,29 @@ namespace dmx {
         Coidak8ch
     }
 
+    export enum Colors {
+        //% block=red
+        Red = 0xFF0000,
+        //% block=orange
+        Orange = 0xFFA500,
+        //% block=yellow
+        Yellow = 0xFFFF00,
+        //% block=green
+        Green = 0x00FF00,
+        //% block=blue
+        Blue = 0x0000FF,
+        //% block=indigo
+        Indigo = 0x4b0082,
+        //% block=violet
+        Violet = 0x8a2be2,
+        //% block=purple
+        Purple = 0xFF00FF,
+        //% block=white
+        White = 0xFFFFFF,
+        //% block=black
+        Black = 0x000000    
+    }
+
     //% blockId=dmx_createfixture block="create fixture with %numChannels| channels" blockGap=8
     //% blockSetVariable=fixture1
     export function createFixture(numChannels: number): Fixture {
@@ -54,15 +77,34 @@ namespace dmx {
 
         /**
          * Set color of an RGB fixture
-         * @param value eg: #FF0000
+         * @param value 
          */        
-        //% blockId=rgbfixture_setcolor block="%dmx(light1) set color to %value" blockGap=8
-        setColor(value: string): void { }   
+        //% blockId=rgbfixture_setcolor block="%dmx(light1) set color to %value=dmx_colors" blockGap=8
+        setColor(value: number): void { }   
 
     }
 
     //% blockId=dmx_send block="send dmx" blockGap=8
     export function send(): void { } 
+
+    /**
+     * Gets the RGB value of a known color
+    */
+    //% weight=2 blockGap=8
+    //% blockId="dmx_colors" block="%color"
+    export function colors(color: Colors): number {
+        return color;
+    }
+
+        /**
+     * Converts red, green, blue channels into a RGB color
+     * @param red value of the red channel between 0 and 255. eg: 255
+     * @param green value of the green channel between 0 and 255. eg: 255
+     * @param blue value of the blue channel between 0 and 255. eg: 255
+     */
+    //% blockId="dmx_rgb" block="red %red|green %green|blue %blue"
+    //% red.min=0 red.max=255 green.min=0 green.max=255 blue.min=0 blue.max=255
+    export function rgb(red: number, green: number, blue: number): number { return 0; }
 
 }
 

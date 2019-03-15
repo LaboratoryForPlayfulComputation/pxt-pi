@@ -4,7 +4,11 @@
   "dmx.RGBFixture.setBrightness": "Set brightness of an RGB fixture",
   "dmx.RGBFixture.setBrightness|param|value": "eg: 255",
   "dmx.RGBFixture.setColor": "Set color of an RGB fixture",
-  "dmx.RGBFixture.setColor|param|value": "eg: #FF0000",
+  "dmx.colors": "Gets the RGB value of a known color",
   "dmx.createRGBFixture": "Create a new RGB light fixture",
-  "dmx.createRGBFixture|param|fixtureType": "of the RGB light, eg: RGBFixtureType.Baisun8ch"
+  "dmx.createRGBFixture|param|fixtureType": "of the RGB light, eg: RGBFixtureType.Baisun8ch",
+  "dmx.rgb": "Converts red, green, blue channels into a RGB color",
+  "dmx.rgb|param|blue": "value of the blue channel between 0 and 255. eg: 255",
+  "dmx.rgb|param|green": "value of the green channel between 0 and 255. eg: 255",
+  "dmx.rgb|param|red": "value of the red channel between 0 and 255. eg: 255"
 }
