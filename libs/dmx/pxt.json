@@ -7,5 +7,10 @@
     "public": true,
     "dependencies": {
         "core": "file:../core"
+    },
+    "extension": {
+        "namespace": "dmx",
+        "label": "DMX Editor",
+        "localUrl": "./dmx-extension/index.html"
     }
 }
