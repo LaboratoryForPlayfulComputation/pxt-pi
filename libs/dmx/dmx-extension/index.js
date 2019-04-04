@@ -4,7 +4,7 @@
  * Author: Annie Kelly
  */
 
-var socket = io();                // creates web socket connection to server
+//var socket = io();                // creates web socket connection to server
 
 var universe;                     // for now you can edit one DMX512 universe at a time
 var patterns = [];                // keeps track of patterns (animations) users have created

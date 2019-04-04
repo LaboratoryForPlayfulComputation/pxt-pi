@@ -82,6 +82,9 @@
             "arrays": "#cb4b16",
             "text": "#b58900"
         },
-        "allowPackageExtensions": true
+        "allowPackageExtensions": true,
+        "experiments": [
+            "allowPackageExtensions"
+        ]
     }
 }
