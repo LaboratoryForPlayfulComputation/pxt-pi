@@ -117,7 +117,7 @@ namespace pxsim {
                         };
                         this.requests[id] = r;
                         ws.send(JSON.stringify(req));
-                        console.log('queueRequestAsync');
+                        console.info('queueRequestAsync');
                     })
                     else return undefined;
                 });

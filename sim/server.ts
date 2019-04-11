@@ -28,7 +28,7 @@ namespace pxsim.server {
 
         return new Promise<WebSocket>((resolve, reject) => {
             ws.addEventListener('open', () => {
-                console.log('PI socket opened...')
+                console.info('PI socket opened...')
                 resolve(ws);
             }, false);
         })

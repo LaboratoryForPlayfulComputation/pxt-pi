@@ -122,8 +122,8 @@ namespace pxsim.console {
      * Print out message
      */
     //% 
-    export function log(msg:string) {
-        logMsg("CONSOLE: " + msg)
+    export function info(msg:string) {
+        logMsg("CONSOLE (INFO): " + msg)
         // why doesn't that work?
         board().writeSerial(msg + "\n")
     }

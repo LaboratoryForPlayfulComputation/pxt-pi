@@ -83,8 +83,8 @@ declare namespace console {
      * Print out message
      */
     //%
-    //% shim=console::log
-    function log(msg: string): void;
+    //% shim=console::info
+    function info(msg: string): void;
 
 }
 

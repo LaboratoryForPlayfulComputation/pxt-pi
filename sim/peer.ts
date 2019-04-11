@@ -41,7 +41,7 @@ namespace pxsim.peer {
         conn.on('data', function(data: any){
             let eventQueue = receipts[data["key"]];
 
-            console.log("Received: " + data["key"]);
+            console.info("Received: " + data["key"]);
 
             if (eventQueue != undefined) {
                 eventQueue.queue[eventQueue.max] = data["data"];
@@ -148,7 +148,7 @@ namespace pxsim.peer {
     export function onReceive(key: string, handler: RefAction) {
         let eventQueue = receipts[key];
 
-        console.log("Listening: " + key);
+        console.info("Listening: " + key);
 
         if (eventQueue == undefined) {
             receipts[key] = {
