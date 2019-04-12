@@ -36,6 +36,18 @@ namespace pxsim.loops {
     export function pauseAsync(ms: number) {
         return Promise.delay(ms)
     }
+
+    /**
+     * Repeats the code forever in the background with a specified pause (in milliseconds) between
+     * repetitions.
+     * 
+     * @param interval the amount of time in milliseconds to wait between repetitions
+     * @param body the code to repeat
+     */
+    //% blockId="onInterval" block="repeat every %interval ms"
+    export function onInterval(ms: number, body: RefAction) {
+
+    }
 }
 
 namespace pxsim.network {

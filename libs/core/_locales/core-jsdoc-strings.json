@@ -117,6 +117,8 @@
   "console.info": "Print out message",
   "loops.forever": "Repeats the code forever in the background. On each iteration, allows other code to run.",
   "loops.forever|param|body": "the code to repeat",
+  "loops.onInterval": "Repeats the code forever in the background with a specified pause (in milliseconds) between\nrepetitions.\n* @param interval the amount of time in milliseconds to wait between repetitions",
+  "loops.onInterval|param|body": "the code to repeat",
   "loops.pause": "Pause for the specified time in milliseconds",
   "loops.pause|param|ms": "how long to pause for, eg: 100, 200, 500, 1000, 2000",
   "parseFloat": "Convert a string to a number.",

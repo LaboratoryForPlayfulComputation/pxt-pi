@@ -12,7 +12,9 @@
         "libs/gpio",
         "libs/grove",
         "libs/netsimple",
-        "libs/sheets"
+        "libs/sheets",
+        "libs/webcam",
+        "libs/timelapse"
     ],
     "runtime": {
         "mathBlocks": true,

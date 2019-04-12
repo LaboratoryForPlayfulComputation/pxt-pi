@@ -19,6 +19,7 @@
   "String|block": "String",
   "console|block": "console",
   "loops.forever|block": "forever",
+  "loops.onInterval|block": "repeat every %interval ms",
   "loops.pause|block": "pause (ms) %pause",
   "loops|block": "loops",
   "parseFloat|block": "parse to number %text",
