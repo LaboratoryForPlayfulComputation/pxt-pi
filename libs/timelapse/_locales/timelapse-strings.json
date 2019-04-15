@@ -1,0 +1,4 @@
+{
+  "timelapse.uploadImage|block": "upload %image to my timelapse",
+  "{id:category}Timelapse": "Timelapse"
+}

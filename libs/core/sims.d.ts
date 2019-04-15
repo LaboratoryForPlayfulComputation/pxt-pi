@@ -29,6 +29,17 @@ declare namespace loops {
     //% shim=loops::pauseAsync promise
     function pause(ms: number): void;
 
+    /**
+     * Repeats the code forever in the background with a specified pause (in milliseconds) between
+     * repetitions.
+     * 
+     * @param interval the amount of time in milliseconds to wait between repetitions
+     * @param body the code to repeat
+     */
+    //% blockId="onInterval" block="repeat every %interval ms"
+    //% shim=loops::onInterval
+    function onInterval(ms: number, body: () => void): void;
+
 }
 declare namespace network {
     //%

@@ -1,0 +1,12 @@
+{
+    "name": "timelapse",
+    "description": "Upload images to the timelapse server",
+    "files": [
+        "timelapse.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core",
+        "webcam": "file:../webcam"
+    }
+}

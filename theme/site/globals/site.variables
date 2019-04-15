@@ -41,15 +41,26 @@
 @cyan      :      #2aa198;
 @green     :      #859900;
 
+/*
+ * New blockytalky colors
+ */
+
+@primary    :  #008BF8;
+@background :  #FBFBFF;
+@darkBackground : #EBEBEF;
+@body       :  #040F16;
+@neutral    :  #0B4F6C;
+@accent     :  #B90C09;
+
 /*-------------------
     Brand Colors
 --------------------*/
 
-@primaryColor        : @blue;
-@secondaryColor      : @base0;
+@primaryColor        : @primary;
+@secondaryColor      : @neutral;
 
 @lightPrimaryColor   : fade(@primaryColor, 90%);
-@lightSecondaryColor : @base1;
+@lightSecondaryColor : fade(@secondaryColor, 90%);
 
 /*******************************
      PXT Variables
@@ -59,7 +70,7 @@
    Menu
 --------------------*/
 
-@mainMenuBackground: #c7053d;
+@mainMenuBackground: @primaryColor;
 @mainMenuInvertedBackground: @mainMenuBackground;
 @mainMenuTutorialBackground: @orange;
 
@@ -79,11 +90,11 @@
    Background
 --------------------*/
 
-@simulatorBackground: @base2;
-@editorToolsBackground: @base3;
-@blocklySvgColor: @base03;
+@simulatorBackground: @darkBackground;
+@editorToolsBackground: @background;
+@blocklySvgColor: @darkBackground;
 
-@homeScreenBackground: @base2;
+@homeScreenBackground: @darkBackground;
 
 /*-------------------
    Full screen
@@ -96,20 +107,20 @@
    Editor
 --------------------*/
 
-@blocklyToolboxColor: @base3;
-@trashIconColor: @primaryColor;
+@blocklyToolboxColor: @background;
+@trashIconColor: @accent;
 
 /*-------------------
    Blockly
 --------------------*/
 
-@blocklyFont: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+@blocklyFont: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Source Code Pro', monospace;
 
 /*-------------------
    Flyout
 --------------------*/
 
-@flyoutLabelColor: @base2;
-@blocklyFlyoutColor: @base02;
+@flyoutLabelColor: @darkBackground;
+@blocklyFlyoutColor: @neutral;
 @blocklyFlyoutColorOpacity: 0.9;
 @monacoFlyoutColor: fade(@blocklyFlyoutColor, 90%);
