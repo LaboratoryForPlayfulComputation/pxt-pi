@@ -13,7 +13,7 @@
         "libs/grove",
         "libs/netsimple",
         "libs/sheets",
-        "libs/dmx"
+        "libs/dmx",
         "libs/webcam",
         "libs/timelapse"
     ],
@@ -91,7 +91,7 @@
         "allowPackageExtensions": true,
         "experiments": [
             "allowPackageExtensions"
-        ]
+        ],
         "downloadText" : "Run Program",
         "downloadIcon" : "play"
     }
