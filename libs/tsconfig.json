@@ -7,5 +7,8 @@
         "rootDir": ".",
         "newLine": "LF",
         "sourceMap": true
-    }
+    },
+    "types": [
+        "webrtc"
+    ]
 }
