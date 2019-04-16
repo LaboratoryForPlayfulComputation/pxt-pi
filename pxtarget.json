@@ -13,12 +13,9 @@
         "libs/grove",
         "libs/netsimple",
         "libs/sheets",
-<<<<<<< HEAD
         "libs/dmx"
-=======
         "libs/webcam",
         "libs/timelapse"
->>>>>>> 850f5a3e0392a79d10a4cb7adac3ad0d215a40c7
     ],
     "runtime": {
         "mathBlocks": true,
@@ -92,13 +89,10 @@
             "arrays": "#E65722"
         },
         "allowPackageExtensions": true,
-<<<<<<< HEAD
         "experiments": [
             "allowPackageExtensions"
         ]
-=======
         "downloadText" : "Run Program",
         "downloadIcon" : "play"
->>>>>>> 850f5a3e0392a79d10a4cb7adac3ad0d215a40c7
     }
 }
