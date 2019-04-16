@@ -13,7 +13,12 @@
         "libs/grove",
         "libs/netsimple",
         "libs/sheets",
+<<<<<<< HEAD
         "libs/dmx"
+=======
+        "libs/webcam",
+        "libs/timelapse"
+>>>>>>> 850f5a3e0392a79d10a4cb7adac3ad0d215a40c7
     ],
     "runtime": {
         "mathBlocks": true,
@@ -22,13 +27,17 @@
         "variablesBlocks": true,
         "textBlocks": true,
         "functionBlocks": true,
+        "functionsOptions": {
+            "useNewFunctions" : true
+        },
         "listsBlocks": true,
         "onStartNamespace": "loops",
-        "onStartColor": "#859900",
+        "onStartColor": "#00AA00",
         "onStartWeight": 100
     },
-    "simulator": {
-        "autoRun": true
+    "disableSimulator" : true,
+    "simulator" : {
+        "autoRun" : true
     },
     "appTheme": {
         "logoUrl": "https://github.com/Microsoft/pxt-sample",
@@ -51,7 +60,7 @@
         "invertedMenu": true,
         "invertedToolbox": false,
         "coloredToolbox": true,
-        "invertedMonaco": true,
+        "invertedMonaco": false,
         "monacoToolbox": true,
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
@@ -61,7 +70,7 @@
             "grid": {
                 "spacing": 45,
                 "length": 7,
-                "colour": "rgba(189, 195, 199, 0.30)",
+                "colour": "#00000020",
                 "snap": true
             }
         },
@@ -70,21 +79,26 @@
             "insertionMarkerOpacity": 0.5
         },
         "monacoColors": {
-            "editor.background": "#002b36"
+            "editor.background": "#EBEBEF"
         },
         "blockColors": {
-            "loops": "#859900",
-            "logic": "#2aa198",
-            "variables": "#dc322f",
-            "math": "#d33682",
-            "advanced": "#586e75",
-            "functions": "#268bd2",
-            "arrays": "#cb4b16",
-            "text": "#b58900"
+            "logic": "#00A4A6",
+            "loops": "#00AA00",
+            "math": "#9400D3",
+            "variables": "#DC143C",
+            "text": "#B8860B",
+            "advanced": "#00272B",
+            "functions": "#3455DB",
+            "arrays": "#E65722"
         },
         "allowPackageExtensions": true,
+<<<<<<< HEAD
         "experiments": [
             "allowPackageExtensions"
         ]
+=======
+        "downloadText" : "Run Program",
+        "downloadIcon" : "play"
+>>>>>>> 850f5a3e0392a79d10a4cb7adac3ad0d215a40c7
     }
 }

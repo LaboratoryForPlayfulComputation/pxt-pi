@@ -36,6 +36,18 @@ namespace pxsim.loops {
     export function pauseAsync(ms: number) {
         return Promise.delay(ms)
     }
+
+    /**
+     * Repeats the code forever in the background with a specified pause (in milliseconds) between
+     * repetitions.
+     * 
+     * @param interval the amount of time in milliseconds to wait between repetitions
+     * @param body the code to repeat
+     */
+    //% blockId="onInterval" block="repeat every %interval ms"
+    export function onInterval(ms: number, body: RefAction) {
+
+    }
 }
 
 namespace pxsim.network {
@@ -122,8 +134,8 @@ namespace pxsim.console {
      * Print out message
      */
     //% 
-    export function log(msg:string) {
-        logMsg("CONSOLE: " + msg)
+    export function info(msg:string) {
+        logMsg("CONSOLE (INFO): " + msg)
         // why doesn't that work?
         board().writeSerial(msg + "\n")
     }

@@ -1,0 +1,11 @@
+{
+    "name": "webcam",
+    "description": "Take pictures with an attached webcam!",
+    "files": [
+        "webcam.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}
