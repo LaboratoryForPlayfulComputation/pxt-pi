@@ -17,16 +17,19 @@ function layoutToJson() {
 
 function patternsToJson() {
   var patternsList = [];
-
-  for (var p = 0; p < patterns.length; p++) {
+  for (var p = 0; p < patterns.length; p++) { // patterns is a list of pattern objects
     var patternJson = {name: '', fixtureInfo: []};
-    for (var f = 0; f < patterns[p].fixtureInfo.length; f++) {
-      var fixtureInfoJson = {};
-      patternJson['fixtureInfo'].push(fixtureInfoJson);
+    for (var s = 0; s < patterns[p]["scenes"].length; s++){
+      console.log(patterns[p]["scenes"][s]);
+      for (var f = 0; f < patterns[p]["scenes"][s]["fixtureInfo"].length; f++){
+        var fixtureInfoJson = patterns[p]["scenes"][s]["fixtureInfo"][f];
+        patternJson['fixtureInfo'].push(fixtureInfoJson);        
+      }
     }
     patternsList.push(patternJson);
   }
-
+  usercode["patterns"] = patternsList; // usercode for generating blocks
+  //console.log({patterns: patternsList});
   return {patterns: patternsList};
 }
 

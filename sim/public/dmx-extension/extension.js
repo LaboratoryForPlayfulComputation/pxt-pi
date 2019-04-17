@@ -53,15 +53,12 @@ function sendRequest(action, body) {
 function saveUserCode(fileName, out) {     
     console.log("saving user code...");       
     usercode[fileName.toLowerCase()] = out;
+    usercode["patterns"] = patternsToJson();
     var ts = renderUserCode();
     sendRequest("extwritecode", {
         code: ts,
         json: JSON.stringify(usercode, null, 2)
     }) 
-    /*preview.innerText = 'Animation saved...';
-    output.innerText = ts;
-    outputext.style.display = 'block';
-    selectOutput();*/
 }
 
 document.onreadystatechange = function (er) {
@@ -70,7 +67,7 @@ document.onreadystatechange = function (er) {
     sendRequest("extinit")
 }
 
-saveUserCode("test", "test");
+//saveUserCode("test", "test");
 
 
 
@@ -81,15 +78,37 @@ namespace dmx { ` +
 
     `
     export enum Animations {
+        //% block="test"
+        test
     `
+    Object.keys(usercode).forEach(function(k){
+        if (k == "patterns") {
+            var numKeys = Object.keys(usercode[k]).length;
+            var count = 0;
+            Object.keys(usercode[k]).forEach(function(m){
+                if (count == numKeys-1) {
+                    ts += 
+                    `,
+                    //% block="test${count}"`+
+                    `
+                    test${count}`
+                } else {
+                    ts += 
+                    `//% block="test${count}"`+
+                    `
+                    test${count},
+                    `
+                }
+            count += 1;
+            });
+        }
+    });
+    ts += 
+    `
+    }`
 
     ts += 
-    `//% block="test"`+
     `
-    test` +
-    `
-    }
-    
     /*
     * Dmx test block
     */
@@ -109,7 +128,7 @@ namespace dmx { ` +
         /*
         * Dmx play animation test block
         * @param dmx layout to use, eg: dmx(rig)
-        * @param animation to loop, eg: Animation.test
+        * @param animation to loop
         */
         //% blockId="dmx_playanimation" block="%dmx play animation %animation"  
         export function playAnimationTest(dmx: Layout, animation: Animations): void {}
@@ -117,7 +136,7 @@ namespace dmx { ` +
         /*
         * Dmx loop animation test block
         * @param dmx layout to use, eg: dmx(rig)
-        * @param animation to play, eg: Animation.test
+        * @param animation to play
         */
         //% blockId="dmx_loopanimation" block="%dmx loop animation %animation"  
         export function loopAnimationTest(dmx: Layout, animation: Animations): void {}
@@ -125,7 +144,7 @@ namespace dmx { ` +
         /*
         * Dmx stop animation test block
         * @param dmx layout to use, eg: dmx(rig)
-        * @param animation to stp[], eg: Animation.test
+        * @param animation to stop
         */
         //% blockId="dmx_stopanimation" block="%dmx stop animation %animation"  
         export function stopAnimationTest(dmx: Layout, animation: Animations): void {}`         

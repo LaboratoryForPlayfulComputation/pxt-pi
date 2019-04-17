@@ -76,6 +76,7 @@ class Pattern {
       scene.fixtureInfo.push(fixtureJson);
     }
     this.scenes.push(scene);
+    saveUserCode("test", "test");
   }
     
   removeScene(sceneNumber) {

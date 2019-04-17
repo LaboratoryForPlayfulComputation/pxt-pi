@@ -66,6 +66,7 @@ class Fixture {
   updateChannel(channel, newValue) {
     if (this.channels[channel])
       this.channels[channel].value = newValue;
+    saveUserCode("test", "test");
   }
 
   initializeChannels() {
