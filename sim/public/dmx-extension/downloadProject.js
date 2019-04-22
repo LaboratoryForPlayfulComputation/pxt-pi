@@ -28,9 +28,13 @@ function patternsToJson() {
     }
     patternsList.push(patternJson);
   }
-  usercode["patterns"] = patternsList; // usercode for generating blocks
+  //usercode["patterns"] = patternsList; // usercode for generating blocks
   //console.log({patterns: patternsList});
   return {patterns: patternsList};
+}
+
+function patternsToOrderedChannelDataJson() {
+  
 }
 
 function saveProject() {

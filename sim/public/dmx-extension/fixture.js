@@ -141,10 +141,12 @@ class FixtureIn {
 
     updateConnectedTo(thing) {
         this.connectedTo = thing;
+        saveUserCode("test", "test");
     }
 
     updateConnectedBy(thing) {
         this.connectedBy = thing;
+        saveUserCode("test", "test");
     } 
     
 }
@@ -209,10 +211,12 @@ class FixtureOut {
 
     updateConnectedTo(thing) {
         this.connectedTo = thing;
+        saveUserCode("test", "test");
     }
 
     updateConnectedBy(thing) {
         this.connectedBy = thing;
+        saveUserCode("test", "test");
     }   
      
 }

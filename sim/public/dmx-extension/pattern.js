@@ -52,8 +52,6 @@ class Pattern {
       this.scenesElement['elt'].appendChild(this.scenesListElement['elt']);
 
       this.scenesElement.hide();
-
-
   }
 
   /* to do: need to check and make sure rig is consistently connected and set up */
