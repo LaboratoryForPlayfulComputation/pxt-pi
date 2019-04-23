@@ -37,6 +37,7 @@ namespace dmx {
      */
     //% blockId=dmx_creatergbfixture block="create RGB light fixture %fixtureType" blockGap=8
     //% blockSetVariable=light1    
+    //% advanced=true
     //% weight=100
     export function createRGBFixture(fixtureType: RGBFixtureType) : RGBFixture { 
         return new RGBFixture(); // just a stub
@@ -44,6 +45,7 @@ namespace dmx {
 
     //% blockId=dmx_createfixture block="create fixture with %numChannels| channels" blockGap=8
     //% blockSetVariable=fixture1
+    //% advanced=true
     //% weight=99
     export function createFixture(numChannels: number): Fixture {
         return new Fixture(); // just a stub
@@ -59,6 +61,7 @@ namespace dmx {
          * @param channel eg: 1
          */        
         //% blockId=fixture_updatechannel block="%dmx(fixture1) update channel %channel| to %value" blockGap=8
+        //% advanced=true
         //% weight=96
         updateChannel(channel: number, value: number): void { }        
     }
@@ -76,6 +79,7 @@ namespace dmx {
          */        
         //% blockId=rgbfixture_setbrightness block="%dmx(light1) set brightness to %value" blockGap=8
         //% value.min=0 value.max= 255
+        //% advanced=true
         //% weight=98
         setBrightness(value: number): void { }        
 
@@ -84,12 +88,14 @@ namespace dmx {
          * @param value 
          */        
         //% blockId=rgbfixture_setcolor block="%dmx(light1) set color to %value=dmx_colors" blockGap=8
+        //% advanced=true
         //% weight=97
         setColor(value: number): void { }   
 
     }
 
     //% blockId=dmx_send block="send dmx" blockGap=8
+    //% advanced=true
     export function send(): void { } 
 
     /**
@@ -109,6 +115,7 @@ namespace dmx {
      */
     //% blockId="dmx_rgb" block="red %red|green %green|blue %blue"
     //% red.min=0 red.max=255 green.min=0 green.max=255 blue.min=0 blue.max=255
+    //% weight=1 blockGap=8
     export function rgb(red: number, green: number, blue: number): number { return 0; }
 
 }

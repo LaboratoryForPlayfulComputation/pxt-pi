@@ -4,7 +4,6 @@ var idToType = {};
 var usercode = {};
 usercode["layout"] = {};
 usercode["scenes"] = {};
-usercode["animations"] = {test1: [], test2: [], test3: []};
 usercode["patterns"] = {};
 
 function receiveMessage(ev) {
@@ -97,7 +96,7 @@ namespace dmx { ` +
         test        
     }
 
-    export enum Animations {
+    export enum Patterns {
     `
         for (var i = 0; i < usercode["patterns"].length; i++) {
             var obj = usercode["patterns"][i];
@@ -129,6 +128,7 @@ namespace dmx { ` +
     */
     //% blockId="dmx_layout" block="dmx layout"  
     //% blockSetVariable=rig 
+    //% hidden=true
     export function dmxlayout(): Layout {
         return new Layout();
     }
@@ -145,26 +145,27 @@ namespace dmx { ` +
         * @param dmx layout to use, eg: dmx(rig)
         * @param scene to show
         */
-        //% blockId="dmx_showscene" block="%dmx show scene %scene"  
-        export function showScene(dmx: Layout, scene: Scenes): void {`
+        //% blockId="dmx_showscene" block="show scene %scene"  
+        export function showScene(scene: Scenes): void {`
 
     ts +=
         `}
 
         /*
-        * Dmx play animation test block
+        * Dmx play pattern test block
         * @param dmx layout to use, eg: dmx(rig)
-        * @param animation to loop
+        * @param pattern to loop
         * @param timeScale
         */
-        //% blockId="dmx_playanimation" block="%dmx play animation %animation| at %timeScale speed"  
-        export function playAnimationTest(dmx: Layout, animation: Animations, timeScale: number): void {
+        //% blockId="dmx_playpattern" block="play pattern %pattern| at %timeScale speed"  
+        export function playPattern(pattern: Patterns, timeScale: number): void {
             var waittime = 0;
+            console.log(pattern);
             `
 
     ts += `
-    for (var i = 0; i < metadata["patterns"][animation].length; i++) {
-        var data = metadata["patterns"][animation][i];
+    for (var i = 0; i < metadata["patterns"][pattern].length; i++) {
+        var data = metadata["patterns"][pattern][i];
         var time = data["time"];
         setTimeout(() => {dmxController.update("pidmx", data["channelData"])}, waittime);\n
         waittime += time;
@@ -173,25 +174,25 @@ namespace dmx { ` +
     ts += `}
 
         /*
-        * Dmx loop animation test block
+        * Dmx loop pattern test block
         * @param dmx layout to use, eg: dmx(rig)
-        * @param animation to play
+        * @param pattern to play
         */
-        //% blockId="dmx_loopanimation" block="%dmx loop animation %animation"  
-        export function loopAnimationTest(dmx: Layout, animation: Animations): void {
+        //% blockId="dmx_looppattern" block="loop pattern %pattern"  
+        export function loopPattern(pattern: Patterns): void {
         var waittime = 0;
         `
 
     ts += `
-        for (var i = 0; i < metadata["patterns"][animation].length; i++) {
-            var data = metadata["patterns"][animation][i];
+        for (var i = 0; i < metadata["patterns"][pattern].length; i++) {
+            var data = metadata["patterns"][pattern][i];
             var time = data["time"];
             setTimeout(() => {dmxController.update("pidmx", data["channelData"])}, waittime);\n
             waittime += time;
         }
         var totalwaittime = waittime;
-        for (var i = 0; i < metadata["patterns"][animation].length; i++) {
-            var data = metadata["patterns"][animation][i];
+        for (var i = 0; i < metadata["patterns"][pattern].length; i++) {
+            var data = metadata["patterns"][pattern][i];
             var time = data["time"];
             setInterval(() => {dmxController.update("pidmx", data["channelData"])}, totalwaittime);\n
             waittime += time;
@@ -201,12 +202,12 @@ namespace dmx { ` +
     ts += `}
         
         /*
-        * Dmx stop animation test block
+        * Dmx stop pattern test block
         * @param dmx layout to use, eg: dmx(rig)
-        * @param animation to stop
+        * @param pattern to stop
         */
-        //% blockId="dmx_stopanimation" block="%dmx stop animation %animation"  
-        export function stopAnimationTest(dmx: Layout, animation: Animations): void {}
+        //% blockId="dmx_stoppattern" block="stop pattern %pattern"  
+        export function stopPattern(pattern: Patterns): void {}
 
         /*
         * Dmx update fixture
@@ -214,16 +215,16 @@ namespace dmx { ` +
         * @param fixture name
         * @param value color
         */
-        //% blockId="dmx_updatefixture" block="%dmx set %fixture| to %value=dmx_colors"  
-        export function updateFixture(dmx: Layout, fixture: string, value: number): void {}             
+        //% blockId="dmx_updatefixture" block="set %fixture| to %value=dmx_colors"  
+        export function updateFixture(fixture: string, value: number): void {}             
 
         /*
         * Dmx blackout test block
         * @param dmx layout to use, eg: dmx(rig)
         * @param blackout
         */
-        //% blockId="dmx_blackout" block="%dmx blackout"  
-        export function blackout(dmx: Layout): void {
+        //% blockId="dmx_blackout" block="blackout"  
+        export function blackout(): void {
             dmxController.update('pidmx', ` 
             
         ts +=  JSON.stringify(generateBlackoutJSON());

@@ -62,7 +62,7 @@ function loopPatternDMX(pattern) {
 }
 
 function getAnimationJson(activePattern) {
-  var patternJson = {};
+  var patternJson = [];
   var node = universe.dmxController.out.connectedTo.parent;
   while (node) {
     var nodeName = node.name;
@@ -80,7 +80,7 @@ function getAnimationJson(activePattern) {
           startingAddress += fixture['channels'].length;
         }
       }
-      patternJson[s] = {channelData: channels, time: scene.length};
+      patternJson.push({channelData: channels, time: scene.length});
     }
     if (node.out && node.out.connectedTo && node.out.connectedTo.parent) {
         node = node.out.connectedTo.parent;
