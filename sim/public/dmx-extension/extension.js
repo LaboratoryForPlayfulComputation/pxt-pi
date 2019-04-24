@@ -90,9 +90,12 @@ function renderUserCode() {
 
 namespace dmx { ` +
     `
-    export const metadata = ${JSON.stringify(usercode)};
+    //console.info("test: " + _core.hacks.nodedmx);
 
+    export const metadata = ${JSON.stringify(usercode)};
+    export const dmxcontroller = new _core.hacks.nodedmx();
     export const intervalIDs = {};
+    console.info("test: " + dmxcontroller);
 
     export enum Scenes {
         //% block="test"
@@ -175,10 +178,9 @@ namespace dmx { ` +
         if (patternname == patternName){
             for (var j = 0; j < patternobj[patternName].length; j++) {
                 var data = patternobj[patternName][j];
-                //console.info(data);
                 var time = data["time"];
                 setTimeout(() => {
-                    //dmxController.update("pidmx", data["channelData"]);
+                    dmxcontroller.update("pidmx", data["channelData"]);
                     console.info(data["channelData"]);
                 }, waittime);\n
                 waittime += time;
