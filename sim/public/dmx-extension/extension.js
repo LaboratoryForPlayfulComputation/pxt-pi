@@ -94,6 +94,7 @@ namespace dmx { ` +
 
     export const metadata = ${JSON.stringify(usercode)};
     export const dmxcontroller = new _core.hacks.nodedmx();
+    dmxcontroller.addUniverse('pidmx', 'dmxking-ultra-dmx-pro', '/dev/ttyUSB0');
     export const intervalIDs = {};
     console.info("test: " + dmxcontroller);
 
@@ -268,7 +269,7 @@ namespace dmx { ` +
         */
         //% blockId="dmx_blackout" block="blackout"  
         export function blackout(): void {
-            dmxController.update('pidmx', ` 
+            dmxcontroller.update('pidmx', ` 
             
         ts +=  JSON.stringify(generateBlackoutJSON());
         //ts +=  JSON.stringify(generateCurrentChannelStateJSON());
@@ -312,7 +313,7 @@ function generatePlayPatternCode(pattern) {
         var sceneData = data[key];
         var channelsData = sceneData['channelData'];
         var timeData = parseInt(sceneData['time']);
-        code += 'setTimeout(() => {dmxController.update("pidmx", ' + JSON.stringify(channelsData) + ')}, ' + waittime + ');\n'
+        code += 'setTimeout(() => {dmxcontroller.update("pidmx", ' + JSON.stringify(channelsData) + ')}, ' + waittime + ');\n'
         waittime += timeData;
         }
     }
