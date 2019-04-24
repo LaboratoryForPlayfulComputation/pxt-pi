@@ -12,6 +12,6 @@
         "namespace": "dmx",
         "coreExtension": true,
         "label": "DMX Editor",
-        "localUrl": "/dmx-extension/index.html"
+        "localUrl": "./dmx-extension/index.html"
     }
 }
