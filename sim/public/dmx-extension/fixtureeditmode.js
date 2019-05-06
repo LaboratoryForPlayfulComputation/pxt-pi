@@ -43,7 +43,7 @@ function mouseDraggedLayoutEditingMode() {
       var thing = layoutObjects[i];
       if (thing.isHovered()) {
         thing.dragged();
-        if (thing.connectingAWire && thing.connectingAWire() && thing.type == 'out'){
+        if (thing.connectingAWire && thing.connectingAWire() && thing.direction == 'out'){
           if (!thing.connectedTo) { // the thing is not currently connected to anything
             if (!lineDrawingInProgress){
               firstConnectionInLine = thing;
@@ -75,12 +75,12 @@ function mouseReleasedLayoutEditingMode() {
       var thing = layoutObjects[i];
       if (thing.isHovered() && thing.connectingAWire && // we are hovering an attachable node
          (thing.parent != firstConnectionInLine.parent && // don't connect with a cable if part of same fixture
-            (thing.type != firstConnectionInLine.type))) { // don't connect with cable unless it's an in and out connection
+            (thing.direction != firstConnectionInLine.direction))) { // don't connect with cable unless it's an in and out connection
               var cable = new Cable(firstConnectionInLine, thing);
               cables.push(cable);
               firstConnectionInLine.connectedTo = thing;
               thing.connectedBy = firstConnectionInLine;
-              if (firstConnectionInLine.type) {
+              if (firstConnectionInLine.direction) {
                 thing.startingAddress = 0;
               }
             }

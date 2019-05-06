@@ -22,8 +22,8 @@ class Fixture {
     this.nameInput.position(this.x/4, this.y+this.size-20);
     this.nameInput.changed(() => this.updateName());    
     this.nameInput.size(80);                                                
-    this.in  = new FixtureIn(this);  
-    this.out = new FixtureOut(this);
+    this.in = new DMXConnector(this, 'in');
+    this.out = new DMXConnector(this, 'out');
   }
 
   display() {
@@ -79,146 +79,6 @@ class Fixture {
       this.updateChannel(c, 0);
   }    
 
-}
-
-/*
- * The UI element for the XLR input on a fixture
- */
-class FixtureIn {
-
-    constructor(parent) {
-        this.parent = parent;
-        this.x = this.parent.x-this.parent.size/2-this.size/2;
-        this.y = this.parent.y;
-        this.size = 15;
-        this.radius = this.size/2;
-        this.isDragged = false;
-        this.isConnectingAWire = false;
-        this.type = 'in';
-        this.connectedTo = null;  
-        this.connectedBy = null;   
-    }
-
-    display() {
-        fill(100);
-        if (this.isHovered()) stroke(255); 
-        else stroke(0);        
-        ellipse(this.parent.x-this.parent.size/2-this.size/2, this.parent.y, this.size, this.size);        
-    }
-
-    isHovered() {
-        this.x = this.parent.x-this.parent.size/2-this.size/2;
-        this.y = this.parent.y;        
-        if (mouseX > this.x-this.radius && mouseX < this.x+this.radius && 
-          mouseY > this.y-this.radius && mouseY < this.y+this.radius) return true;
-        else return false;
-      }
-    
-      pressed() {
-        if(this.isHovered() && (!locked || this.locked)) { 
-          fill(255, 255, 255);
-          locked = true;
-          this.locked = true;
-        }
-      }
-      
-      dragged() {
-        if (locked && this.locked)
-          this.isDragged = true;
-      }
-      
-      released() {
-        this.locked = false;
-        locked = false;
-        this.isDragged = false;
-        this.isConnectingAWire = false;        
-      }  
-      
-      connectingAWire() {
-        if (this.isDragged) return true;
-        else false;
-    }
-
-    updateConnectedTo(thing) {
-        this.connectedTo = thing;
-        saveUserCode("test", "test");
-    }
-
-    updateConnectedBy(thing) {
-        this.connectedBy = thing;
-        saveUserCode("test", "test");
-    } 
-    
-}
-
-/*
- * The UI element for the XLR output on a fixture
- */
-class FixtureOut {
-
-    constructor(parent) {
-        this.parent = parent;
-        this.x = this.parent.x+this.parent.size/2+this.size/2;
-        this.y = this.parent.y;
-        this.size = 15;
-        this.radius = this.size/2;
-        this.isDragged = false;
-        this.isConnectingAWire = false;   
-        this.type = 'out';     
-        this.connectedTo = null;   
-        this.connectedBy = null;  
-    }
-
-    display() {
-        fill(100);
-        if (this.isHovered()) stroke(255); 
-        else stroke(0);         
-        ellipse(this.parent.x+this.parent.size/2+this.size/2, this.parent.y, this.size, this.size);
-    }
-
-    isHovered() {
-        this.x = this.parent.x+this.parent.size/2+this.size/2;
-        this.y = this.parent.y;        
-        if (mouseX > this.x-this.radius && mouseX < this.x+this.radius && 
-          mouseY > this.y-this.radius && mouseY < this.y+this.radius) return true;
-        else return false;
-      }
-    
-      pressed() {
-        if(this.isHovered() && (!locked || this.locked)) { 
-          fill(255, 255, 255);
-          locked = true;
-          this.locked = true;
-        }
-      }
-      
-      dragged() {
-        if (locked && this.locked)
-            this.isDragged = true;
-      }
-      
-      released() {
-        this.locked = false;
-        locked = false;
-        this.isDragged = false;
-        this.isConnectingAWire = false;        
-      }  
-      
-      connectingAWire() {
-        if (this.isDragged) return true;
-        else false;
-    } 
-
-    updateConnectedTo(thing) {
-        this.connectedTo = thing;
-        saveUserCode("test", "test");
-    }
-
-    updateConnectedBy(thing) {
-        this.connectedBy = thing;
-        saveUserCode("test", "test");
-    }   
-     
 }
 
 function hexToRgb(hex) {
