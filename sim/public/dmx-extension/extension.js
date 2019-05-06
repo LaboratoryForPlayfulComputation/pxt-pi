@@ -227,18 +227,24 @@ namespace dmx { ` +
             }
             // now set animation intervals
             var totalwaittime = waittime;
+            var waittime = 0;
             intervalIDs[patternName] = [];
-            for (var j = 0; j < patternobj[patternName].length; j++) {
-                var data = patternobj[patternName][j];
-                var time = data["time"];
-                var channelData = data["channelData"];
-                (function(data, name, wait) {
-                    //var id = setInterval(() => {dmxController.update("pidmx", data["channelData"])}, totalwaittime);\n
-                    var id = setInterval(() => {console.info(data)}, wait);\n
-                    intervalIDs[name].push(id);
-                })(channelData, patternname, totalwaittime);
-                totalwaittime += time;
-            }      
+            var id = setInterval(() => {
+                for (var j = 0; j < patternobj[patternName].length; j++) {
+                    var data = patternobj[patternName][j];
+                    var time = data["time"];
+                    var channelData = data["channelData"];
+                    (function(data, wait) {
+                        setTimeout(() => {
+                            dmxcontroller.update("pidmx", data);
+                            console.info(data);
+                        }, wait);
+                    })(channelData, waittime);
+                    waittime += time;
+                }                
+            }, totalwaittime);\n
+            intervalIDs[patternname].push(id);
+
         }
     }
         `

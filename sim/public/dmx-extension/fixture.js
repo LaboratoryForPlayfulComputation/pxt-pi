@@ -7,6 +7,7 @@ class Fixture {
     this.numChannels = 0;
     this.channels = [];
     this.startingAddress = null;
+
     this.size = 75;
     this.radius = this.size/2;
     this.x = universe.fixtures.length * 50 + 200 + this.size;   
@@ -21,7 +22,8 @@ class Fixture {
     this.nameInput = createInput(this.name);
     this.nameInput.position(this.x/4, this.y+this.size-20);
     this.nameInput.changed(() => this.updateName());    
-    this.nameInput.size(80);                                                
+    this.nameInput.size(80);   
+                                                 
     this.in = new DMXConnector(this, 'in');
     this.out = new DMXConnector(this, 'out');
   }
