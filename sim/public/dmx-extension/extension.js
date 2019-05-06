@@ -180,10 +180,13 @@ namespace dmx { ` +
             for (var j = 0; j < patternobj[patternName].length; j++) {
                 var data = patternobj[patternName][j];
                 var time = data["time"];
-                setTimeout(() => {
-                    dmxcontroller.update("pidmx", data["channelData"]);
-                    console.info(data["channelData"]);
-                }, waittime);\n
+                var channelData = data["channelData"];
+                (function(data, wait) {
+                    setTimeout(() => {
+                        dmxcontroller.update("pidmx", data);
+                        console.info(data);
+                    }, wait);\n
+                })(channelData, waittime);
                 waittime += time;
             }
         }
@@ -213,10 +216,13 @@ namespace dmx { ` +
             for (var j = 0; j < patternobj[patternName].length; j++) {
                 var data = patternobj[patternName][j];
                 var time = data["time"];
-                setTimeout(() => {
-                    //dmxController.update("pidmx", data["channelData"]);
-                    console.info(data["channelData"]);
-                }, waittime);\n
+                var channelData = data["channelData"];
+                (function(data, wait) {
+                    setTimeout(() => {
+                        dmxcontroller.update("pidmx", data);
+                        console.info(data);
+                    }, wait);\n
+                })(channelData, waittime);
                 waittime += time;
             }
             // now set animation intervals
@@ -225,13 +231,16 @@ namespace dmx { ` +
             for (var j = 0; j < patternobj[patternName].length; j++) {
                 var data = patternobj[patternName][j];
                 var time = data["time"];
-                //var id = setInterval(() => {dmxController.update("pidmx", data["channelData"])}, totalwaittime);\n
-                var id = setInterval(() => {console.info(data["channelData"])}, totalwaittime);\n
-                intervalIDs[patternName].push(id);
+                var channelData = data["channelData"];
+                (function(data, name, wait) {
+                    //var id = setInterval(() => {dmxController.update("pidmx", data["channelData"])}, totalwaittime);\n
+                    var id = setInterval(() => {console.info(data)}, wait);\n
+                    intervalIDs[name].push(id);
+                })(channelData, patternname, totalwaittime);
                 totalwaittime += time;
             }      
         }
-    } 
+    }
         `
 
     ts += `}
