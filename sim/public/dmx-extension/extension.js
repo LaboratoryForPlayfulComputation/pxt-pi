@@ -227,9 +227,9 @@ namespace dmx { ` +
             }
             // now set animation intervals
             var totalwaittime = waittime;
-            var waittime = 0;
             intervalIDs[patternName] = [];
             var id = setInterval(() => {
+                var waittime = 0;
                 for (var j = 0; j < patternobj[patternName].length; j++) {
                     var data = patternobj[patternName][j];
                     var time = data["time"];
@@ -240,6 +240,7 @@ namespace dmx { ` +
                             console.info(data);
                         }, wait);
                     })(channelData, waittime);
+                    console.info(waittime);
                     waittime += time;
                 }                
             }, totalwaittime);\n
