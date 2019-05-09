@@ -1,7 +1,7 @@
 {
     "id": "pi",
-    "name": "Raspberry Pi",
-    "title": "MakeCode Pi",
+    "name": "BlockyTalky 3",
+    "title": "BlockyTalky 3 for Raspberry Pi",
     "corepkg": "core",
     "cloud": {
         "workspace": false,
@@ -36,6 +36,7 @@
         "autoRun" : true
     },
     "appTheme": {
+        "boardName": "BTU",
         "logoUrl": "https://github.com/Microsoft/pxt-sample",
         "homeUrl": "http://microsoft.github.io/pxt-sample/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
@@ -88,7 +89,7 @@
             "arrays": "#E65722"
         },
         "allowPackageExtensions": true,
-        "downloadText" : "Run Program",
+        "downloadText" : "Compile and Run",
         "downloadIcon" : "play"
     }
 }

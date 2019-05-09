@@ -25,7 +25,6 @@
   "loops|block": "loops",
   "parseFloat|block": "parse to number %text",
   "parseInt|block": "parse to integer %text",
-  "pi|block": "pi",
   "{id:category}Array": "Array",
   "{id:category}Arrays": "Arrays",
   "{id:category}Boolean": "Boolean",
@@ -33,11 +32,9 @@
   "{id:category}Helpers": "Helpers",
   "{id:category}Loops": "Loops",
   "{id:category}Math": "Math",
-  "{id:category}Network": "Network",
   "{id:category}Number": "Number",
   "{id:category}Object": "Object",
   "{id:category}Packet": "Packet",
-  "{id:category}Pi": "Pi",
   "{id:category}String": "String",
   "{id:category}Text": "Text"
 }

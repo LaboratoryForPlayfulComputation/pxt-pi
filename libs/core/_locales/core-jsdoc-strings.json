@@ -135,6 +135,5 @@
   "loops.pause": "Pause for the specified time in milliseconds",
   "loops.pause|param|ms": "how long to pause for, eg: 100, 200, 500, 1000, 2000",
   "parseFloat": "Convert a string to a number.",
-  "parseInt": "Convert a string to an integer.",
-  "pi.rpcCall": "Executes an RPC call into the Raspberry Pi"
+  "parseInt": "Convert a string to an integer."
 }

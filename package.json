@@ -1,7 +1,7 @@
 {
-  "name": "pxt-sample",
+  "name": "pxt-pi",
   "version": "2.0.1",
-  "description": "sample target for PXT",
+  "description": "a custom PXT target for BlockyTalky3 on the Raspberry Pi",
   "keywords": [
     "JavaScript",
     "education",
@@ -25,15 +25,15 @@
     "docs/**"
   ],
   "devDependencies": {
-    "typescript": "2.6.1",
-    "semantic-ui-less": "2.2.14",
     "@types/bluebird": "2.0.33",
     "@types/jquery": "3.2.16",
     "@types/marked": "0.3.0",
-    "@types/node": "8.0.53"
+    "@types/node": "8.0.53",
+    "@types/web-bluetooth": "0.0.4",
+    "semantic-ui-less": "2.2.14",
+    "typescript": "2.6.1"
   },
   "dependencies": {
-    "@types/peerjs": "0.0.29",
     "pxt-core": "git+https://github.com/LaboratoryForPlayfulComputation/pxt#lpc-deploy"
   }
 }

@@ -8,9 +8,19 @@ namespace pxt.editor {
     initExtensionsAsync = function (_opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug('loading pxt-pi target extensions...');
         const res: pxt.editor.ExtensionResult = {
-            customDownloadProjectAsync: async (res: pxt.cpp.HexFile) => {
+            customDownloadProjectAsync: async (res: pxt.cpp.HexFile, opts: pxt.commands.CustomDownloadOptions) => {
                 return pxt.Util.httpPostJsonAsync(`http://${_HOST}:${_PORT}${_PATH}`, res.source)
-                    .then(() => { }); // Convert Promise<any> to Promise<void>
+                    .then(() => {
+                        if (opts && opts.showInfo) {
+                            opts.showInfo("The program was uploaded!");
+                        }
+                    })
+                    .catch((msg) => {
+                        if (opts && opts.showError) {
+                            opts.showError("An error occurred while trying to upload the program.");
+                            console.error(msg);
+                        }
+                    })
             }
         };
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
