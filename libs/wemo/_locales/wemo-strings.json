@@ -1,0 +1,6 @@
+{
+  "wemo.WemoDevice.setSwitchState|block": "set %switch to %newState",
+  "wemo.bySerialNumber|block": "find wemo with serial number %serial",
+  "wemo.onConnect|block": "when I connect to a wemo with serial %serial",
+  "{id:category}Wemo": "Wemo"
+}
