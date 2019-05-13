@@ -14,7 +14,8 @@
         "libs/netsimple",
         "libs/sheets",
         "libs/webcam",
-        "libs/timelapse"
+        "libs/timelapse",
+        "libs/wemo"
     ],
     "runtime": {
         "mathBlocks": true,

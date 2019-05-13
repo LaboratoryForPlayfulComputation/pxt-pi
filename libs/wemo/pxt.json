@@ -1,0 +1,11 @@
+{
+    "name": "wemo",
+    "description": "Interact with wemo devices.",
+    "files": [
+        "wemo.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}
