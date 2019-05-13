@@ -1,6 +1,12 @@
 {
-  "wemo.WemoDevice.setSwitchState|block": "set %switch to %newState",
+  "wemo.WemoDevice.getInstantPower|block": "power usage of %device (mW)",
+  "wemo.WemoDevice.getSwitchState|block": "get %device state",
+  "wemo.WemoDevice.onStateChange|block": "when %device changes state",
+  "wemo.WemoDevice.setSwitchState|block": "set %device to %newState",
+  "wemo.WemoSwitchState.OFF|block": "OFF",
+  "wemo.WemoSwitchState.ON|block": "ON",
   "wemo.bySerialNumber|block": "find wemo with serial number %serial",
+  "wemo.onConnectToName|block": "when I connect to a wemo with name %name",
   "wemo.onConnect|block": "when I connect to a wemo with serial %serial",
   "{id:category}Wemo": "Wemo"
 }
