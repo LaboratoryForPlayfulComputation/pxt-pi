@@ -311,19 +311,23 @@ namespace dmx { ` +
             */
             //% blockId="dmx_updatefixture" block="set %fixture| to %value=dmx_colors"  
             export function updateFixture(fixture: Fixtures, value: number): void {
-                // stub
-
-                dmxcontroller.update('pidmx', `
+                `
                 
-                /*var fixturesList = usercode["layout"]["universes"][0]["fixtures"];
-                for (var i = 0; i < fixturesList.length; i++) {
-                    if (fixturesList[i]["name"] == fixture){ // not gonna work cus fixture will be undefined here?
-                        metadata
+                ts += `
+                for (var f=0; f < universe.fixtures.length; f++) {
+                    var fixtureObj = universe.fixtures[f];
+                    if (fixture = fixtureObj.name) {
+                        var rgbColor = hexToRgb(value);
+                        fixtureObj.r = rgbColor['r'];
+                        fixtureObj.g = rgbColor['g'];
+                        fixtureObj.b = rgbColor['b'];
+                        fixtureObj.updateChannel(fixtureObj.redChannel-1, fixtureObj.r);
+                        fixtureObj.updateChannel(fixtureObj.greenChannel-1, fixtureObj.g);
+                        fixtureObj.updateChannel(fixtureObj.blueChannel-1, fixtureObj.b);
                     }
-                }*/
-                ts +=  JSON.stringify(generateCurrentChannelStateJSON()); // this needs to be updated!!
-                ts +=
-                `);
+                }
+
+                dmxcontroller.update('pidmx', JSON.stringify(generateCurrentChannelStateJSON())); // will this work?
             }`
 
     }
