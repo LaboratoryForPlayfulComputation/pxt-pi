@@ -314,20 +314,14 @@ namespace dmx { ` +
                 `
                 
                 ts += `
-                for (var f=0; f < universe.fixtures.length; f++) {
-                    var fixtureObj = universe.fixtures[f];
+                for (var f=0; f < ${universe.fixtures.length}; f++) {
+                    var fixtureObj = ${universe.fixtures[f]};
                     if (fixture = fixtureObj.name) {
-                        var rgbColor = hexToRgb(value);
-                        fixtureObj.r = rgbColor['r'];
-                        fixtureObj.g = rgbColor['g'];
-                        fixtureObj.b = rgbColor['b'];
-                        fixtureObj.updateChannel(fixtureObj.redChannel-1, fixtureObj.r);
-                        fixtureObj.updateChannel(fixtureObj.greenChannel-1, fixtureObj.g);
-                        fixtureObj.updateChannel(fixtureObj.blueChannel-1, fixtureObj.b);
+                        console.info("testtt " + fixture);
                     }
                 }
 
-                dmxcontroller.update('pidmx', JSON.stringify(generateCurrentChannelStateJSON())); // will this work?
+                //dmxcontroller.update('pidmx', JSON.stringify(generateCurrentChannelStateJSON())); // will this work?
             }`
 
     }
