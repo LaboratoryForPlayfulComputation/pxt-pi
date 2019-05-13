@@ -128,6 +128,33 @@ namespace dmx { ` +
     `
     }`
 
+    ts +=
+    `export enum Fixtures {
+        `
+            var fixturesList = usercode["layout"]["universes"][0]["fixtures"];
+            for (var i = 0; i < fixturesList.length; i++){
+                var fixture = fixturesList[i];
+                var fixtureName = fixture["name"];
+                //to do keep track of channels
+                if (i == fixturesList.length-1) {
+                    ts += 
+                    `
+                    //% block="${fixtureName}"`+
+                    `
+                    ${fixtureName}`
+                } else {
+                    ts += 
+                    `//% block="${fixtureName}"`+
+                    `
+                    ${fixtureName},
+                    `
+                }                
+            }
+    
+    ts += 
+    `
+    }`
+
     ts += 
     `
     /*
@@ -145,7 +172,9 @@ namespace dmx { ` +
 
         constructor() {}` 
 
-    ts +=
+    
+    if (false) { // don't have ability to gen scene blocks yet, this is here so the block doesn't get created
+        ts +=
         `
         /*
         * Dmx show scene test block
@@ -153,83 +182,30 @@ namespace dmx { ` +
         * @param scene to show
         */
         //% blockId="dmx_showscene" block="show scene"  
-        export function showScene(): void {`
-
-    ts +=
-        `
-        console.info(metadata);
-        }
-
-        /*
-        * Dmx play pattern test block
-        * @param dmx layout to use, eg: dmx(rig)
-        * @param pattern to loop
-        * @param timeScale
-        */
-        //% blockId="dmx_playpattern" block="play pattern %pattern| at %timeScale speed"  
-        export function playPattern(pattern: Patterns, timeScale: number): void {
-            var waittime = 0;
-            var patternName = "pattern" + pattern.toString();
-            `
-
-    ts += `
-    for (var i = 0; i < metadata["patterns"].length; i++) {
-        var patternobj = metadata["patterns"][i];
-        var patternname = Object.keys(patternobj)[0];
-        if (patternname == patternName){
-            for (var j = 0; j < patternobj[patternName].length; j++) {
-                var data = patternobj[patternName][j];
-                var time = data["time"];
-                var channelData = data["channelData"];
-                (function(data, wait) {
-                    setTimeout(() => {
-                        dmxcontroller.update("pidmx", data);
-                        console.info(data);
-                    }, wait);\n
-                })(channelData, waittime);
-                waittime += time;
-            }
-        }
+        export function showScene(): void {}`
     }
 
-`
+    if (usercode["patterns"].length > 0){
 
-    ts += `}
+        ts +=`
 
-        /*
-        * Dmx loop pattern test block
-        * @param dmx layout to use, eg: dmx(rig)
-        * @param pattern to play
-        */
-        //% blockId="dmx_looppattern" block="loop pattern %pattern"  
-        export function loopPattern(pattern: Patterns): void {
-        var waittime = 0;
-        var patternName = "pattern" + pattern.toString();
-        `
-
-    ts += `
-    for (var i = 0; i < metadata["patterns"].length; i++) {
-        var patternobj = metadata["patterns"][i];
-        var patternname = Object.keys(patternobj)[0];
-        if (patternname == patternName){
-            // set inital timeouts and count the total waittime
-            for (var j = 0; j < patternobj[patternName].length; j++) {
-                var data = patternobj[patternName][j];
-                var time = data["time"];
-                var channelData = data["channelData"];
-                (function(data, wait) {
-                    setTimeout(() => {
-                        dmxcontroller.update("pidmx", data);
-                        console.info(data);
-                    }, wait);\n
-                })(channelData, waittime);
-                waittime += time;
-            }
-            // now set animation intervals
-            var totalwaittime = waittime;
-            intervalIDs[patternName] = [];
-            var id = setInterval(() => {
+            /*
+            * Dmx play pattern test block
+            * @param dmx layout to use, eg: dmx(rig)
+            * @param pattern to loop
+            * @param timeScale
+            */
+            //% blockId="dmx_playpattern" block="play pattern %pattern| at %timeScale speed"  
+            export function playPattern(pattern: Patterns, timeScale: number): void {
                 var waittime = 0;
+                var patternName = "pattern" + pattern.toString();
+                `
+
+        ts += `
+        for (var i = 0; i < metadata["patterns"].length; i++) {
+            var patternobj = metadata["patterns"][i];
+            var patternname = Object.keys(patternobj)[0];
+            if (patternname == patternName){
                 for (var j = 0; j < patternobj[patternName].length; j++) {
                     var data = patternobj[patternName][j];
                     var time = data["time"];
@@ -238,45 +214,121 @@ namespace dmx { ` +
                         setTimeout(() => {
                             dmxcontroller.update("pidmx", data);
                             console.info(data);
-                        }, wait);
+                        }, wait);\n
                     })(channelData, waittime);
-                    console.info(waittime);
                     waittime += time;
-                }                
-            }, totalwaittime);\n
-            intervalIDs[patternname].push(id);
-
-        }
-    }
-        `
-
-    ts += `}
-        
-        /*
-        * Dmx stop pattern test block
-        * @param dmx layout to use, eg: dmx(rig)
-        * @param pattern to stop
-        */
-        //% blockId="dmx_stoppattern" block="stop pattern %pattern"  
-        export function stopPattern(pattern: Patterns): void {
-            var patternName = "pattern"+pattern.toString();
-            var intervals = intervalIDs[patternName];
-            if (intervals) {
-                for (var i = 0; i < intervals.length; i++) {
-                    clearInterval(intervals[i]);
                 }
-                intervalIDs[patternName] = [];
             }
         }
 
-        /*
-        * Dmx update fixture
-        * @param dmx layout to use, eg: dmx(rig)
-        * @param fixture name
-        * @param value color
-        */
-        //% blockId="dmx_updatefixture" block="set %fixture| to %value=dmx_colors"  
-        export function updateFixture(fixture: string, value: number): void {}             
+    `
+
+        ts += `}
+
+            /*
+            * Dmx loop pattern test block
+            * @param dmx layout to use, eg: dmx(rig)
+            * @param pattern to play
+            */
+            //% blockId="dmx_looppattern" block="loop pattern %pattern"  
+            export function loopPattern(pattern: Patterns): void {
+            var waittime = 0;
+            var patternName = "pattern" + pattern.toString();
+            `
+
+        ts += `
+        for (var i = 0; i < metadata["patterns"].length; i++) {
+            var patternobj = metadata["patterns"][i];
+            var patternname = Object.keys(patternobj)[0];
+            if (patternname == patternName){
+                // set inital timeouts and count the total waittime
+                for (var j = 0; j < patternobj[patternName].length; j++) {
+                    var data = patternobj[patternName][j];
+                    var time = data["time"];
+                    var channelData = data["channelData"];
+                    (function(data, wait) {
+                        setTimeout(() => {
+                            dmxcontroller.update("pidmx", data);
+                            console.info(data);
+                        }, wait);\n
+                    })(channelData, waittime);
+                    waittime += time;
+                }
+                // now set animation intervals
+                var totalwaittime = waittime;
+                intervalIDs[patternName] = [];
+                var id = setInterval(() => {
+                    var waittime = 0;
+                    for (var j = 0; j < patternobj[patternName].length; j++) {
+                        var data = patternobj[patternName][j];
+                        var time = data["time"];
+                        var channelData = data["channelData"];
+                        (function(data, wait) {
+                            setTimeout(() => {
+                                dmxcontroller.update("pidmx", data);
+                                console.info(data);
+                            }, wait);
+                        })(channelData, waittime);
+                        console.info(waittime);
+                        waittime += time;
+                    }                
+                }, totalwaittime);\n
+                intervalIDs[patternname].push(id);
+
+            }
+        }
+            `
+
+        ts += `}
+            
+            /*
+            * Dmx stop pattern test block
+            * @param dmx layout to use, eg: dmx(rig)
+            * @param pattern to stop
+            */
+            //% blockId="dmx_stoppattern" block="stop pattern %pattern"  
+            export function stopPattern(pattern: Patterns): void {
+                var patternName = "pattern"+pattern.toString();
+                var intervals = intervalIDs[patternName];
+                if (intervals) {
+                    for (var i = 0; i < intervals.length; i++) {
+                        clearInterval(intervals[i]);
+                    }
+                    intervalIDs[patternName] = [];
+                }
+            }`
+    }
+
+    if (usercode["layout"]["universes"][0]["fixtures"].length > 0){
+
+        ts += `
+
+            /*
+            * Dmx update fixture
+            * @param dmx layout to use, eg: dmx(rig)
+            * @param fixture name
+            * @param value color
+            */
+            //% blockId="dmx_updatefixture" block="set %fixture| to %value=dmx_colors"  
+            export function updateFixture(fixture: Fixtures, value: number): void {
+                // stub
+
+                dmxcontroller.update('pidmx', `
+                
+                /*var fixturesList = usercode["layout"]["universes"][0]["fixtures"];
+                for (var i = 0; i < fixturesList.length; i++) {
+                    if (fixturesList[i]["name"] == fixture){ // not gonna work cus fixture will be undefined here?
+                        metadata
+                    }
+                }*/
+                ts +=  JSON.stringify(generateCurrentChannelStateJSON()); // this needs to be updated!!
+                ts +=
+                `);
+            }`
+
+    }
+        
+    ts +=`
 
         /*
         * Dmx blackout test block
